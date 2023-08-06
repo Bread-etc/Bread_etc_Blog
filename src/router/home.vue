@@ -1,7 +1,7 @@
 <!-- home.vue -->
 <template>
-  <div>
-    主页
+  <div :class="$style.content">
+    主页1234560oOpPlLiI
   </div>
 </template>
 
@@ -9,6 +9,6 @@
 
 </script>
 
-<style>
-
+<style module lang="less">
+  @import '@/assets/css/HomePage.module.less';
 </style>

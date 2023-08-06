@@ -20,11 +20,37 @@ export default defineConfig({
   // 别名
   resolve: {
     alias: {
-      // 设置别名 (从config目录开始向外查找)
+      // 设置别名
       '@': path.resolve(__dirname, '../src')
+    }
+  },
+  css: {
+    // 是否开启devSourcemap
+    devSourcemap: true,
+    
+    // 模块配置项
+    modules: {
+
+      // 是否开启模块化(默认值为“local”)
+      scopeBehaviour: 'local',
+      
+      // 修改生成的配置对象的key的展示形式
+      localsConvention: 'camelCase',
+
+    },
+    // 预处理器配置项
+    preprocessorOptions: {
+      less: {
+        math: 'always',
+        javascriptEnabled: true,
+        // 将global.less作为全局样式，此处从config开始解析目录
+        additionalData: `@import "${path.resolve(__dirname, '../src/assets/css/global.less')}";`
+      }
     }
   },
   server: {
     port: 3030
   }
 })
+
+// console.log(path.resolve(__dirname, '../src'));

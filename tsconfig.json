@@ -9,8 +9,8 @@
     // 编译过程中需要引入的库文件的列表
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
 
-    // 指定如何处理模块
-    "moduleResolution": "bundler",
+    // 指定如何处理模块(分包处理)
+    "moduleResolution": "Node",
 
     // 允许编译JS
     "allowJs": true,
@@ -54,14 +54,11 @@
         单元测试中需要安装 tsconfig-paths 的包
     */
     // 描述计算相对路径时的根目录
-    // "baseUrl": "@",
-    // // 描述路径别名
-    // "paths": {
-    //   "@/*": [
-    //     "./src/*",
-
-    //   ]
-    // },
+    "baseUrl": ".",
+    // 描述路径别名
+    "paths": {
+      "@/*": [ "src/*" ]
+    },
 
     // 其他未了解的配置
     "noEmit": true,

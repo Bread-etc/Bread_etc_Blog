@@ -17,6 +17,7 @@
   "devDependencies": {
     "@types/node": "^20.4.7",
     "@vitejs/plugin-vue": "^4.2.3",
+    "less": "^4.2.0",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.0.2",
     "unplugin-auto-import": "^0.16.6",

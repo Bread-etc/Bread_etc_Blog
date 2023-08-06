@@ -1,12 +1,14 @@
-<!-- about.vue -->
+<!-- daily,vue -->
 <template>
   <div>
-    关于页
+    日常记录
   </div>
 </template>
 
-<script setup lang="ts">
+<script>
+export default {
 
+}
 </script>
 
 <style>

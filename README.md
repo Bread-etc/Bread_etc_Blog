@@ -8,3 +8,7 @@
 - 首次使用`vite`创建工作目录。
 - 加入`vue-router`
 - 加入`Element Plus`
+
+### 2023/08/07 更新
+- 创建`stores`目录
+- 加入`Pinia`

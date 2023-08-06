@@ -1,35 +1,85 @@
 {
   "compilerOptions": {
+    // 指定ECMAScript目标版本
     "target": "ES2020",
-    "useDefineForClassFields": true,
+
+    // 指定使用模块：'commonjs','amd','system','umd' or 'es2015'
     "module": "ESNext",
+
+    // 编译过程中需要引入的库文件的列表
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "skipLibCheck": true,
+
+    // 指定如何处理模块
+    "moduleResolution": "bundler",
+
+    // 允许编译JS
+    "allowJs": true,
+
+    // 是否检测JS的语法
+    "checkJs": true,
+
+    // 指定 jsx 代码的生成: 'preserve','react-native','react' （保留原始的jsx编码）
+    "jsx": "preserve",
+
+    // 启用所有严格类型检查选项 
+    // 相当于启用 --noImplicitAny, --noImplicitThis, --alwaysStrict, 
+    // --strictNullChecks, --strictFunctionTypes, --strictPropertyInitialization
+    "strict": true,
+
+    // 生成对应的sourmap文件
+    "sourceMap": true,
+
+    // 使用 Object.defineProperty 定义 class 中的属性，不使用键值对
+    "useDefineForClassFields": true,
+
+    // 指定包含类型声明文件名列表
     "types": [
       "node",
     ],
 
-    /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "preserve",
+    // 忽略所有的声明文件(*.d.ts)的类型检查
+    "skipLibCheck": true,
 
-    /* Linting */
-    "strict": true,
+    // 允许从没有设置默认导出的模块中默认导入，不影响代码的输出，仅仅为了类型检查
+    "allowImportingTsExtensions": true,
+
+    // 允许引入JSON文件
+    "resolveJsonModule": true,
+
+    // 该属性要求所有文件都是ES Module模块
+    "isolatedModules": true,
+
+    /* 负责别名配置字段 
+        如果配置了paths,就一定要配置basrUrl 
+        单元测试中需要安装 tsconfig-paths 的包
+    */
+    // 描述计算相对路径时的根目录
+    // "baseUrl": "@",
+    // // 描述路径别名
+    // "paths": {
+    //   "@/*": [
+    //     "./src/*",
+
+    //   ]
+    // },
+
+    // 其他未了解的配置
+    "noEmit": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
+
   },
+  // 指定需要编译的文件
   "include": [
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
-    "src/*.vue",
-    "src/router/*.vue"
+  ],
+  // 指定不需要编译的文件
+  "exclude": [
+    "node_modules"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

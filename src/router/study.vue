@@ -1,12 +1,14 @@
-<!-- about.vue -->
+<!-- study,vue -->
 <template>
   <div>
-    关于页
+    学习
   </div>
 </template>
 
-<script setup lang="ts">
+<script>
+export default {
 
+}
 </script>
 
 <style>

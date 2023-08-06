@@ -1,12 +1,14 @@
-<!-- about.vue -->
+<!-- contact.vue -->
 <template>
   <div>
-    关于页
+    留言板
   </div>
 </template>
 
-<script setup lang="ts">
+<script>
+export default {
 
+}
 </script>
 
 <style>

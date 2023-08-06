@@ -1,7 +1,7 @@
-<!-- about.vue -->
+<!-- home.vue -->
 <template>
   <div>
-    关于页
+    主页
   </div>
 </template>
 

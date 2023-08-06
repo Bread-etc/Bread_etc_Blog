@@ -4,7 +4,8 @@ import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import vue from '@vitejs/plugin-vue'
 
-const path = require('path')
+// 使用 ES6 语法导入path
+import path from 'path'
 
 export default defineConfig({
   plugins: [
@@ -19,8 +20,11 @@ export default defineConfig({
   // 别名
   resolve: {
     alias: {
-      // 设置别名
-      '@': path.resolve(__dirname, './src')
+      // 设置别名 (从config目录开始向外查找)
+      '@': path.resolve(__dirname, '../src')
     }
+  },
+  server: {
+    port: 3030
   }
 })

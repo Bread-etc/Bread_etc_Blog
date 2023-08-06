@@ -4,6 +4,7 @@
     "skipLibCheck": true,
     "module": "ESNext",
     "moduleResolution": "bundler",
+    // 允许使用import 导入使用 export = 导出的默认内容 
     "allowSyntheticDefaultImports": true,
     "types": [
       "node"

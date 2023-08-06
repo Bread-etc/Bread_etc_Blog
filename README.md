@@ -12,3 +12,5 @@
 ### 2023/08/07 更新
 - 创建`stores`目录
 - 加入`Pinia`
+- 使用`css modules`，防止命名重复
+- 增加`global.less`全局变量

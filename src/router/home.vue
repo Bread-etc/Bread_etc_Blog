@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-
+  import '@/assets/css/global.less'
 </script>
 
 <style module lang="less">

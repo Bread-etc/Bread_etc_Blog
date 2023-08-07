@@ -1,10 +1,9 @@
 // vite.config.ts
 // 使用策略模式
-import { defineConfig } from "vite"
+import { defineConfig, loadEnv } from "vite"
 import viteBaseConfig from "./config/vite.base.config"
 import viteDevConfig from "./config/vite.dev.config"
 import viteProdConfig from "./config/vite.prod.config"
-import path from 'path'
 
 const envResolver = {
   "build": () => {
@@ -17,8 +16,15 @@ const envResolver = {
   }
 }
 
+// 配置为了在html中使用环境变量
+const getViteEnv = ( mode, target ) => {
+  return loadEnv( mode, process.cwd())[target]
+}
+
 export default defineConfig(({ command, mode }) => {
-  // const env = loadEnv(mode, process.cwd(),"")
-  // console.log('env',env)  
+  // 配置环境变量且前缀设置为WEB
+  const env = loadEnv(mode, process.cwd(),"WEB")
+  console.log('env',env)  
+
   return envResolver[command]()
 })

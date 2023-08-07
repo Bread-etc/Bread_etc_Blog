@@ -14,3 +14,8 @@
 - 加入`Pinia`
 - 使用`css modules`，防止命名重复
 - 增加`global.less`全局变量
+
+### 2023/08/08 更新
+- 添加`Navigation`组件（需要解决居中问题）
+- 添加配置环境变量
+- 在`global.less`添加全局样式变量

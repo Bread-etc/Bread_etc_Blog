@@ -1,0 +1,76 @@
+.header {
+    width: 100%;
+    max-width: 100vw;
+    // 导航栏边框间距
+    padding: @spacing-normal;
+    box-sizing: border-box;
+
+    // 导航栏背景
+    background-color: @bg-dark-mode;
+
+    // 居中nav
+    display: flex;
+    justify-content: center;
+
+    .nav {
+        width: fit-content;
+        flex: 1;
+        // 导航栏内容高度
+        height: @height-nav;
+        // 导航栏布局
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: flex-start;
+
+        .logo {
+            width: auto;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            // 字体颜色
+            color: @font-color-nav;
+            // 绿蛋靠左
+            margin-right: auto;
+
+            img {
+                width: @width-nav;
+                height: @height-nav;
+            }
+
+            .blogName {
+                width: 150px;
+                height: @height-nav;
+                line-height: @height-nav;
+                // 间距
+                padding-left: @spacing-nav;
+                padding-right: @spacing-nav;
+                
+                // 字体
+                font-size: @font-size;
+                font-weight: @font-weight-nav;
+            }
+        }
+
+        .navBox {
+            width: auto;
+            height: @height-nav;
+            // 间距
+            padding-left: @spacing-nav;
+            padding-right: @spacing-nav;
+
+        }
+
+        .navLink {
+            // 字体
+            text-align: center;
+            font-size: @font-size;
+            font-weight: @font-weight-nav;
+            color: @font-color-nav;
+            text-decoration: none;
+            line-height: 30px;
+        }
+    }
+}
+

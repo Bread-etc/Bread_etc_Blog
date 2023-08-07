@@ -48,8 +48,10 @@ export default defineConfig({
       }
     }
   },
+  // 本地服务器配置
   server: {
-    port: 3030
+    port: 3030,
+    hmr: true,
   }
 })
 

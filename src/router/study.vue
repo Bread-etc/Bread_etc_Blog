@@ -1,16 +1,19 @@
 <!-- study,vue -->
 <template>
-  <div>
-    学习
+  <div class="row">
+    <div class="col-3">
+        我是左侧目录
+    </div>
+    <div class="col-9">
+      我是右侧正文
+    </div>
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
 
-}
 </script>
 
-<style>
+<style lang="scss">
 
 </style>

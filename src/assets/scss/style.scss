@@ -1,0 +1,14 @@
+// 导入部分Bootstrap的CSS文件
+// @import '~bootstrap/dist/css/bootstrap-grid.min.css';
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+// 导入全局变量
+@import './mixin.scss';
+
+body {
+
+    // 设置全局布局，设置缩小居中并取消body自带margin(!important)
+    margin: 0;
+    padding: 0;
+    background-color: $bg-light-mode;
+}

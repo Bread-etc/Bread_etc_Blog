@@ -14,5 +14,6 @@
     "vite.config.ts",
     "./config/*.ts",
     "src/*.vue",
+    "src/**/*.vue",
   ]
 }

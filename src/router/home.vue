@@ -1,14 +1,14 @@
 <!-- home.vue -->
 <template>
-  <div :class="$style.content">
+  <div>
     主页1234560oOpPlLiI
   </div>
 </template>
 
 <script setup lang="ts">
-  import '@/assets/css/global.less'
+
 </script>
 
-<style module lang="less">
-  @import '@/assets/css/HomePage.module.less';
+<style module >
+  
 </style>

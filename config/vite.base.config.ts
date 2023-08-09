@@ -1,7 +1,4 @@
 import { defineConfig } from 'vite'
-import AutoImport from 'unplugin-auto-import/vite'
-import Components from 'unplugin-vue-components/vite'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import vue from '@vitejs/plugin-vue'
 
 // 使用 ES6 语法导入path
@@ -10,18 +7,13 @@ import path from 'path'
 export default defineConfig({
   plugins: [
     vue(),
-    AutoImport({
-      resolvers: [ElementPlusResolver()],
-    }),
-    Components({
-      resolvers: [ElementPlusResolver()],
-    }),
   ],
   // 别名
   resolve: {
     alias: {
       // 设置别名
-      '@': path.resolve(__dirname, '../src')
+      '@': path.resolve(__dirname, '../src'),
+      '~bootstrap': path.resolve(__dirname, '../node_modules/bootstrap'),  
     }
   },
   css: {
@@ -40,11 +32,9 @@ export default defineConfig({
     },
     // 预处理器配置项
     preprocessorOptions: {
-      less: {
-        math: 'always',
-        javascriptEnabled: true,
-        // 将global.less作为全局样式，此处从config开始解析目录
-        additionalData: `@import "${path.resolve(__dirname, '../src/assets/css/global.less')}";`
+      scss: {
+        // mixin.scss 用于在全局中使用预定义变量
+        additionalData: '@use "@/assets/scss/mixin.scss";'
       }
     }
   },

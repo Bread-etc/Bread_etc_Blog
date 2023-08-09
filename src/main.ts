@@ -1,7 +1,10 @@
 import { createApp } from 'vue'
-import ElementPlus from 'element-plus'
 import store from './stores/index'
 import router from './router/index'
+// 导入全局scss文件
+import '../src/assets/scss/style.scss'
+// 导入所有bootstrap的js
+import 'bootstrap'
 import App from './App.vue'
 
 const app = createApp(App)
@@ -9,5 +12,4 @@ const app = createApp(App)
 // 使用插件并挂载app
 app.use(store)
 app.use(router)
-app.use(ElementPlus, { size: 'small', zIndex: 3000 })
 app.mount('#app')

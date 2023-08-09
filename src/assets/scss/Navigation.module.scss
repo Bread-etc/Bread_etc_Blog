@@ -1,6 +1,131 @@
 .wrapper {
 
-    
     // 设置导航栏为透明背景
     background-color: $bg-componment;
+    border-bottom: 1px solid $border-color-nav;
+
+    // 设置布局
+    padding: 0;
+
+    .navbar {
+
+        // 15px的常规容器间距
+        padding: $space-container;
+
+        // 设置布局
+        display: flex;
+        justify-content: flex-start;
+
+        .logoEgg {
+
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            height: $height-nav;
+
+            .egg {
+                // 为绿蛋设置宽高
+                width: $width-nav;
+                height: $height-nav;  
+                display: flex;  
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        .who {
+            // 字体设置
+            font-size: $font-size-default;
+            font-weight: $font-weight-nav;
+            text-align: center;
+            text-decoration: none;
+            line-height: $height-nav;
+            color: $font-color-default;
+
+            // 布局设置
+            padding-left: $space-default;
+            padding-right: $space-default;
+
+        }
+
+        .navButton {
+
+            width: $width-nav + 10px;
+            height: $height-nav;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            // 使小屏幕三线选项按钮靠右
+            margin-left: auto;
+
+            button {
+                // 调整按钮样式
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: $width-nav + 10px;
+                height: $height-nav;
+                padding: 0;
+
+                span {
+                    
+                    width: 30px;
+                    height: 30px;
+                    // 5px间距
+                    padding: $space-default;
+                }
+            }
+        }
+
+        .navList {
+
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            margin-left: auto;
+            // 使文字和github图标靠右
+            flex-grow: 0;
+
+            .navBlock {
+
+                margin-left: $space-navBox;
+                margin-right: $space-navBox;
+
+                .navTitle {
+                    // 字体设置
+                    font-size: $font-size-default;
+                    font-weight: $font-weight-nav;
+                    text-decoration: none;
+                    color: $font-color-nav;
+        
+                    // 布局设置
+                    flex-wrap: nowrap;
+                    padding-left: $space-default;
+                    padding-right: $space-default;
+    
+    
+                    // 父元素hover特效
+                    &:hover {
+                        color: #ec407a;
+                    }
+                }
+            }
+    
+            .navIcons {
+                // 设置icons样式和布局
+                margin-left: $space-navBox;
+                margin-right: $space-navBox;
+                width: $width-nav;
+                height: $height-nav;
+    
+                display: flex;  
+                justify-content: center;
+                align-items: center;
+    
+            }
+        }
+    }
 }

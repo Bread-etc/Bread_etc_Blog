@@ -7,8 +7,16 @@
 
 body {
 
+    // 设置全局字体
+    font-family: Dejavu Sans Mono, "Microsoft YaHei", Arial, Helvetica, sans-serif;
+
+
+
+
     // 设置全局布局，设置缩小居中并取消body自带margin(!important)
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     background-color: $bg-light-mode;
+    // 深色模式等项目完成后再添加
 }

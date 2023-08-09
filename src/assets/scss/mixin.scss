@@ -12,104 +12,42 @@ $bg-componment: rgba( 255, 255, 255, 0 );
 * 全局字体-颜色变量定义
 */
 $font-color-default: black;         // 默认颜色
-$font-color-nav: #c4dde6;           // 导航栏颜色
-// font-color-title: #333;            // 主要标题色
-// font-color-subtitle: #444;         // 副标题色
-// font-color-success: #8cc253;       // 成功字体色
-// font-color-warning: #d18f52;       // 
-// font-color-danger: #e46671;        // 危险字体色
-// font-color-highlight: #c872d6;     // 高亮字体色
-// font-color-disabled: #909399;      // 禁用字体色
-
-// /**
-// *  全局字体-大小粗细变量定义
-// */
-// font-size: 14px;                     // 默认大小
-// font-size-title: 18px;               // 主要标题
-// font-size-subtitle: 16px;            // 副标题
-// font-size-max: 30px;                 // 大标题
-// font-size-mini: 12px;                // 小文本
-// font-weight-title: 700;              // 标题加粗
-// font-weight-nav: 500;                // 导航栏字体粗细
-// font-weight-subtitle: 500;           // 副标题加粗
-
-// /**
-// * 全局 padding / margin -空间尺寸变量定义
-// */
-// spacing-default: 5px;                // 默认间距
-// spacing-nav: 12px;                   // 导航栏间距
-// spacing-normal: 15px;                // 普通间距
-// spacing-small: 10px;                 // 小间距
-// spacing-min: 3px;                    // 微间距
-// spacing-large: 20px;                 // 大间距
-// spacing-max: 30px;                   // 超大间距
-
-// /**
-// * 全局border变量定义
-// */
-// border-color: #DCDFE6;             // 默认的
-// border-color-success: #67C23A;     // 成功边框
-// border-color-warning: #E6A23C;     // 警告边框
-// border-color-danger: #F56C6C;      // 危险边框
-// border-color-highlight: #409EFF;   // 高亮边框
-// border-color-disabled: #909399;    // 禁用边框
-// border-width: 1px;                   // 默认
-// border-width-max: 2px;               // 粗边框
-
-// /**
-// * 全局border-radius变量定义
-// */
-// border-radius-min: 2px;              // 小圆角
-// border-radius-normal: 4px;           // 默认圆角
-// border-radius-max: 10px;             // 大圆角
-// border-radius-circle: 30px;          // 圆形圆角
+$font-color-nav: #3c3c43;           // 导航栏颜色
 
 
-// /**
-// * 全局box-shadow投影定义
-// */
-// box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04); // 基础投影
-// box-shadow-light: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04); // 浅色投影
+/**
+*  全局字体-大小粗细变量定义
+*/
+$font-size-default: 14px;               // 默认大小
+$font-weight-nav: 500;                  // 导航栏字体粗细
 
-// /**
-// * 全局高宽变量定义
-// */
-// height: 40px;                        // 默认的
-// height-nav: 30px;                    // 导航栏默认高度
-// height-medium: 30px;                 // 中间的
-// height-small: 20px;                  // 小的
-// height-mini: 10px;                   // 迷你的
-// height-plus: 50px;                   // 加高的
-// height-max: 60px;                    // 最高的
-
-// width: 120px;                        // 默认的
-// width-nav: 30px;                     // 导航栏默认宽度
-// width-medium: 100px;                 // 中间的
-// width-small: 80px;                   // 小的
-// width-mini: 60px;                    // 迷你的
-// width-plus: 200px;                   // 加高的
-// width-max: 400px;                    // 最高的
+/**
+* 全局 padding / margin -空间尺寸变量定义
+*/
+$space-default: 5px;                    // 默认间距
+$space-container: 15px;                 // 容器间距 
+$space-navBox: 10px;                    // 导航盒间距
 
 
-// body {
-//     margin:0;
-//     padding: 0;
-// }
+/**
+* 全局border变量定义
+*/
+$border-color-nav: #e7e7e8;         // 导航栏边框
 
 
-// #app {
+/**
+* 全局border-radius变量定义
+*/
+$border-button-normal: 5px;             // 默认圆角
 
-//     // 设置全局布局 设置缩小居中并取消body自带margin(重要)
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     width: 100%;
-//     max-width: 100vw;
-//     min-height: 100vh;
-//     // 设置全局背景
-//     background-color: bg-dark-mode;
-//     // 设置全局字体
-//     font-family: Dejavu Sans Mono, "Microsoft YaHei", Arial, Helvetica, sans-serif;
+/**
+* 全局高宽变量定义
+*/
+$height-default: 40px;                  // 默认的
+$height-nav: 40px;                      // 导航栏默认高度
 
-// }
+
+$width-default: 120px;                  // 默认的
+$width-nav: 30px;                       // 导航栏默认宽度
+
  

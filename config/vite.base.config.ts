@@ -13,7 +13,8 @@ export default defineConfig({
     alias: {
       // 设置别名
       '@': path.resolve(__dirname, '../src'),
-      '~bootstrap': path.resolve(__dirname, '../node_modules/bootstrap'),  
+      '~bootstrap': path.resolve(__dirname, '../node_modules/bootstrap'),
+      'icons': path.resolve(__dirname, '../node_modules/bootstrap-icons/icons'),
     }
   },
   css: {

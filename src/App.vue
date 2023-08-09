@@ -6,7 +6,7 @@
 
 <template>
   <!-- container-fluid 流式容器 -->
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
       <!-- 导航栏 -->
       <Navigation />

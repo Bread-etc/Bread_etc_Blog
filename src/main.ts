@@ -4,7 +4,7 @@ import router from './router/index'
 // 导入全局scss文件
 import '../src/assets/scss/style.scss'
 // 导入所有bootstrap的js
-import 'bootstrap'
+import '../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'
 import App from './App.vue'
 
 const app = createApp(App)

@@ -1,6 +1,6 @@
 <!-- study,vue -->
 <template>
-  <div class="container">
+  <div class="container" >
     <div class="row">
       <div class="col-3">
           我是左侧目录
@@ -16,6 +16,7 @@
 
 </script>
 
-<style lang="scss">
-
+<style module lang="scss">
+  @import '@/assets/scss/mixin.scss';
+  @import '@/assets/scss/Home.module.scss';
 </style>

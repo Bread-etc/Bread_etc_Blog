@@ -1,7 +1,7 @@
 <!-- Navigation.vue for top -->
 <template>
   <nav class="navbar navbar-expand-md" :class="$style.wrapper">
-    <div class="container" :class="$style.navbar">
+    <div class="container p-2" :class="$style.navbar">
       <div :class="$style.logoEgg">
         <a :class="$style.egg" href="#" >
           <img src="@/assets/images/egg.png" alt="image/nav">

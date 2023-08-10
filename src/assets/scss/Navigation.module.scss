@@ -9,9 +9,6 @@
 
     .navbar {
 
-        // 15px的常规容器间距
-        padding: $space-container;
-
         // 设置布局
         display: flex;
         justify-content: flex-start;
@@ -89,6 +86,10 @@
             // 使文字和github图标靠右
             flex-grow: 0;
 
+            // 下拉菜单动画效果
+            transition-duration: 700ms;
+            transition-timing-function: ease-in-out;
+
             .navBlock {
 
                 margin-left: $space-navBox;
@@ -102,14 +103,33 @@
                     color: $font-color-nav;
         
                     // 布局设置
-                    flex-wrap: nowrap;
+                    display: inline-block;
+                    position: relative;
+                    white-space: nowrap;
                     padding-left: $space-default;
                     padding-right: $space-default;
-    
-    
-                    // 父元素hover特效
+                    padding-bottom: 0;
+                    
+
+                    // hover特效
                     &:hover {
-                        color: #ec407a;
+                        color: #328d29;
+                    }
+
+                    &::before,
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 0;
+                        height: 2px;
+                        background-color: #328d29;
+                        transition: width 0.3s ease-in-out;
+                    }
+
+                    &:hover::before {
+                        width: 100%;
                     }
                 }
             }

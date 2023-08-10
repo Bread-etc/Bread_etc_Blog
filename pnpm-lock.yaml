@@ -46,6 +46,9 @@ devDependencies:
   vue-tsc:
     specifier: ^1.8.5
     version: registry.npmmirror.com/vue-tsc@1.8.5(typescript@5.0.2)
+  vue3typed:
+    specifier: ^0.1.5
+    version: registry.npmmirror.com/vue3typed@0.1.5
 
 packages:
 
@@ -585,6 +588,13 @@ packages:
       fsevents: registry.npmmirror.com/fsevents@2.3.2
     dev: true
 
+  registry.npmmirror.com/core-js@3.32.0:
+    resolution: {integrity: sha512-rd4rYZNlF3WuoYuRIDEmbR/ga9CeuWX9U05umAvgrrZoHY4Z++cp/xwPQMvUpBB4Ag6J8KfD80G0zwCyaSxDww==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/core-js/-/core-js-3.32.0.tgz}
+    name: core-js
+    version: 3.32.0
+    requiresBuild: true
+    dev: true
+
   registry.npmmirror.com/csstype@3.1.2:
     resolution: {integrity: sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/csstype/-/csstype-3.1.2.tgz}
     name: csstype
@@ -889,6 +899,12 @@ packages:
       strip-bom: registry.npmmirror.com/strip-bom@3.0.0
     dev: true
 
+  registry.npmmirror.com/typed.js@2.0.16:
+    resolution: {integrity: sha512-IBB52GlJiTUOnomwdVVf7lWgC6gScn8md+26zTHj5oJWA+4pSuclHE76rbGI2hnyO+NT+QXdIUHbfjAY5nEtcw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/typed.js/-/typed.js-2.0.16.tgz}
+    name: typed.js
+    version: 2.0.16
+    dev: true
+
   registry.npmmirror.com/typescript@5.0.2:
     resolution: {integrity: sha512-wVORMBGO/FAs/++blGNeAVdbNKtIh1rbBL2EyQ1+J9lClJ93KiiKe8PmFIVdXhHcyv44SL9oglmfeSsndo0jRw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/typescript/-/typescript-5.0.2.tgz}
     name: typescript
@@ -988,6 +1004,16 @@ packages:
       '@vue/typescript': registry.npmmirror.com/@vue/typescript@1.8.5(typescript@5.0.2)
       semver: registry.npmmirror.com/semver@7.5.4
       typescript: registry.npmmirror.com/typescript@5.0.2
+    dev: true
+
+  registry.npmmirror.com/vue3typed@0.1.5:
+    resolution: {integrity: sha512-hJ20Nvuze8uYlAwJj9Q3vCYxQ03ePvyvLIl01XdhIQzyuP0eqPd9n7/9w872LE1skRVC/n4l/YTAnSmymImtpw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vue3typed/-/vue3typed-0.1.5.tgz}
+    name: vue3typed
+    version: 0.1.5
+    dependencies:
+      core-js: registry.npmmirror.com/core-js@3.32.0
+      typed.js: registry.npmmirror.com/typed.js@2.0.16
+      vue: registry.npmmirror.com/vue@3.3.4
     dev: true
 
   registry.npmmirror.com/vue@3.3.4:

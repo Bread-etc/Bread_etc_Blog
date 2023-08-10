@@ -6,12 +6,12 @@
 
 <template>
   <!-- container-fluid 流式容器 -->
-  <div class="container-fluid">
+  <div class="container">
     <div class="row">
       <!-- 导航栏 -->
       <Navigation />
     </div>
-    <div class="row">
+    <div class="row" >
       <router-view></router-view>
     </div>
     <div class="row">
@@ -24,5 +24,9 @@
 </template>
 
 <style lang="scss">
-  @import '@/assets/scss/mixin.scss';
+
+  // .custom-container {
+    
+  // }
+
 </style>

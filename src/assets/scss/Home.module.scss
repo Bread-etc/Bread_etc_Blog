@@ -1,0 +1,64 @@
+
+.content {
+
+    // 设置布局
+    // display: flex;
+    // flex-direction: row;
+    // justify-content: center;
+    // flex: 1;
+    // margin: 0 auto;
+    // min-height: 100vh;
+
+    // 使大小屏幕多个组件左右外边距一致 (important)
+    max-width: fit-content;
+    overflow: hidden;
+    
+
+    // 设置背景
+    background-color: $bg-light-mode;
+
+    .contentRow {
+        
+        // 设置布局
+        display: flex;
+        flex-direction: row;
+        
+        
+
+        .homeWord {
+
+
+            // 设置字体
+
+            // 设置布局
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+
+            h1 {
+
+                width: 100%;
+                font-weight: 1000;
+                color: black;
+                word-wrap:break-word;
+            }
+
+        }
+
+        .homeImg {
+            
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+
+            img {
+                // 改变龙的大小
+                width: 100%;
+                height: 100%;
+                
+            }
+        }
+    }
+}

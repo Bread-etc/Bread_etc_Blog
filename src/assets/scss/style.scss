@@ -16,6 +16,8 @@ body {
     // 设置全局布局，设置缩小居中并取消body自带margin(!important)
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
     box-sizing: border-box;
     background-color: $bg-light-mode;
     // 深色模式等项目完成后再添加

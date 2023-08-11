@@ -29,15 +29,89 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            padding: 2rem;
 
             h1 {
 
                 width: 100%;
-                font-weight: 1000;
-                color: black;
+                font-size: $font-size-homeHeadline;
+                font-weight: $font-weight-hoemHeadline;
+                
+                // 设置渐变字体
+                background: rgb(16,141,25);
+                background: linear-gradient(260deg, rgba(16,141,25,1) 20%, rgba(92,196,75,1) 100%);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
                 
             }
 
+            .buttons {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 2rem;
+
+                .buttonActive {
+
+                    // 设置布局
+                    display: flex;
+                    flex-wrap: nowrap;
+                    flex-shrink: 0;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 0 $space-button;
+                    line-height: $height-buttons;
+                    
+
+                    button {
+
+                        // 设置布局
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 100%;
+
+                        border: none;
+                        outline: none;
+                        box-shadow: none;
+                        border-radius: $border-button-useful;
+                        padding: 0 1.5rem;
+                        
+                        // 设置字体
+                        font-size: $font-size-buttons;
+                        font-weight: $font-weight-buttons;
+                        text-align: center;
+
+                    }
+
+                    .buttonStudy {
+                        border-color: $font-color-buttons1;
+                        background-color: $font-color-buttons1;
+                        color: $font-size-homePage;
+
+                        &:hover {
+                            background-color: $font-color-buttons1-hover;
+                        }
+                    }
+
+
+                    .buttonContact {
+                        
+                        background-color: $font-color-buttons2;
+                        border-color: $font-color-buttons2;
+
+                        & {
+                            border: 1px solid #c0c0c2;
+                        }
+
+                        &:hover {
+                            background-color: $font-color-buttons2-hover;
+                        }
+                    }
+                }
+            }
         }
 
         .homeImg {
@@ -45,19 +119,40 @@
             // 设置布局
             // width: 50%;
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
+            padding: 2rem;
 
-            .imgFather {
+            .imgBg {
 
                 // 设置布局
-                // width: 50%;
                 display: flex;
-                justify-content: center;
+                position: relative;
                 align-items: center;
+
                 // 改变yoshi的大小
                 width: 70%;
-                height: 70%;
+                
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    // 设置图片蒙版背景
+                    border-radius: 50%;
+                    background-image: url(../images/imgBg.png);
+                    background-position: center center;
+                    background-size: cover;
+                    filter: blur(60px);
+                    z-index: 1;
+                }
+
+                img {
+                    z-index: 2;
+                }
 
             }
 

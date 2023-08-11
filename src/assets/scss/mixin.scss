@@ -14,6 +14,12 @@ $bg-componment: rgba( 255, 255, 255, 0 );
 $font-color-default: black;         // 默认颜色
 $font-color-nav: #3c3c43;           // 导航栏颜色
 $font-color-homePage: #3c3c43;      // 主页滚动字体颜色
+$font-color-buttons1: #ffd859;      // 按钮1颜色
+$font-color-buttons2: #f6f6f7;      // 按钮2颜色
+
+// hover
+$font-color-buttons1-hover: #f7d336;
+$font-color-buttons2-hover: #e3e3e5;
 
 
 $egg-color: #53b74b;                // 首页绿龙颜色
@@ -23,9 +29,13 @@ $egg-color: #53b74b;                // 首页绿龙颜色
 *  全局字体-大小粗细变量定义
 */
 $font-size-default: 14px;               // 默认大小
-$font-size-homePage: 1.1em;              // 首页滚动字体大小
+$font-size-homePage: 1.1rem;            // 首页滚动字体大小
+$font-size-homeHeadline: 1.72em;        // 首页标题字体大小
+$font-size-buttons: 14px;               // 按钮字体大小
 $font-weight-nav: 500;                  // 导航栏字体粗细
 $font-weight-homePage: 550;             // 首页滚动字体粗细
+$font-weight-hoemHeadline: 1000;        // 首页标题字体粗细
+$font-weight-buttons: 600;              // 按钮字体粗细
 
 /**
 * 全局 padding / margin -空间尺寸变量定义
@@ -33,6 +43,7 @@ $font-weight-homePage: 550;             // 首页滚动字体粗细
 $space-default: 5px;                    // 默认间距
 $space-container: 15px;                 // 容器间距 
 $space-navBox: 10px;                    // 导航盒间距
+$space-button: 5px;                    // 按钮间距
 
 
 /**
@@ -45,13 +56,14 @@ $border-color-nav: #e7e7e8;         // 导航栏边框
 * 全局border-radius变量定义
 */
 $border-button-normal: 5px;             // 默认圆角
+$border-button-useful: 20px;            // 最常用圆角
 
 /**
 * 全局高宽变量定义
 */
 $height-default: 40px;                  // 默认的
 $height-nav: 40px;                      // 导航栏默认高度
-
+$height-buttons: 2rem;                
 
 $width-default: 120px;                  // 默认的
 $width-nav: 30px;                       // 导航栏默认宽度

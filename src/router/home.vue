@@ -1,15 +1,17 @@
 <!-- home.vue for content -->
 <template>
-  <div class="p-2" :class="$style.content">
+  <div class="container p-2" :class="$style.content">
     <div class="row" :class="$style.contentRow">
       <div class="col-md-6" :class="$style.homeWord">
         <h1>
-          蛋壳 Blog 1111111111111111111111111111111111222222222222222222222
+          蛋壳 Blog
         </h1>
         <Typing />
       </div>
       <div class="col-md-6" :class="$style.homeImg">
-        <img src="@/assets/images/YoshiLogo.png" alt="image/bigLogo" class="img-fluid">
+        <div :class="$style.imgFather">
+          <img src="@/assets/images/YoshiLogo.png" alt="image/bigLogo" class="img-fluid">
+        </div>
       </div>
     </div>
   </div>

@@ -13,15 +13,19 @@ $bg-componment: rgba( 255, 255, 255, 0 );
 */
 $font-color-default: black;         // 默认颜色
 $font-color-nav: #3c3c43;           // 导航栏颜色
+$font-color-homePage: #3c3c43;      // 主页滚动字体颜色
 
-$egg-color: #53b74b;                // 首页绿蛋颜色
+
+$egg-color: #53b74b;                // 首页绿龙颜色
 
 
 /**
 *  全局字体-大小粗细变量定义
 */
 $font-size-default: 14px;               // 默认大小
+$font-size-homePage: 1.1em;              // 首页滚动字体大小
 $font-weight-nav: 500;                  // 导航栏字体粗细
+$font-weight-homePage: 550;             // 首页滚动字体粗细
 
 /**
 * 全局 padding / margin -空间尺寸变量定义

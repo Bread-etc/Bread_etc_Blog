@@ -4,6 +4,7 @@
             :strings = strings :loop = loop 
             :smart-backspace="true" :typeSpeed = typeSpeed
             :startDelay = startDelay :backSpeed = backSpeed
+            :class="$style.type" :autoInsertCss="true"
         >
             <div class="typing" />
         </vuetyped>
@@ -14,7 +15,7 @@
     const strings: string[] = [
         'Bread_etc的个人博客',
         '欢迎来到我的博客',
-        'Thanks,thanks,thanks,thanks,Monica~',
+        'Thanks,thanks*3,Monica~',
         '谁能代替你地位~',
     ];
     const loop: Boolean = true;
@@ -24,5 +25,10 @@
 </script>
 
 <style module lang="scss">
-
+    @import '@/assets/scss/mixin.scss';
+    .type {
+        color: $font-color-homePage;
+        font-size: $font-size-homePage;
+        font-weight: $font-weight-homePage;
+    }
 </style>

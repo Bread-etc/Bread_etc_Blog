@@ -1,6 +1,6 @@
 <!-- Navigation.vue for top -->
 <template>
-  <nav class="navbar navbar-expand-md" :class="$style.wrapper">
+  <nav class="navbar navbar-expand-md fixed-top" :class="[$style.wrapper, isSticky ? $style.showSticky : '']">
     <div class="container p-2" :class="$style.navbar">
       <div :class="$style.logoEgg">
         <a :class="$style.egg" href="#" >
@@ -47,10 +47,32 @@
 </template>
 
 <script setup lang="ts">
+  import { ref, onMounted, onUnmounted } from "vue";
 
+  // 判断导航栏是否处于顶部,发生滚动则跟随
+  const isSticky = ref(false);
+  const handleScroll = () => {
+    // 滚动的时候设置isSticky为true
+    if(window.scrollY > 0){
+      isSticky.value = true;
+    } else {
+      isSticky.value = false;
+    }
+  };
+  
+  // 挂载函数
+  onMounted (() => {
+    window.addEventListener('scroll', handleScroll);
+  });
+  // 释放函数
+  onUnmounted(() => {
+    window.removeEventListener('scroll', handleScroll);
+  });
+  
 </script>
 
 <style module lang="scss">
   @import '@/assets/scss/mixin.scss';
   @import '@/assets/scss/Navigation.module.scss';
+  
 </style>

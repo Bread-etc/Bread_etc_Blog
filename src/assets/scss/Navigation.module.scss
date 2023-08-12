@@ -2,7 +2,6 @@
 
     // 设置导航栏为透明背景
     background-color: $bg-componment;
-    border-bottom: 1px solid $border-color-nav;
 
     // 设置布局
     padding: 0;
@@ -113,7 +112,7 @@
 
                     // hover特效
                     &:hover {
-                        color: #328d29;
+                        color: #c33e31;
                     }
 
                     &::before,
@@ -124,7 +123,7 @@
                         left: 0;
                         width: 0;
                         height: 2px;
-                        background-color: #328d29;
+                        background-color: #c51707;
                         transition: width 0.7s ease-in-out;
                     }
 
@@ -148,4 +147,10 @@
             }
         }
     }
+}
+
+.showSticky {
+    background-color: $bg-light-mode;
+    border-bottom: 1px solid #e7e7e8;
+    transition: .7s ease-in-out;
 }

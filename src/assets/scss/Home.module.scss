@@ -4,7 +4,6 @@
     // 设置布局
     display: block;
     overflow: hidden;
-
     // 使大小屏幕多个组件左右外边距一致 (important)
     // max-width: fit-content;
     
@@ -17,7 +16,6 @@
         display: flex;
         flex-direction: row;
         
-        
 
         .homeWord {
 
@@ -29,23 +27,42 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 2rem;
+            padding: 1rem;
 
-            h1 {
+            .h1Active {
 
-                width: 100%;
+                display: flex;
+                width: auto;
                 font-size: $font-size-homeHeadline;
-                font-weight: $font-weight-hoemHeadline;
-                
-                // 设置渐变字体
-                background: rgb(16,141,25);
-                background: linear-gradient(260deg, rgba(16,141,25,1) 20%, rgba(92,196,75,1) 100%);
-                -webkit-background-clip: text;
-                background-clip: text;
-                color: transparent;
-                
+
+                div {
+                    width: auto;
+                    font-size: $font-size-homeHeadline;
+                    font-weight: $font-weight-hoemHeadline;
+                    
+                    // 设置渐变字体
+                    background: rgb(233,160,154);
+                    background: linear-gradient(101deg, rgba(233,160,154,1) 27%, rgba(231,206,105,1) 50%, rgba(195,62,49,1) 83%);
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    color: transparent;                  
+                }  
             }
 
+            h2 {
+                // 字体大小
+                width: auto;
+                font-size: 3rem;
+                font-weight: $font-weight-hoemHeadline;
+                // 设置渐变字体
+                background: rgb(234,48,32);
+                background: linear-gradient(101deg, rgba(234,48,32,1) 15%, rgba(231,206,105,1) 39%, rgba(234,124,113,1) 87%);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;   
+            }
+
+            
             .buttons {
                 display: flex;
                 flex-direction: row;
@@ -89,7 +106,8 @@
                     .buttonStudy {
                         border-color: $font-color-buttons1;
                         background-color: $font-color-buttons1;
-                        color: $font-size-homePage;
+                        color: white;
+                        transition-duration: 0.25s;
 
                         &:hover {
                             background-color: $font-color-buttons1-hover;
@@ -101,6 +119,7 @@
                         
                         background-color: $font-color-buttons2;
                         border-color: $font-color-buttons2;
+                        transition-duration: 0.25s;
 
                         & {
                             border: 1px solid #c0c0c2;
@@ -119,9 +138,9 @@
             // 设置布局
             // width: 50%;
             display: flex;
-            justify-content: flex-start;
+            justify-content: center;
             align-items: center;
-            padding: 2rem;
+            padding: 1rem;
 
             .imgBg {
 
@@ -130,8 +149,8 @@
                 position: relative;
                 align-items: center;
 
-                // 改变yoshi的大小
-                width: 70%;
+                // 改变ggbond的大小
+                width: 80%;
                 
 
                 &::before {
@@ -144,7 +163,7 @@
                     // 设置图片蒙版背景
                     border-radius: 50%;
                     background-image: url(../images/imgBg.png);
-                    background-position: center center;
+                    background-position: center;
                     background-size: cover;
                     filter: blur(60px);
                     z-index: 1;

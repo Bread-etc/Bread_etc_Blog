@@ -3,7 +3,10 @@
   <div class="container p-2" :class="$style.content">
     <div class="row" :class="$style.contentRow">
       <div class="col-md-6" :class="$style.homeWord">
-        <h1>蛋壳_Blog</h1>
+        <div :class="$style.h1Active">
+          🍞<div>eTc</div>
+        </div>
+        <h2 >为生活找些乐子🎁</h2>
         <Typing />
         <div :class="$style.buttons" style="padding-left: 0;">
           <div :class="$style.buttonActive" style="padding-left: 0;">
@@ -16,16 +19,18 @@
       </div>
       <div class="col-md-6" :class="$style.homeImg">
         <div :class="$style.imgBg">
-          <img src="@/assets/images/YoshiLogo.png" alt="image/bigLogo" class="img-fluid">
+          <img src="@/assets/images/ggbond.png" alt="image/bigLogo" class="img-fluid">
         </div>
       </div>
     </div>
+    <HomeCards />
   </div>
 </template>
 
 <script setup lang="ts">
   // 导入打字机效果组件
   import Typing from '../components/Typing.vue';
+  import HomeCards from '../components/HomeCards.vue';
   import { useRouter } from 'vue-router';
   // 使用路由跳转
   const router = useRouter();

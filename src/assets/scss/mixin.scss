@@ -7,6 +7,8 @@
 $bg-light-mode: white;
 $bg-dark-mode: #111827;
 $bg-componment: rgba( 255, 255, 255, 0 );
+$bg-homePage-card: #f6f6f7;
+
 
 /**
 * 全局字体-颜色变量定义
@@ -14,15 +16,14 @@ $bg-componment: rgba( 255, 255, 255, 0 );
 $font-color-default: black;         // 默认颜色
 $font-color-nav: #3c3c43;           // 导航栏颜色
 $font-color-homePage: #3c3c43;      // 主页滚动字体颜色
-$font-color-buttons1: #ffd859;      // 按钮1颜色
+$font-color-buttons1: #fad646;      // 按钮1颜色
 $font-color-buttons2: #f6f6f7;      // 按钮2颜色
 
 // hover
-$font-color-buttons1-hover: #f7d336;
+$font-color-buttons1-hover: #e7c231;
 $font-color-buttons2-hover: #e3e3e5;
 
 
-$egg-color: #53b74b;                // 首页绿龙颜色
 
 
 /**
@@ -30,7 +31,7 @@ $egg-color: #53b74b;                // 首页绿龙颜色
 */
 $font-size-default: 14px;               // 默认大小
 $font-size-homePage: 1.1rem;            // 首页滚动字体大小
-$font-size-homeHeadline: 1.72em;        // 首页标题字体大小
+$font-size-homeHeadline: 2.5rem;        // 首页标题字体大小
 $font-size-buttons: 14px;               // 按钮字体大小
 $font-weight-nav: 500;                  // 导航栏字体粗细
 $font-weight-homePage: 550;             // 首页滚动字体粗细
@@ -43,8 +44,8 @@ $font-weight-buttons: 600;              // 按钮字体粗细
 $space-default: 5px;                    // 默认间距
 $space-container: 15px;                 // 容器间距 
 $space-navBox: 10px;                    // 导航盒间距
-$space-button: 5px;                    // 按钮间距
-
+$space-button: 5px;                     // 按钮间距
+$space-card: 12px;                      // 卡片间距
 
 /**
 * 全局border变量定义

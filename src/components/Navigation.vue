@@ -1,6 +1,6 @@
 <!-- Navigation.vue for top -->
 <template>
-  <nav class="navbar navbar-expand-md fixed-top" :class="[$style.wrapper, isSticky ? $style.showSticky : '']">
+  <nav class="navbar navbar-expand-md" :class="[$style.wrapper, isSticky ? $style.showSticky : '']">
     <div class="container p-2" :class="$style.navbar">
       <div :class="$style.logoEgg">
         <a :class="$style.egg" href="#" >
@@ -10,31 +10,31 @@
           Bread_etc's Blog
         </div>
       </div>
-      <div :class="$style.navButton" class="d-md-none">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
+      <!-- <div :class="$style.navButton">
+        <button class="navbar-toggler" >
           <span class="navbar-toggler-icon"></span>
         </button>
-      </div>
-      <div :class="$style.navList" class="collapse navbar-collapse" id="navbarSupportedContent">
+      </div> -->
+      <div :class="$style.navList">
         <!-- 路由选项和图标 -->
-        <ul class="navbar-nav me-auto mb-lg-0">
-          <li :class="$style.navBlock" class="nav-item">
-            <router-link to="/" :class="$style.navTitle" class="nav-link active" aria-current="page">首页</router-link>
+        <ul class="navbar-nav">
+          <li :class="$style.navBlock">
+            <router-link to="/" :class="$style.navTitle">首页</router-link>
           </li>
-          <li :class="$style.navBlock" class="nav-item">
-            <router-link to="/study" :class="$style.navTitle" class="nav-link" >学习</router-link>
+          <li :class="$style.navBlock">
+            <router-link to="/study" :class="$style.navTitle">学习</router-link>
           </li>
-          <li :class="$style.navBlock" class="nav-item">
-            <router-link to="/daily" :class="$style.navTitle" class="nav-link">日常</router-link>
+          <li :class="$style.navBlock">
+            <router-link to="/daily" :class="$style.navTitle">日常</router-link>
           </li>
-          <li :class="$style.navBlock" class="nav-item">
-            <router-link to="/contact" :class="$style.navTitle" class="nav-link">留言板</router-link>
+          <li :class="$style.navBlock">
+            <router-link to="/contact" :class="$style.navTitle">留言板</router-link>
           </li>
-          <li :class="$style.navBlock" class="nav-item">
-            <router-link to="/about" :class="$style.navTitle" class="nav-link">关于</router-link>
+          <li :class="$style.navBlock">
+            <router-link to="/about" :class="$style.navTitle">关于</router-link>
           </li>
-          <li :class="$style.navBlock" class="nav-item">
-            <div :class="$style.navIcons" class="nav-link">
+          <li :class="$style.navBlock">
+            <div :class="$style.navIcons">
               <a href="https://github.com/Bread-etc">
                 <img src="~icons/github.svg" alt="svg/github" :class="$style.githubIcon" width="24" height="24">
               </a>

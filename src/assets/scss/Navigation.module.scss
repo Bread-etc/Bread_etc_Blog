@@ -2,7 +2,6 @@
 
     // 设置导航栏为透明背景
     background-color: $bg-componment;
-
     // 设置布局
     padding: 0;
 
@@ -46,34 +45,34 @@
 
         }
 
-        .navButton {
+        // .navButton {
 
-            width: $width-nav + 10px;
-            height: $height-nav;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            // 使小屏幕三线选项按钮靠右
-            margin-left: auto;
+        //     width: $width-nav + 10px;
+        //     height: $height-nav;
+        //     display: flex;
+        //     justify-content: center;
+        //     align-items: center;
+        //     // 使小屏幕三线选项按钮靠右
+        //     margin-left: auto;
 
-            button {
-                // 调整按钮样式
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: $width-nav + 10px;
-                height: $height-nav;
-                padding: 0;
+        //     button {
+        //         // 调整按钮样式
+        //         display: flex;
+        //         justify-content: center;
+        //         align-items: center;
+        //         width: $width-nav + 10px;
+        //         height: $height-nav;
+        //         padding: 0;
 
-                span {
+        //         span {
                     
-                    width: 30px;
-                    height: 30px;
-                    // 5px间距
-                    padding: $space-default;
-                }
-            }
-        }
+        //             width: 30px;
+        //             height: 30px;
+        //             // 5px间距
+        //             padding: $space-default;
+        //         }
+        //     }
+        // }
 
         .navList {
 
@@ -88,11 +87,17 @@
             // 下拉菜单动画效果
             transition-duration: 700ms;
             transition-timing-function: ease-in-out;
-
             .navBlock {
 
                 margin-left: $space-navBox;
                 margin-right: $space-navBox;
+                display: flex;
+                // 内容居中
+                justify-content: center;
+                align-content: center;
+                // 元素居中
+                justify-items: center;
+                align-items: center;
 
                 .navTitle {
                     // 字体设置
@@ -154,3 +159,4 @@
     border-bottom: 1px solid #e7e7e8;
     transition: .7s ease-in-out;
 }
+

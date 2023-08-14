@@ -1,13 +1,13 @@
 <!-- 入口文件 -->
 <script setup lang="ts">
-  import Navigation from './components/Navigation.vue'
+  import Navigation from './components/Navigation.vue';
+  import Footer from './components/Footer.vue';
 </script>
 
 
 <template>
-  <!-- container-fluid 流式容器 -->
   <div class="container">
-    <div class="row">
+    <div class="row  sticky-top">
       <!-- 导航栏 -->
       <Navigation />
     </div>
@@ -16,17 +16,11 @@
     </div>
     <div class="row">
       <!-- 底部栏 -->
-      <footer class="footer">
-          备案xx号:213213
-      </footer>
+      <Footer />
     </div>
   </div>
 </template>
 
 <style lang="scss">
-
-  // .custom-container {
-    
-  // }
 
 </style>

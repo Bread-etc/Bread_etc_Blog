@@ -1,0 +1,28 @@
+
+.footer {
+
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background-color: $bg-componment;
+    font-size: $font-size-default;
+    padding: 2rem 1rem;
+    padding-bottom: 0;
+
+    .footerContent {
+        padding: 0;
+
+        .showInfo {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-top: 1px solid $border-color-nav;
+            padding: 1rem 0;
+
+            span {
+                color: $font-color-nav;
+            }
+        }
+    }
+}

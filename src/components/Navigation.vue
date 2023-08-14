@@ -10,12 +10,7 @@
           Bread_etc's Blog
         </div>
       </div>
-      <!-- <div :class="$style.navButton">
-        <button class="navbar-toggler" >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div> -->
-      <div :class="$style.navList">
+      <div :class="$style.navList" class="d-none d-md-block">
         <!-- 路由选项和图标 -->
         <ul class="navbar-nav">
           <li :class="$style.navBlock">
@@ -42,7 +37,23 @@
           </li>
         </ul>
       </div>
+      <!-- 制作移动端小按钮 -->
+      <!-- d-md-none 指在中等屏幕以上隐藏 -->
+      <div class="d-md-none" :class="$style.button">
+        <button type="button" :class="$style.moblieButton" @click="dropdown">
+          <span :class="$style.buttonContainer">
+            <span :class="isDrop ? $style.buttonTopActive : $style.buttonTop"></span>
+            <span :class="isDrop ? $style.buttonBottomActive : $style.buttonBottom"></span>
+          </span>
+        </button>
+      </div>
     </div>
+    <!-- 制作下拉菜单 -->
+    <transition name="dropdown">
+      <div :class="$style.dropdownMenu" v-show="isDrop">
+        12345
+      </div>
+    </transition>
   </nav>
 </template>
 
@@ -68,6 +79,14 @@
   onUnmounted(() => {
     window.removeEventListener('scroll', handleScroll);
   });
+
+  // 制作下拉菜单dropdown
+  const isDrop = ref(false);
+  const dropdown = () => {
+    // 点击时下拉状态取反
+    isDrop.value = !isDrop.value;
+    console.log(isDrop.value)
+  };
   
 </script>
 

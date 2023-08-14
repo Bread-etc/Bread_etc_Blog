@@ -45,35 +45,6 @@
 
         }
 
-        // .navButton {
-
-        //     width: $width-nav + 10px;
-        //     height: $height-nav;
-        //     display: flex;
-        //     justify-content: center;
-        //     align-items: center;
-        //     // 使小屏幕三线选项按钮靠右
-        //     margin-left: auto;
-
-        //     button {
-        //         // 调整按钮样式
-        //         display: flex;
-        //         justify-content: center;
-        //         align-items: center;
-        //         width: $width-nav + 10px;
-        //         height: $height-nav;
-        //         padding: 0;
-
-        //         span {
-                    
-        //             width: 30px;
-        //             height: 30px;
-        //             // 5px间距
-        //             padding: $space-default;
-        //         }
-        //     }
-        // }
-
         .navList {
 
             display: flex;
@@ -84,9 +55,6 @@
             // 使文字和github图标靠右
             flex-grow: 0;
 
-            // 下拉菜单动画效果
-            transition-duration: 700ms;
-            transition-timing-function: ease-in-out;
             .navBlock {
 
                 margin-left: $space-navBox;
@@ -151,6 +119,85 @@
     
             }
         }
+
+        .button {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: auto;
+            padding: 0;
+            color: $bg-componment;
+
+            .moblieButton {
+                border: none;
+                outline: none;
+                padding: 0 0.5rem;
+                height: $height-nav;
+                background-color: $bg-componment;
+                cursor: pointer;
+            
+                .buttonContainer {
+
+                    width: 16px;
+                    height: 14px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-content: center;
+                    align-items: center;
+
+                    .buttonTop,
+                    .buttonBottom,
+                    .buttonTopActive,
+                    .buttonBottomActive {
+                        // 设置双线下拉菜单展开栏
+                        width: 16px;
+                        height: 2px;
+                        border-radius: 50px;
+                        background-color: #3c3c43;
+                        transition: .5s;
+                    }
+
+                    // 分别设置双线动画
+                    .buttonTop {
+                        position: relative;
+                        top: -3px;
+                    }
+                    .buttonBottom {
+                        position: relative;
+                        top: 3px;
+                    }
+                    .buttonTopActive {
+                        position: relative;
+                        top: 1px;
+                        transform: rotate(45deg);
+                    }
+                    .buttonBottomActive {
+                        position: relative;
+                        top: -1px;
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+        }
+    }
+
+    .dropdownMenu {
+        background-color: gray;
+        width: 100%;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+    }
+
+    .dropdown-enter-active,
+    .dropdown-leave-active {
+        transition: max-height 0.3s ease-in-out;
+    }
+
+    .dropdown-enter,
+    .dropdown-leave-to {
+        max-height: 500px;
     }
 }
 

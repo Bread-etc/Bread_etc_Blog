@@ -13,20 +13,8 @@
       <div :class="$style.navList" class="d-none d-md-block">
         <!-- 路由选项和图标 -->
         <ul class="navbar-nav">
-          <li :class="$style.navBlock">
-            <router-link to="/" :class="$style.navTitle">首页</router-link>
-          </li>
-          <li :class="$style.navBlock">
-            <router-link to="/study" :class="$style.navTitle">学习</router-link>
-          </li>
-          <li :class="$style.navBlock">
-            <router-link to="/daily" :class="$style.navTitle">日常</router-link>
-          </li>
-          <li :class="$style.navBlock">
-            <router-link to="/contact" :class="$style.navTitle">留言板</router-link>
-          </li>
-          <li :class="$style.navBlock">
-            <router-link to="/about" :class="$style.navTitle">关于</router-link>
+          <li :class="$style.navBlock" v-for="(navLink, index) in navList" :key="index">
+            <router-link :to='navLink.router' :class="$style.navTitle">{{ navLink.title }}</router-link>
           </li>
           <li :class="$style.navBlock">
             <div :class="$style.navIcons">
@@ -49,16 +37,44 @@
       </div>
     </div>
     <!-- 制作下拉菜单 -->
-    <transition name="dropdown">
-      <div :class="$style.dropdownMenu" v-show="isDrop">
-        12345
-      </div>
+    <transition name="fade-slide">
+      <div :class="$style.dropdownMenu" v-if="isDrop">
+        <ul>
+          <li v-for="(navLink, index) in navList" :key="index">
+            <router-link :to='navLink.router' :class="$style.moblieRouter">{{ navLink.title }}</router-link>
+          </li>
+        </ul>
+     </div>
     </transition>
   </nav>
 </template>
 
 <script setup lang="ts">
   import { ref, onMounted, onUnmounted } from "vue";
+
+  // 使用v-for重写ul导航栏组件
+  const navList = ref([
+    {
+      router: '/',
+      title: '首页'
+    },
+    {
+      router: '/study',
+      title: '学习'
+    },
+    {
+      router: '/daily',
+      title: '日常'
+    },
+    {
+      router: '/contact',
+      title: '留言板'
+    },
+    {
+      router: '/about',
+      title: '关于'
+    }
+  ]);
 
   // 判断导航栏是否处于顶部,发生滚动则跟随
   const isSticky = ref(false);
@@ -85,7 +101,6 @@
   const dropdown = () => {
     // 点击时下拉状态取反
     isDrop.value = !isDrop.value;
-    console.log(isDrop.value)
   };
   
 </script>
@@ -93,5 +108,5 @@
 <style module lang="scss">
   @import '@/assets/scss/mixin.scss';
   @import '@/assets/scss/Navigation.module.scss';
-  
+
 </style>

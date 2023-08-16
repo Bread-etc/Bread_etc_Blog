@@ -4,6 +4,7 @@
     background-color: $bg-componment;
     // 设置布局
     padding: 0;
+    overflow-y: auto;
 
     .navbar {
 
@@ -184,26 +185,46 @@
     }
 
     .dropdownMenu {
-        background-color: gray;
+
+        background-color: $bg-componment;
+        border-top: 1px solid $border-color-nav;
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         overflow: hidden;
-        transition: max-height 0.3s ease-in-out;
-    }
 
-    .dropdown-enter-active,
-    .dropdown-leave-active {
-        transition: max-height 0.3s ease-in-out;
-    }
+        ul {
 
-    .dropdown-enter,
-    .dropdown-leave-to {
-        max-height: 500px;
+            width: 70%;
+            margin: 0;
+            padding: 0;
+
+            li {
+                list-style: none;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                align-items: center;
+                padding: 12px 0;
+                width: 100%;
+                border-bottom: 1px solid $border-color-nav;
+                
+                .moblieRouter {
+                    // 设置文本样式
+                    color: #47474e;
+                    line-height: 24px;
+                    font-size: $font-size-default;
+                    text-decoration: none;
+                }
+            }
+        }
     }
 }
 
 .showSticky {
     background-color: $bg-light-mode;
-    border-bottom: 1px solid #e7e7e8;
+    border-bottom: 1px solid $border-color-nav;
     transition: .7s ease-in-out;
 }
-

@@ -14,11 +14,26 @@
         <!-- 路由选项和图标 -->
         <ul class="navbar-nav">
           <li :class="$style.navBlock" v-for="(navLink, index) in navList" :key="index">
-            <router-link :to='navLink.router' :class="$style.navTitle">{{ navLink.title }}</router-link>
+            <router-link :to='navLink.router' :class="[$style.navTitle, currentRoute(navLink.router) ? $style.currentPCRoute : '' ]">{{ navLink.title }}</router-link>
+          </li>
+          <li :class="$style.navBlock">
+            <div :class="$style.navSpace">
+              |
+            </div>
+          </li>
+          <li :class="$style.navBlock">
+            <div :class="$style.modeChange">
+              深色
+            </div>
+          </li>
+          <li :class="$style.navBlock">
+            <div :class="$style.navSpace">
+              |
+            </div>
           </li>
           <li :class="$style.navBlock">
             <div :class="$style.navIcons">
-              <a href="https://github.com/Bread-etc">
+              <a href="https://github.com/Bread-etc" class="text-dark">
                 <img src="~icons/github.svg" alt="svg/github" :class="$style.githubIcon" width="24" height="24">
               </a>
             </div>
@@ -41,7 +56,7 @@
       <div :class="$style.dropdownMenu" v-if="isDrop">
         <ul>
           <li v-for="(navLink, index) in navList" :key="index">
-            <router-link :to='navLink.router' :class="$style.moblieRouter">{{ navLink.title }}</router-link>
+            <router-link :to='navLink.router' :class="[$style.moblieRouter, currentRoute(navLink.router) ? $style.currentMoblieRoute : '' ]">{{ navLink.title }}</router-link>
           </li>
         </ul>
      </div>
@@ -50,7 +65,9 @@
 </template>
 
 <script setup lang="ts">
-  import { ref, onMounted, onUnmounted } from "vue";
+  import path from "path";
+import { ref, onMounted, onUnmounted } from "vue";
+  import { useRouter } from "vue-router";
 
   // 使用v-for重写ul导航栏组件
   const navList = ref([
@@ -102,6 +119,13 @@
     // 点击时下拉状态取反
     isDrop.value = !isDrop.value;
   };
+
+  // 读取当前路由,实现hover效果
+  const router = useRouter();
+  const currentRoute = ( path : string ) => {
+    // 判断为true就展示当前路由样式
+    return router.currentRoute.value.path === path
+  }
   
 </script>
 

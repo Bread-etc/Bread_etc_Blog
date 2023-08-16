@@ -68,6 +68,25 @@
                 justify-items: center;
                 align-items: center;
 
+                .navSpace {
+                    color: #e5e6e6;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    justify-content: center;
+                    align-content: center;
+                    margin: 0 -10px;
+                }
+
+                .modeChange {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    justify-content: center;
+                    align-content: center;
+                    margin: 0 -10px;
+                }
+
                 .navTitle {
                     // 字体设置
                     font-size: $font-size-default;
@@ -82,12 +101,12 @@
                     padding-left: $space-default;
                     padding-right: $space-default;
                     padding-bottom: 0;
-                    
 
                     // hover特效
                     &:hover {
                         color: #c33e31;
                     }
+
 
                     &::before,
                     &::after {
@@ -217,6 +236,15 @@
                     line-height: 24px;
                     font-size: $font-size-default;
                     text-decoration: none;
+
+                    // hover特效
+                    &:hover {
+                        color: #c33e31;
+                    }
+                }
+
+                .currentMoblieRoute {
+                    color: #c33e31;
                 }
             }
         }

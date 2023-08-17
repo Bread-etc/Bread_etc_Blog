@@ -3,7 +3,9 @@
   <div class="container p-2" :class="$style.content" >
     <div class="row" :class="$style.contentRow">
       <div class="col-3" :class="$style.catalog">
-          我是左侧目录
+          <MasterCard />
+          <SortCard />
+          <WebInfo />
       </div>
       <div class="col-9" :class="$style.mainText">
         我是右侧正文
@@ -12,7 +14,11 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
+  // 导入组件
+  import MasterCard from '../components/MasterCard.vue';
+  import SortCard from '../components/SortCard.vue';
+  import WebInfo from '../components/WebInfo.vue';
 
 </script>
 

@@ -1,0 +1,28 @@
+.card {
+
+    display: flex;
+    flex-direction: column;
+    // 内容居中
+    justify-content: center;
+    align-content: center;
+
+    // 子元素居中
+    justify-items: center;
+    align-items: center;
+
+    .authorPic {
+
+    }
+    .authorTag {
+
+    }
+    .authorName{
+
+    }
+    .authorWork {
+
+    }
+    .authorGithub {
+
+    }
+}

@@ -22,7 +22,7 @@ $font-color-buttons2: #f6f6f7;      // 按钮2颜色
 // hover
 $font-color-buttons1-hover: #e7c231;
 $font-color-buttons2-hover: #e3e3e5;
-
+$font-color-card: #4c4948;          // 卡片文字颜色
 
 
 
@@ -46,6 +46,7 @@ $space-container: 15px;                 // 容器间距
 $space-navBox: 10px;                    // 导航盒间距
 $space-button: 5px;                     // 按钮间距
 $space-card: 12px;                      // 卡片间距
+$space-card-component: 5px;             // 卡片内部组件间距
 
 /**
 * 全局border变量定义
@@ -58,6 +59,7 @@ $border-color-nav: #e7e7e8;         // 导航栏边框
 */
 $border-button-normal: 5px;             // 默认圆角
 $border-button-useful: 20px;            // 最常用圆角
+$border-card: 12px;                     // 卡片组件圆角
 
 /**
 * 全局高宽变量定义
@@ -65,6 +67,9 @@ $border-button-useful: 20px;            // 最常用圆角
 $height-default: 40px;                  // 默认的
 $height-nav: 40px;                      // 导航栏默认高度
 $height-buttons: 2rem;                
+$height-headPicture: 100px;             // 头像高度
+
 
 $width-default: 120px;                  // 默认的
 $width-nav: 30px;                       // 导航栏默认宽度
+$width-headPicture: 100px;              // 头像宽度

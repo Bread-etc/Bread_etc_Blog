@@ -2,20 +2,22 @@
 <template>
     <div :class="$style.card">
         <div :class="$style.authorPic">
-            <img src="" alt="">
+            <img src="@/assets/images/HeadPicture.jpg" alt="image/HeadPicture" class="img-fluid">
         </div>
         <div :class="$style.authorTag">
-            Student
+            <div :class="$style.tag">
+                student
+            </div>
         </div>
         <div :class="$style.authorName">
             <span>Bread_etc</span>
         </div>
         <div :class="$style.authorWork">
-            文章:10,分类: 0
+            文章:10 | 分类: 0
         </div>
-        <button :class="$style.authroGithub">
-            Follow Me
-        </button>
+        <div :class="$style.authorGithub">
+            <button>Follow me</button>
+        </div>
     </div>
 </template>
 

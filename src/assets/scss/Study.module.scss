@@ -1,10 +1,16 @@
 
 .content {
+
+    // 设置布局
     display: block;
-    
+    overflow: hidden;
+
+    // 设置背景
+    background-color: $bg-light-mode;    
 
     .contentRow {
 
+        // 设置布局
         display: flex;
         width: 100%;
         margin: 0;

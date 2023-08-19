@@ -1,6 +1,23 @@
 <!-- study,vue -->
 <template>
   <div class="container p-2" :class="$style.content" >
+    <div class="row" :class="$style.studyRow">
+      <div class="col-md-6">
+        <div :class="$style.h1Active">
+
+        </div>
+        <div :class="$style.buttons" style="padding-left: 0;">
+          <div :class="$style.buttonActive" style="padding-left: 0;">
+            <button :class="$style.postBlog">发布博客</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6" :class="$style.studyImg">
+        <div :class="$style.imgBg">
+          <img src="@/assets/images/study.png" alt="image/studyLogo" class="img-fluid">
+        </div>
+      </div>
+    </div>
     <div class="row" :class="$style.contentRow">
       <div class="col-3" :class="$style.catalog">
           <MasterCard />

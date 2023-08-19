@@ -1,6 +1,7 @@
 <!-- MasterCard for Study.vue -->
 <template>
     <div :class="$style.card">
+        <div :class="$style.cardHead"><br></div>
         <div :class="$style.authorPic">
             <img src="@/assets/images/HeadPicture.jpg" alt="image/HeadPicture" class="img-fluid">
         </div>

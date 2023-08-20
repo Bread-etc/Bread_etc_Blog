@@ -8,25 +8,149 @@
     // 设置背景
     background-color: $bg-light-mode;    
 
+    .studyRow {
+
+        // 设置布局
+        display: flex;
+        flex-direction: row;
+
+        .studyWord {
+
+            // 设置布局
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 1rem;
+
+            .h1Active {
+
+                display: flex;
+                width: auto;
+                font-size: $font-size-homeHeadline;
+
+                div {
+                    width: auto;
+                    font-size: $font-size-homeHeadline;
+                    font-weight: $font-weight-hoemHeadline;
+
+                    // 设置渐变字体
+                    background: rgb(183,15,0);
+                    background: linear-gradient(101deg, rgba(183,15,0,1) 9%, rgba(220,38,22,1) 33%, rgba(234,104,91,1) 64%, rgba(251,167,158,1) 87%);
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    color: transparent;
+
+                }
+
+            }
+
+            .buttons {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 2rem;
+
+                .buttonActive {
+
+                    // 设置布局
+                    display: flex;
+                    flex-wrap: nowrap;
+                    flex-shrink: 0;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 0 $space-button;
+                    line-height: $height-buttons;
+
+                    .postBlog {
+                        // 设置布局
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 100%;
+
+                        border: none;
+                        outline: none;
+                        box-shadow: none;
+                        border-radius: $border-button-useful;
+                        padding: 0 1.5rem;
+                        background-color: $yellow;
+
+                        // 设置字体
+                        font-size: $font-size-buttons;
+                        font-weight: $font-weight-buttons;
+                        text-align: center;
+                        color: white;
+
+                        &:hover {
+                            background-color: $font-color-buttons1-hover;
+                        }
+
+                    }
+                }
+            }
+        }
+
+        .studyImg {
+
+            // 设置布局
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+
+            .imgBg {
+
+                // 设置布局
+                display: flex;
+                position: relative;
+                align-items: center;
+
+                // 改变ggbond大小
+                width: 70%;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    // 设置图片蒙版背景
+                    border-radius: 50%;
+                    background-image: url(../images/imgBg.png);
+                    background-position: center;
+                    background-size: cover;
+                    filter: blur(60px);
+                    z-index: 1;
+                }
+
+                img {
+                    z-index: 2;
+                    // 水平镜像图片
+                    transform: rotateY(180deg);
+                }
+            }
+        }
+    }
+
     .contentRow {
 
         // 设置布局
         display: flex;
-        width: 100%;
-        margin: 0;
         flex-direction: row;
-        justify-content: center;
 
         .catalog {
             display: flex;
-            justify-content: center;
-            padding: 0;
+            justify-content: flex-start;
+            padding: 1rem;
         }
 
         .mainText {
-            padding: 0;
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
+            padding: 1rem;
+
         }
     }
 }

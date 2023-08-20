@@ -4,7 +4,7 @@
     <div class="container p-2" :class="$style.navbar">
       <div :class="$style.logoEgg">
         <a :class="$style.egg" href="#" >
-          <img src="@/assets/images/egg.png" alt="image/nav">
+          <img src="@/assets/images/bread.png" alt="image/nav" width="24" height="24">
         </a>
         <div :class="$style.who" class="text-break">
           Bread_etc's Blog
@@ -33,7 +33,7 @@
           </li>
           <li :class="$style.navBlock">
             <div :class="$style.navIcons">
-              <a href="https://github.com/Bread-etc" class="text-dark">
+              <a href="https://github.com/Bread-etc" class="text-dark" width="24" height="24">
                 <img src="~icons/github.svg" alt="svg/github" :class="$style.githubIcon" width="24" height="24">
               </a>
             </div>

@@ -1,10 +1,10 @@
 <!-- study,vue -->
 <template>
-  <div class="container p-2" :class="$style.content" >
-    <div class="row" :class="$style.studyRow">
-      <div class="col-md-6">
+  <div class="container" :class="$style.content" >
+    <div class="row p-2" :class="$style.studyRow">
+      <div class="col-md-6" :class="$style.studyWord">
         <div :class="$style.h1Active">
-
+          📚<div>博客内容</div>
         </div>
         <div :class="$style.buttons" style="padding-left: 0;">
           <div :class="$style.buttonActive" style="padding-left: 0;">
@@ -18,7 +18,7 @@
         </div>
       </div>
     </div>
-    <div class="row" :class="$style.contentRow">
+    <div class="row p-2" :class="$style.contentRow">
       <div class="col-3" :class="$style.catalog">
           <MasterCard />
           <SortCard />

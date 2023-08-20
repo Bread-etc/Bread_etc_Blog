@@ -6,7 +6,7 @@
         <div :class="$style.h1Active">
           🍞<div>eTc</div>
         </div>
-        <h2 >为生活找些乐子🎁</h2>
+        <h2>为生活找些乐子🎁</h2>
         <Typing />
         <div :class="$style.buttons" style="padding-left: 0;">
           <div :class="$style.buttonActive" style="padding-left: 0;">

@@ -17,6 +17,9 @@
           <img src="@/assets/images/study.png" alt="image/studyLogo" class="img-fluid">
         </div>
       </div>
+      <div class="row" :class="$style.arrowhead">
+        <div :class="$style.arrow" ></div>
+      </div>
     </div>
     <div class="row p-2" :class="$style.contentRow">
       <div class="col-3" :class="$style.catalog">

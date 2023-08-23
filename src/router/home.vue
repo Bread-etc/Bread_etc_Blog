@@ -1,25 +1,27 @@
 <!-- home.vue for content -->
 <template>
   <div class="container p-2" :class="$style.content">
-    <div class="row" :class="$style.contentRow">
-      <div class="col-md-6" :class="$style.homeWord">
-        <div :class="$style.h1Active">
-          🍞<div>eTc</div>
-        </div>
-        <h2>为生活找些乐子🎁</h2>
-        <Typing />
-        <div :class="$style.buttons" style="padding-left: 0;">
-          <div :class="$style.buttonActive" style="padding-left: 0;">
-            <button :class="$style.buttonStudy"  @click="navigateToStudy">进入博客</button>
+    <div class="container p-2">
+      <div class="row" :class="$style.contentRow">
+        <div class="col-md-6" :class="$style.homeWord">
+          <div :class="$style.h1Active">
+            🍞<div>eTc</div>
           </div>
-          <div :class="$style.buttonActive">
-             <button :class="$style.buttonContact" @click="navigateToContact">留言板</button>
+          <h2>为生活找些乐子🎁</h2>
+          <Typing />
+          <div :class="$style.buttons" style="padding-left: 0;">
+            <div :class="$style.buttonActive" style="padding-left: 0;">
+              <button :class="$style.buttonStudy"  @click="navigateToStudy">进入博客</button>
+            </div>
+            <div :class="$style.buttonActive">
+              <button :class="$style.buttonContact" @click="navigateToContact">留言板</button>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-6" :class="$style.homeImg">
-        <div :class="$style.imgBg">
-          <img src="@/assets/images/ggbond.png" alt="image/bigLogo" class="img-fluid">
+        <div class="col-md-6" :class="$style.homeImg">
+          <div :class="$style.imgBg">
+            <img src="@/assets/images/ggbond.png" alt="image/bigLogo" class="img-fluid">
+          </div>
         </div>
       </div>
     </div>

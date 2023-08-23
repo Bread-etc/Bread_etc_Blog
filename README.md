@@ -83,3 +83,7 @@
 ### 2023/08/22 更新
 - 更新study面板
 - 加入箭头`arrowhead`
+
+### 2023/08/23 更新
+- 使用`container-fluid`流式容器代替`container`从而改变导航栏的底部栏的长度
+- 增加`mixin.scss`背景颜色变量

@@ -6,14 +6,13 @@
     overflow: hidden;
 
     // 设置背景
-    background-color: $bg-light-mode;    
+    // background-color: $bg-color;    
 
     .studyRow {
 
         // 设置布局
         display: flex;
         flex-direction: row;
-        height: calc( 100vh - 60px );
 
         .studyWord {
 
@@ -134,59 +133,59 @@
             }
         }
 
-        .arrowhead {
-            // 设置箭头布局
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            background-color: $bg-componment;
+        // .arrowhead {
+        //     // 设置箭头布局
+        //     display: flex;
+        //     justify-content: center;
+        //     align-items: center;
+        //     width: 100%;
+        //     background-color: $bg-componment;
 
-            // 设置箭头大小
-            font-size: 30px;
-            text-align: center;
+        //     // 设置箭头大小
+        //     font-size: 30px;
+        //     text-align: center;
 
-            .arrow {
-                width: 30px;
-                height: 30px;
-                position: relative;
-                animation: bounce 1s infinite;
+        //     .arrow {
+        //         width: 30px;
+        //         height: 30px;
+        //         position: relative;
+        //         animation: bounce 1s infinite;
 
-                &::before,
-                &::after {
-                    content: '';
-                    position: absolute;
-                    bottom: 0;
-                    width: 0;
-                    height: 0;
-                    border: solid transparent;
-                }
+        //         &::before,
+        //         &::after {
+        //             content: '';
+        //             position: absolute;
+        //             bottom: 0;
+        //             width: 0;
+        //             height: 0;
+        //             border: solid transparent;
+        //         }
 
-                &::before {
-                    left: 50%;
-                    transform: translateX(-50%);
-                    border-width: 0 10px 15px 10px;
-                    border-bottom-color: $red;
-                }
+        //         &::before {
+        //             left: 50%;
+        //             transform: translateX(-50%);
+        //             border-width: 0 10px 15px 10px;
+        //             border-bottom-color: $red;
+        //         }
 
-                &::after {
-                    left: 50%;
-                    transform: translateX(-50%);
-                    border-width: 0 10px 15px 10px;
-                    border-bottom-color: rgba(0, 0, 0, 0.1);
-                    animation-delay: 0.3s;
-                }
+        //         &::after {
+        //             left: 50%;
+        //             transform: translateX(-50%);
+        //             border-width: 0 10px 15px 10px;
+        //             border-bottom-color: rgba(0, 0, 0, 0.1);
+        //             animation-delay: 0.3s;
+        //         }
 
-                @keyframes bounce {
-                    0%, 100% {
-                        transform: translateY(0);
-                    }
-                    50% {
-                        transform: translateY(10px);
-                    }
-                }
-            }
-        }
+        //         @keyframes bounce {
+        //             0%, 100% {
+        //                 transform: translateY(0);
+        //             }
+        //             50% {
+        //                 transform: translateY(10px);
+        //             }
+        //         }
+        //     }
+        // }
     }
 
     .contentRow {

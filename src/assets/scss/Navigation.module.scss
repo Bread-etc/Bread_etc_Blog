@@ -1,6 +1,6 @@
 .wrapper {
 
-    // 设置导航栏为透明背景
+    // 设置导航栏背景
     background-color: $bg-componment;
     // 设置布局
     padding: 0;
@@ -68,15 +68,6 @@
                 justify-items: center;
                 align-items: center;
 
-                .navSpace {
-                    color: #e5e6e6;
-                    display: flex;
-                    flex-direction: row;
-                    flex-wrap: nowrap;
-                    justify-content: center;
-                    align-content: center;
-                    margin: 0 -10px;
-                }
 
                 .modeChange {
                     display: flex;
@@ -85,6 +76,15 @@
                     justify-content: center;
                     align-content: center;
                     margin: 0 -10px;
+
+                    &::before {
+                        margin-right: 8px;
+                        margin-left: 8px;
+                        width: 1px;
+                        height: 24px;
+                        background-color: $gray;
+                        content: "";
+                    }
                 }
 
                 .navTitle {
@@ -128,15 +128,23 @@
     
             .navIcons {
                 // 设置icons样式和布局
-                margin-left: $space-navBox;
-                margin-right: $space-navBox;
                 width: $width-nav;
                 height: $height-nav;
-    
-                display: flex;  
+                display: flex;
+                align-content: center;
                 justify-content: center;
+
+                justify-items: center;
                 align-items: center;
-    
+
+                &::before {
+                    margin-right: 8px;
+                    margin-left: 8px;
+                    width: 1px;
+                    height: 24px;
+                    background-color: $gray;
+                    content: "";
+                }
             }
         }
 

@@ -5,8 +5,9 @@
     align-content: center;
     justify-content: center;
     background-color: $bg-componment;
+    border-top: 1px solid $border-color-nav;
     font-size: $font-size-default;
-    padding: 2rem 1rem;
+    padding: 0.5rem 1rem;
     padding-bottom: 0;
 
     .footerContent {
@@ -17,11 +18,15 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            border-top: 1px solid $border-color-nav;
             padding: 1rem 0;
 
             span {
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 color: $font-color-nav;
+
+
             }
         }
     }

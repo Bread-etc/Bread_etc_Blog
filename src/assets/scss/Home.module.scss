@@ -4,11 +4,9 @@
     // 设置布局
     display: block;
     overflow: hidden;
-    // 使大小屏幕多个组件左右外边距一致 (important)
-    // max-width: fit-content;
-    
+
     // 设置背景
-    background-color: $bg-light-mode;
+    background-color: $bg-componment;
 
     .contentRow {
         

@@ -6,8 +6,8 @@
 
 
 <template>
-  <div class="container">
-    <div class="row  sticky-top">
+  <div class="container-fluid">
+    <div class="row sticky-top">
       <!-- 导航栏 -->
       <Navigation />
     </div>

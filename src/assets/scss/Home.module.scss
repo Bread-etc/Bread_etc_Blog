@@ -108,7 +108,6 @@
                         }
                     }
 
-
                     .buttonContact {
                         
                         background-color: $font-color-buttons2;
@@ -130,7 +129,6 @@
         .homeImg {
             
             // 设置布局
-            // width: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -166,9 +164,7 @@
                 img {
                     z-index: 2;
                 }
-
             }
-
         }
     }
 }

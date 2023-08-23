@@ -43,6 +43,9 @@ devDependencies:
   vite:
     specifier: ^4.4.5
     version: registry.npmmirror.com/vite@4.4.5(@types/node@20.4.7)(sass@1.64.2)
+  vite-plugin-radar:
+    specifier: ^0.9.1
+    version: registry.npmmirror.com/vite-plugin-radar@0.9.1(vite@4.4.5)
   vue-tsc:
     specifier: ^1.8.5
     version: registry.npmmirror.com/vue-tsc@1.8.5(typescript@5.0.2)
@@ -911,6 +914,17 @@ packages:
     version: 5.0.2
     engines: {node: '>=12.20'}
     hasBin: true
+
+  registry.npmmirror.com/vite-plugin-radar@0.9.1(vite@4.4.5):
+    resolution: {integrity: sha512-stnb+LxeEKobcesXW2JA0OdCaBRgR/zZwN6ACXZf1gF9MNR689aiK5UlgTVmrpUnEcPucO9U0M0WHnuM6NXPsA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vite-plugin-radar/-/vite-plugin-radar-0.9.1.tgz}
+    id: registry.npmmirror.com/vite-plugin-radar/0.9.1
+    name: vite-plugin-radar
+    version: 0.9.1
+    peerDependencies:
+      vite: ^2.0.0 || ^3.0.0 || ^4.0.0
+    dependencies:
+      vite: registry.npmmirror.com/vite@4.4.5(@types/node@20.4.7)(sass@1.64.2)
+    dev: true
 
   registry.npmmirror.com/vite@4.4.5(@types/node@20.4.7)(sass@1.64.2):
     resolution: {integrity: sha512-4m5kEtAWHYr0O1Fu7rZp64CfO1PsRGZlD3TAB32UmQlpd7qg15VF7ROqGN5CyqN7HFuwr7ICNM2+fDWRqFEKaA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vite/-/vite-4.4.5.tgz}

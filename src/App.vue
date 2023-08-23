@@ -2,11 +2,14 @@
 <script setup lang="ts">
   import Navigation from './components/Navigation.vue';
   import Footer from './components/Footer.vue';
+  import { useThemeStore } from './stores/modules/theme';
+
+  const themeStore = useThemeStore();
 </script>
 
 
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid" :class="themeStore.isDarkMode ? 'dark-theme' : 'light-theme'">
     <div class="row sticky-top">
       <!-- 导航栏 -->
       <Navigation />
@@ -22,5 +25,11 @@
 </template>
 
 <style lang="scss">
-
+@import '@/assets/scss/mixin.scss';
+.dark-theme {
+  background-color: $bg-color-dark;
+}
+.light-theme {
+  background-color: $bg-color-light;
+}
 </style>

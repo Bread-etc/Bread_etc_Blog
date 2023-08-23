@@ -260,7 +260,7 @@
 }
 
 .showSticky {
-    background-color: $bg-light-mode;
+    background-color: inherit;
     border-bottom: 1px solid $border-color-nav;
     transition: .7s ease-in-out;
 }

@@ -1,5 +1,4 @@
 // 导入部分Bootstrap的CSS文件
-// @import '~bootstrap/dist/css/bootstrap-grid.min.css';
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
 // 导入全局变量
@@ -16,8 +15,7 @@ body {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    background-color: $bg-color;
-    // 深色模式等项目完成后再添加
+    background-color: inherit;
 }
 
 // 导航栏下拉菜单动画效果

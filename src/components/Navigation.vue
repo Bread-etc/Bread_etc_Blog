@@ -18,7 +18,7 @@
           </li>
           <li :class="$style.navBlock">
             <div :class="$style.modeChange">
-              1
+              <button @click="themeStore.toggleDarkMode">切换</button>
             </div>
           </li>
           <li :class="$style.navBlock">
@@ -56,9 +56,13 @@
 </template>
 
 <script setup lang="ts">
-  import path from "path";
-import { ref, onMounted, onUnmounted } from "vue";
   import { useRouter } from "vue-router";
+  import { useThemeStore } from "../stores/modules/theme";
+  import { ref, onMounted, onUnmounted } from "vue";
+
+  // 切换深色模式
+  const themeStore = useThemeStore();
+
 
   // 使用v-for重写ul导航栏组件
   const navList = ref([
@@ -95,15 +99,6 @@ import { ref, onMounted, onUnmounted } from "vue";
     }
   };
   
-  // 挂载函数
-  onMounted (() => {
-    window.addEventListener('scroll', handleScroll);
-  });
-  // 释放函数
-  onUnmounted(() => {
-    window.removeEventListener('scroll', handleScroll);
-  });
-
   // 制作下拉菜单dropdown
   const isDrop = ref(false);
   const dropdown = () => {
@@ -111,17 +106,24 @@ import { ref, onMounted, onUnmounted } from "vue";
     isDrop.value = !isDrop.value;
   };
 
-  // 读取当前路由,实现hover效果
+  // 读取当前路由
   const router = useRouter();
   const currentRoute = ( path : string ) => {
     // 判断为true就展示当前路由样式
     return router.currentRoute.value.path === path
   }
-  
+
+  // 挂载函数
+  onMounted (() => {
+    window.addEventListener('scroll', handleScroll);
+  });
+  // 释放函数
+  onUnmounted(() => {
+    window.removeEventListener('scroll', handleScroll);
+  });  
 </script>
 
 <style module lang="scss">
   @import '@/assets/scss/mixin.scss';
   @import '@/assets/scss/Navigation.module.scss';
-
 </style>

@@ -1,9 +1,7 @@
 // 导入部分Bootstrap的CSS文件
 @import '~bootstrap/dist/css/bootstrap.min.css';
-
 // 导入全局变量
-@import './mixin.scss';
-
+@import './variables.scss';
 body {
 
     // 设置全局字体

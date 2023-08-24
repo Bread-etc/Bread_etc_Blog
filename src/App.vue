@@ -9,7 +9,7 @@
 
 
 <template>
-  <div class="container-fluid" :class="themeStore.isDarkMode ? 'dark-theme' : 'light-theme'">
+  <div class="container-fluid">
     <div class="row sticky-top">
       <!-- 导航栏 -->
       <Navigation />
@@ -25,11 +25,5 @@
 </template>
 
 <style lang="scss">
-@import '@/assets/scss/mixin.scss';
-.dark-theme {
-  background-color: $bg-color-dark;
-}
-.light-theme {
-  background-color: $bg-color-light;
-}
+@import '@/assets/scss/variables.scss';
 </style>

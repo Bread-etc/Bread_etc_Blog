@@ -8,12 +8,10 @@
 
     .navbar {
 
-        // 设置布局
         display: flex;
         justify-content: flex-start;
 
-        .logoEgg {
-
+        .logoBread {
             display: flex;
             flex-direction: row;
             flex-wrap: nowrap;
@@ -21,8 +19,8 @@
             align-items: center;
             height: $height-nav;
 
-            .egg {
-                // 为绿蛋设置宽高
+            .bread {
+                // 为面包设置宽高
                 width: $width-nav;
                 height: $height-nav;  
                 display: flex;  
@@ -38,12 +36,11 @@
             text-align: center;
             text-decoration: none;
             line-height: $height-nav;
-            color: $font-color-default;
+            color: inherit;
 
             // 布局设置
             padding-left: $space-default;
             padding-right: $space-default;
-
         }
 
         .navList {
@@ -53,7 +50,7 @@
             justify-content: flex-end;
             align-items: center;
             margin-left: auto;
-            // 使文字和github图标靠右
+            // 使文字和图标靠右
             flex-grow: 0;
 
             .navBlock {
@@ -68,7 +65,6 @@
                 justify-items: center;
                 align-items: center;
 
-
                 .modeChange {
                     display: flex;
                     flex-direction: row;
@@ -82,17 +78,17 @@
                         margin-left: 8px;
                         width: 1px;
                         height: 24px;
-                        background-color: $gray;
+                        background-color: $space-color-nav;
                         content: "";
                     }
                 }
 
                 .navTitle {
                     // 字体设置
-                    font-size: $font-size-default;
+                    font-size: $font-size-nav;
                     font-weight: $font-weight-nav;
-                    text-decoration: none;
                     color: $font-color-nav;
+                    text-decoration: none;
         
                     // 布局设置
                     display: inline-block;
@@ -107,7 +103,6 @@
                         color: #c33e31;
                     }
 
-
                     &::before,
                     &::after {
                         content: "";
@@ -116,7 +111,7 @@
                         left: 0;
                         width: 0;
                         height: 2px;
-                        background-color: #c51707;
+                        background-color: $underline-color;
                         transition: width 0.7s ease-in-out;
                     }
 
@@ -133,7 +128,6 @@
                 display: flex;
                 align-content: center;
                 justify-content: center;
-
                 justify-items: center;
                 align-items: center;
 
@@ -142,8 +136,7 @@
                     margin-left: 8px;
                     width: 1px;
                     height: 24px;
-                    background-color: $gray;
-                    content: "";
+                    content: '';
                 }
             }
         }
@@ -183,7 +176,7 @@
                         width: 16px;
                         height: 2px;
                         border-radius: 50px;
-                        background-color: #3c3c43;
+                        background-color: $gray;
                         transition: .5s;
                     }
 
@@ -214,7 +207,7 @@
     .dropdownMenu {
 
         background-color: $bg-componment;
-        border-top: 1px solid $border-color-nav;
+        border-top: 1px solid $dropdownMenu-border-color;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -236,23 +229,23 @@
                 align-items: center;
                 padding: 12px 0;
                 width: 100%;
-                border-bottom: 1px solid $border-color-nav;
+                border-bottom: 1px solid $dropdownMenu-border-color;
                 
                 .moblieRouter {
                     // 设置文本样式
-                    color: #47474e;
+                    color: $dropdownMenu-text-color;
                     line-height: 24px;
                     font-size: $font-size-default;
                     text-decoration: none;
 
                     // hover特效
                     &:hover {
-                        color: #c33e31;
+                        color: $underline-color;
                     }
                 }
 
                 .currentMoblieRoute {
-                    color: #c33e31;
+                    color: $underline-color;
                 }
             }
         }
@@ -261,6 +254,6 @@
 
 .showSticky {
     background-color: inherit;
-    border-bottom: 1px solid $border-color-nav;
+    box-shadow: rgba(0, 0, 0, 0.7) 0px 0px 2px 0px;
     transition: .7s ease-in-out;
 }

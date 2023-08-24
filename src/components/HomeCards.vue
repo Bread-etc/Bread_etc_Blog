@@ -55,6 +55,5 @@ const items = ref([
 </script>
 
 <style module lang="scss">
-    @import '@/assets/scss/mixin.scss';
-    @import '@/assets/scss/HomeCards.module.scss';
+@import '@/assets/scss/HomeCards.module.scss';
 </style>

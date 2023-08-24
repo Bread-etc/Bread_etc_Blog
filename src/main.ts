@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import store from './stores/index'
 import router from './router/index'
-// 导入全局scss文件
+// 导入scss文件
 import '../src/assets/scss/style.scss'
 // 导入所有bootstrap的js
 import '../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'

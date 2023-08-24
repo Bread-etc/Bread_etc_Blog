@@ -3,27 +3,19 @@
 /**
  * 全局背景-颜色变量定义
  */
-
-// 浅色主题变量
-$bg-color-light: #ffffff;
-$bg-color-light-content: #f5f5f5;
-$text-color-light: #333333;
-
-// 深色主题变量
-$bg-color-dark: #1e2227;
-$bg-color-dark-content: #23272e;
-
-$bg-componment: rgba( 255, 255, 255, 0 );
+// 通用主题变量
+$bg-componment: rgba(255, 255, 255, 0);
 $bg-homePage-card: #f6f6f7;
-
 
 // 全局颜色定义
 $red: #c33e31;
 $yellow: #fad646;
 $yellow-study: #fdbf38;
-$beige: #f6f5f0;
+$yellow-hover: #e7c231;
+$white: #f6f6f7;
+$white-hover: #e3e3e5;
 $skin: #e8b69b;
-$gray: #d6d6d6;
+$gray: #3c3c43;
 
 /**
 * 全局字体-局部颜色变量定义
@@ -31,27 +23,26 @@ $gray: #d6d6d6;
 $font-color-default: black;         // 默认颜色
 $font-color-nav: #3c3c43;           // 导航栏颜色
 $font-color-homePage: #3c3c43;      // 主页滚动字体颜色
-$font-color-buttons1: #fad646;      // 按钮1颜色
-$font-color-buttons2: #f6f6f7;      // 按钮2颜色
-
-// hover
-$font-color-buttons1-hover: #e7c231;
-$font-color-buttons2-hover: #e3e3e5;
-$font-color-card: #4c4948;          // 卡片文字颜色
-
-
 
 /**
 *  全局字体-大小粗细变量定义
 */
-$font-size-default: 14px;               // 默认大小
-$font-size-homePage: 1.1rem;            // 首页滚动字体大小
-$font-size-homeHeadline: 2.5rem;        // 首页标题字体大小
-$font-size-buttons: 14px;               // 按钮字体大小
-$font-weight-nav: 500;                  // 导航栏字体粗细
-$font-weight-homePage: 550;             // 首页滚动字体粗细
-$font-weight-hoemHeadline: 1000;        // 首页标题字体粗细
-$font-weight-buttons: 600;              // 按钮字体粗细
+
+// 大小
+$font-size-default: 14px;               // 默认
+$font-size-nav: 14px;                   // 导航栏
+$font-size-homePage: 1.1rem;            // 首页滚动字体
+$font-size-homeHeadline: 2.5rem;        // 首页标题字体
+$font-size-buttons: 14px;               // 按钮字体
+
+
+$font-size-footer: 14px;                // 底部字体
+
+// 粗细
+$font-weight-nav: 500;                  // 导航栏字体
+$font-weight-homePage: 550;             // 首页滚动字体
+$font-weight-hoemHeadline: 1000;        // 首页标题字体
+$font-weight-buttons: 600;              // 按钮字体
 
 /**
 * 全局 padding / margin -空间尺寸变量定义
@@ -67,13 +58,11 @@ $space-card-component: 5px;             // 卡片内部组件间距
 * 全局border变量定义
 */
 $border-color-nav: #e7e7e8;         // 导航栏边框
-
-
 /**
 * 全局border-radius变量定义
 */
 $border-button-normal: 5px;             // 默认圆角
-$border-button-useful: 20px;            // 最常用圆角
+$border-button-radius-useful: 20px;     // 最常用圆角
 $border-card: 12px;                     // 卡片组件圆角
 
 /**
@@ -88,5 +77,3 @@ $height-headPicture: 100px;             // 头像高度
 $width-default: 120px;                  // 默认的
 $width-nav: 30px;                       // 导航栏默认宽度
 $width-headPicture: 100px;              // 头像宽度
-
-

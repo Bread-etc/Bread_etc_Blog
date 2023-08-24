@@ -23,6 +23,5 @@
 </script>
 
 <style lang="scss" module>
-  @import '@/assets/scss/mixin.scss';
-  @import '@/assets/scss/Footer.module.scss';
+@import '@/assets/scss/Footer.module.scss';
 </style>

@@ -27,7 +27,5 @@
 </script>
 
 <style lang="scss" module>
-    @import '@/assets/scss/mixin.scss';
-    @import '@/assets/scss/MasterCard.module.scss';
-
+@import '@/assets/scss/MasterCard.module.scss';
 </style>

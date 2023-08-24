@@ -2,8 +2,8 @@
 <template>
   <nav class="navbar navbar-expand-md" :class="[$style.wrapper, isSticky ? $style.showSticky : '']">
     <div class="container p-2" :class="$style.navbar">
-      <div :class="$style.logoEgg">
-        <a :class="$style.egg" href="#" >
+      <div :class="$style.logoBread">
+        <a :class="$style.bread" href="#" >
           <img src="@/assets/images/bread.png" alt="image/nav" width="24" height="24">
         </a>
         <div :class="$style.who" class="text-break">
@@ -58,11 +58,23 @@
 <script setup lang="ts">
   import { useRouter } from "vue-router";
   import { useThemeStore } from "../stores/modules/theme";
+  import { toggleTheme } from "@zougt/vite-plugin-theme-preprocessor/dist/browser-utils.js";
   import { ref, onMounted, onUnmounted } from "vue";
 
   // 切换深色模式
   const themeStore = useThemeStore();
-
+  const change = (value: boolean) => {
+    if (value) {
+      toggleTheme({
+        scopeName: "theme-default",
+      })
+    } else {
+      toggleTheme({
+        scopeName: "theme-dark",
+      })
+    }
+  };
+  change(themeStore.isDarkMode);
 
   // 使用v-for重写ul导航栏组件
   const navList = ref([
@@ -124,6 +136,5 @@
 </script>
 
 <style module lang="scss">
-  @import '@/assets/scss/mixin.scss';
-  @import '@/assets/scss/Navigation.module.scss';
+@import '@/assets/scss/Navigation.module.scss';
 </style>

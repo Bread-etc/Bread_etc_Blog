@@ -25,10 +25,9 @@
 </script>
 
 <style module lang="scss">
-    @import '@/assets/scss/mixin.scss';
-    .type {
-        color: $font-color-homePage;
-        font-size: $font-size-homePage;
-        font-weight: $font-weight-homePage;
-    }
+.type {
+    color: $homePage-text-color;
+    font-size: $font-size-homePage;
+    font-weight: $font-weight-homePage;
+}
 </style>

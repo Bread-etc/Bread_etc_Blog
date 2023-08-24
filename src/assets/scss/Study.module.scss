@@ -6,7 +6,7 @@
     overflow: hidden;
 
     // 设置背景
-    // background-color: $bg-color;    
+    background-color: $bg-componment;    
 
     .studyRow {
 
@@ -71,7 +71,7 @@
                         border: none;
                         outline: none;
                         box-shadow: none;
-                        border-radius: $border-button-useful;
+                        border-radius: $border-button-radius-useful;
                         padding: 0 1.5rem;
                         background-color: $yellow;
 
@@ -82,7 +82,7 @@
                         color: white;
 
                         &:hover {
-                            background-color: $font-color-buttons1-hover;
+                            background-color: $yellow-study;
                         }
 
                     }

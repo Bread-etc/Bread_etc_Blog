@@ -44,6 +44,5 @@
 </script>
 
 <style module lang="scss">
-  @import '@/assets/scss/mixin.scss';
-  @import '@/assets/scss/Study.module.scss';
+@import '@/assets/scss/Study.module.scss';
 </style>

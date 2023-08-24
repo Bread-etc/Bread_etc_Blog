@@ -1,4 +1,3 @@
-
 .content {
 
     // 设置布局
@@ -14,7 +13,6 @@
         display: flex;
         flex-direction: row;
         
-
         .homeWord {
 
             // 设置布局
@@ -56,7 +54,6 @@
                 color: transparent;   
             }
 
-            
             .buttons {
                 display: flex;
                 flex-direction: row;
@@ -75,19 +72,16 @@
                     padding: 0 $space-button;
                     line-height: $height-buttons;
                     
-
                     button {
 
-                        // 设置布局
                         display: flex;
                         justify-content: center;
                         align-items: center;
                         height: 100%;
-
                         border: none;
                         outline: none;
                         box-shadow: none;
-                        border-radius: $border-button-useful;
+                        border-radius: $border-button-radius-useful;
                         padding: 0 1.5rem;
                         
                         // 设置字体
@@ -98,20 +92,20 @@
                     }
 
                     .buttonStudy {
-                        border-color: $font-color-buttons1;
-                        background-color: $font-color-buttons1;
-                        color: white;
+                        border-color: $yellow;
+                        background-color: $yellow;
+                        color: #ffffff;
                         transition-duration: 0.25s;
 
                         &:hover {
-                            background-color: $font-color-buttons1-hover;
+                            background-color: $yellow-hover;
                         }
                     }
 
                     .buttonContact {
                         
-                        background-color: $font-color-buttons2;
-                        border-color: $font-color-buttons2;
+                        background-color: $white;
+                        border-color: $white;
                         transition-duration: 0.25s;
 
                         & {
@@ -119,7 +113,7 @@
                         }
 
                         &:hover {
-                            background-color: $font-color-buttons2-hover;
+                            background-color: $white-hover;
                         }
                     }
                 }
@@ -135,16 +129,12 @@
             padding: 1rem;
 
             .imgBg {
-
-                // 设置布局
                 display: flex;
                 position: relative;
                 align-items: center;
-
                 // 改变ggbond的大小
                 width: 80%;
                 
-
                 &::before {
                     content: '';
                     position: absolute;

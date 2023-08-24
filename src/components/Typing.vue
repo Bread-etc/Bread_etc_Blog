@@ -25,6 +25,8 @@
 </script>
 
 <style module lang="scss">
+@import '../assets/scss/theme/default-theme';
+@import '../assets/scss/theme/dark-theme';
 .type {
     color: $homePage-text-color;
     font-size: $font-size-homePage;

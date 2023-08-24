@@ -92,3 +92,7 @@
 - 初步使用`pinia`加入深色模式
 - 使用`pinia`存储模式信息
 - 改用`vite-plugin-theme`加入深色模式
+
+### 2023/08/25 更新
+- 即将删除`bootstrap`框架
+- 加入`Element-UI`

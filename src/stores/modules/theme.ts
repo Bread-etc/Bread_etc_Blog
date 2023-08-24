@@ -3,11 +3,12 @@ import { defineStore } from "pinia";
 
 export const useThemeStore = defineStore('theme', {
     state: () => ({
-        isDarkMode: false,  // 默认为浅色模式
+        currentTheme: 'default',    // 默认主题
     }),
     actions: {
-        toggleDarkMode() {
-            this.isDarkMode = !this.isDarkMode;
+        setTheme(theme: string) {
+            this.currentTheme = theme;
+            console.log(this.currentTheme);
         }
     },
 });

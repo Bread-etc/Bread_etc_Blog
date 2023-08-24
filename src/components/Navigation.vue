@@ -18,7 +18,7 @@
           </li>
           <li :class="$style.navBlock">
             <div :class="$style.modeChange">
-              <button @click="themeStore.toggleDarkMode">切换</button>
+              <ThemeSwitcher />
             </div>
           </li>
           <li :class="$style.navBlock">
@@ -56,25 +56,9 @@
 </template>
 
 <script setup lang="ts">
+  import ThemeSwitcher from './ThemeSwitcher.vue';
   import { useRouter } from "vue-router";
-  import { useThemeStore } from "../stores/modules/theme";
-  import { toggleTheme } from "@zougt/vite-plugin-theme-preprocessor/dist/browser-utils.js";
   import { ref, onMounted, onUnmounted } from "vue";
-
-  // 切换深色模式
-  const themeStore = useThemeStore();
-  const change = (value: boolean) => {
-    if (value) {
-      toggleTheme({
-        scopeName: "theme-default",
-      })
-    } else {
-      toggleTheme({
-        scopeName: "theme-dark",
-      })
-    }
-  };
-  change(themeStore.isDarkMode);
 
   // 使用v-for重写ul导航栏组件
   const navList = ref([
@@ -136,5 +120,7 @@
 </script>
 
 <style module lang="scss">
+@import '../assets/scss/theme/default-theme';
+@import '../assets/scss/theme/dark-theme';
 @import '@/assets/scss/Navigation.module.scss';
 </style>

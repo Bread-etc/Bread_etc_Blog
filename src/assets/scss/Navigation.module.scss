@@ -1,3 +1,4 @@
+
 .wrapper {
 
     // 设置导航栏背景
@@ -253,7 +254,7 @@
 }
 
 .showSticky {
-    background-color: inherit;
+    background-color: $bg-color;
     box-shadow: rgba(0, 0, 0, 0.7) 0px 0px 2px 0px;
     transition: .7s ease-in-out;
 }

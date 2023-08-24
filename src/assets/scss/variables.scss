@@ -1,8 +1,3 @@
-// 此处预定义全局变量
-
-/**
- * 全局背景-颜色变量定义
- */
 // 通用主题变量
 $bg-componment: rgba(255, 255, 255, 0);
 $bg-homePage-card: #f6f6f7;
@@ -21,7 +16,6 @@ $gray: #3c3c43;
 * 全局字体-局部颜色变量定义
 */
 $font-color-default: black;         // 默认颜色
-$font-color-nav: #3c3c43;           // 导航栏颜色
 $font-color-homePage: #3c3c43;      // 主页滚动字体颜色
 
 /**

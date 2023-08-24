@@ -1,19 +1,19 @@
 // 导入部分Bootstrap的CSS文件
 @import '~bootstrap/dist/css/bootstrap.min.css';
-// 导入全局变量
-@import './variables.scss';
-body {
+@import './theme/default-theme';
+@import './theme/dark-theme';
 
+body {
     // 设置全局字体
     font-family: Dejavu Sans Mono, "Microsoft YaHei", Arial, Helvetica, sans-serif;
-
     // 设置全局布局，设置缩小居中并取消body自带margin(!important)
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    background-color: inherit;
+    background-color: $bg-color;
+    color: $text-color;
 }
 
 // 导航栏下拉菜单动画效果

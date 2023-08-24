@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import styleImport from 'vite-plugin-style-import'
 
 // 使用 ES6 语法导入path
 import path from 'path'
@@ -8,11 +7,6 @@ import path from 'path'
 export default defineConfig({
   plugins: [
     vue(),
-    styleImport({
-      libs: [
-
-      ]
-    }),
   ],
   // 别名
   resolve: {

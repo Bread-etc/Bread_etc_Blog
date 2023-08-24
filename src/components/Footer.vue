@@ -20,15 +20,14 @@
 
 <script lang="ts" setup>
 import { useThemeStore } from '../stores/modules/theme';
-import styles from '../assets/scss/Footer.module.scss';
 
 const themeStore = useThemeStore();
 const currentTheme = themeStore.currentTheme;
 
-// 根据主题选择样式
-const selectedStyles = currentTheme === 'default' ? styles.defaultTheme : styles.darkTheme;
 </script>
 
 <style lang="scss" module>
+@import '@/assets/scss/theme/default-theme';
+@import '@/assets/scss/theme/dark-theme';
 @import '@/assets/scss/Footer.module.scss';
 </style>

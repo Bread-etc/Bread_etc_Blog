@@ -49,7 +49,6 @@
 </script>
 
 <style module lang="scss">
-@import '../assets/scss/theme/default-theme';
-@import '../assets/scss/theme/dark-theme';
-  @import '@/assets/scss/Home.module.scss';
+@import '@/assets/styles/theme/default-theme.scss';
+@import '~router/Home.module.scss';
 </style>

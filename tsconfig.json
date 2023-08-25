@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     // 指定ECMAScript目标版本
-    "target": "ES2020",
+    "target": "ESNext",
 
     // 指定使用模块：'commonjs','amd','system','umd' or 'es2015'
     "module": "ESNext",
@@ -35,6 +35,9 @@
     // 指定包含类型声明文件名列表
     "types": [
       "node",
+      "element-plus/global",
+      "vite/client",
+      "unplugin-icons/types/vue",
     ],
 
     // 忽略所有的声明文件(*.d.ts)的类型检查
@@ -57,7 +60,9 @@
     "baseUrl": ".",
     // 描述路径别名
     "paths": {
-      "@/*": [ "src/*" ]
+      "@/*": [ "src/*" ],
+      "~router/*": [ "src/assets/styles/router/*" ],
+      "~components/*": [ "src/assets/styles/components/*" ],
     },
 
     // 其他未了解的配置
@@ -73,7 +78,7 @@
     "src/**/*.d.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
-    
+    "src/autoImport/*.d.ts",
   ],
   // 指定不需要编译的文件
   "exclude": [

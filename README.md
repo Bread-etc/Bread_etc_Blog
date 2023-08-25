@@ -95,4 +95,7 @@
 
 ### 2023/08/25 更新
 - 即将删除`bootstrap`框架
-- 加入`Element-UI`
+- 加入`Element Plus`
+
+### 2023/08/26 更新
+- 进行大面积重构`vite.base.config.ts/package.json/App.vue`

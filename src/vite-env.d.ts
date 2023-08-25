@@ -7,8 +7,5 @@ declare module '*.vue' {
     export default component
 }
 
-// 用于兼容bootstrap文件
-declare module 'bootstrap'
-
 // 用于兼容typedJs
 declare module 'vue3typed'

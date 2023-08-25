@@ -24,7 +24,6 @@ const getViteEnv = ( mode, target ) => {
 export default defineConfig(({ command, mode }) => {
   // 配置环境变量且前缀设置为WEB
   const env = loadEnv(mode, process.cwd(),"WEB")
-  console.log('env',env)  
 
   return envResolver[command]()
 })

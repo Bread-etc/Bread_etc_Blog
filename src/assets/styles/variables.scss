@@ -1,4 +1,6 @@
 // 通用主题变量
+$bg-color: #ffffff;
+$text-color: #000000;
 $bg-componment: rgba(255, 255, 255, 0);
 $bg-homePage-card: #f6f6f7;
 
@@ -42,7 +44,7 @@ $font-weight-buttons: 600;              // 按钮字体
 * 全局 padding / margin -空间尺寸变量定义
 */
 $space-default: 5px;                    // 默认间距
-$space-container: 15px;                 // 容器间距 
+$space-container: 20px;                 // 容器间距 
 $space-navBox: 10px;                    // 导航盒间距
 $space-button: 5px;                     // 按钮间距
 $space-card: 12px;                      // 卡片间距
@@ -63,7 +65,7 @@ $border-card: 12px;                     // 卡片组件圆角
 * 全局高宽变量定义
 */
 $height-default: 40px;                  // 默认的
-$height-nav: 40px;                      // 导航栏默认高度
+$height-nav: 60px;                      // 导航栏默认高度
 $height-buttons: 2rem;                
 $height-headPicture: 100px;             // 头像高度
 

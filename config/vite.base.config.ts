@@ -1,20 +1,53 @@
 import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-
-// 使用 ES6 语法导入path
 import path from 'path'
+import vue from '@vitejs/plugin-vue'
+import Icons from 'unplugin-icons/vite'
+import IconsResolver from 'unplugin-icons/resolver'
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+
+const pathSrc = path.resolve(__dirname, '../src')
+
 
 export default defineConfig({
+    // 别名
+    resolve: {
+      alias: {
+        '@': pathSrc,
+        '~router': path.resolve(pathSrc + '/assets/styles/router'),
+        '~components': path.resolve(pathSrc + '/assets/styles/components'),
+      }
+    },
   plugins: [
     vue(),
+    AutoImport({
+      imports: ['vue'],
+      resolvers: [
+        ElementPlusResolver(),
+        IconsResolver({
+          prefix: 'Icon'
+        })
+      ],
+      dts: path.resolve(pathSrc + '/autoImport', 'auto-imports.d.ts')
+    }),
+    Components({
+      resolvers: [
+        IconsResolver({
+          enabledCollections: ['ep', 'carbon', 'noto']
+        }),
+        ElementPlusResolver(),
+      ],
+      dts: path.resolve(pathSrc + '/autoImport', 'components.d.ts')
+    }),
+    Icons({
+      autoInstall: true,
+      compiler: 'vue3'
+    })
   ],
-  // 别名
-  resolve: {
-    alias: {
-      // 设置别名
-      '@': path.resolve(__dirname, '../src'),
-      '~bootstrap': path.resolve(__dirname, '../node_modules/bootstrap'),
-    }
+  // 预构建vueuse的包
+  optimizeDeps: {
+    include: ['@vueuse/core']
   },
   css: {
     // 是否开启devSourcemap
@@ -22,7 +55,6 @@ export default defineConfig({
     
     // 模块配置项
     modules: {
-
       // 是否开启模块化(默认值为“local”)
       scopeBehaviour: 'local',
       
@@ -31,20 +63,18 @@ export default defineConfig({
 
       generateScopedName: '[name]_[local]_[hash:5]',
       
-      // 不参与css模块化的路径
-      // globalModulePaths: ["../src/assets/scss/variables.scss"],
     },
     // 预处理器配置项
     preprocessorOptions: {
       scss: {
         // variables.scss 用于在全局中使用预定义变量
-        additionalData: '@import "@/assets/scss/variables.scss";'
+        additionalData: '@import "@/assets/styles/variables.scss";'
       }
     }
   },
-  // 本地服务器配置
   server: {
     port: 3030,
+    strictPort: true,
     hmr: true,
   }
 })

@@ -1,11 +1,13 @@
 import { createApp } from 'vue'
+
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
 import App from './App.vue'
 import store from './stores/index'
 import router from './router/index'
-// 导入全局样式
-import './assets/scss/style.scss';
-// 导入所有bootstrap的js
-import '../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'
+// 导入样式
+import 'element-plus/theme-chalk/dark/css-vars.css'
+import './assets/styles/index.scss'
 // 导入打字机typed.js
 import vuetyped from 'vue3typed'
 
@@ -15,4 +17,5 @@ const app = createApp(App)
 app.use(vuetyped)
 app.use(store)
 app.use(router)
+app.use(ElementPlus)
 app.mount('#app')

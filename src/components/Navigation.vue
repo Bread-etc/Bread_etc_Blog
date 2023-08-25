@@ -1,18 +1,29 @@
 <!-- Navigation.vue for top -->
 <template>
-  <nav class="navbar navbar-expand-md" :class="[$style.wrapper, isSticky ? $style.showSticky : '']">
-    <div class="container p-2" :class="$style.navbar">
-      <div :class="$style.logoBread">
-        <a :class="$style.bread" href="#" >
-          <img src="@/assets/images/bread.png" alt="image/nav" width="24" height="24">
-        </a>
-        <div :class="$style.who" class="text-break">
-          Bread_etc's Blog
-        </div>
+  <el-menu :default-active="activePath" :ellipsis="false" 
+          mode="horizontal" :class="$style.wrapper"
+  >
+    <div :class="$style.logo">
+      <a href="#" :class="$style.bread">
+        <img src="@/assets/images/bread.png" alt="image/nav" width="24" height="24">
+      </a>
+      <div :class="$style.author">
+        Bread_etc Blog
       </div>
-      <div :class="$style.navList" class="d-none d-md-block">
-        <!-- 路由选项和图标 -->
-        <ul class="navbar-nav">
+    </div>
+    <div :class="$style.flex"></div>
+    <el-menu-item v-for="route in routes" :key="route.path" 
+                :index="route.path" @click="handleNavigation(route.path)" 
+                :class="$style.navList" class="hidden-md-and-down"
+    >
+      {{ route.title }}
+    </el-menu-item>
+    <el-menu-item>
+      <el-switch></el-switch>
+    </el-menu-item>
+      <!-- <div :class="$style.navList" class="d-none d-md-block">
+        路由选项和图标
+        <ul>
           <li :class="$style.navBlock" v-for="(navLink, index) in navList" :key="index">
             <router-link :to='navLink.router' :class="[$style.navTitle, currentRoute(navLink.router) ? $style.currentPCRoute : '' ]">{{ navLink.title }}</router-link>
           </li>
@@ -21,18 +32,8 @@
               <ThemeSwitcher />
             </div>
           </li>
-          <li :class="$style.navBlock">
-            <div :class="$style.navIcons">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
-                <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
-                <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
-              </svg>
-            </div>
-          </li>
         </ul>
       </div>
-      <!-- 制作移动端小按钮 -->
-      <!-- d-md-none 指在中等屏幕以上隐藏 -->
       <div class="d-md-none" :class="$style.button">
         <button type="button" :class="$style.moblieButton" @click="dropdown">
           <span :class="$style.buttonContainer">
@@ -42,7 +43,7 @@
         </button>
       </div>
     </div>
-    <!-- 制作下拉菜单 -->
+    制作下拉菜单
     <transition name="fade-slide">
       <div :class="$style.dropdownMenu" v-if="isDrop">
         <ul>
@@ -51,38 +52,49 @@
           </li>
         </ul>
      </div>
-    </transition>
-  </nav>
+    </transition> -->
+  </el-menu>
 </template>
 
-<script setup lang="ts">
-  import ThemeSwitcher from './ThemeSwitcher.vue';
-  import { useRouter } from "vue-router";
-  import { ref, onMounted, onUnmounted } from "vue";
+<script lang="ts" setup>
+  import { ElMenu, ElMenuItem, ElSwitch } from 'element-plus';
+  import { useRoute, useRouter } from 'vue-router';
+  import { ref, onMounted, onUnmounted } from 'vue';
 
-  // 使用v-for重写ul导航栏组件
-  const navList = ref([
+  const route = useRoute();
+  const router = useRouter();
+  const activePath = ref(route.path);
+
+  // v-for遍历导航栏
+  const routes = ref([
     {
-      router: '/',
+      path: '/',
       title: '首页'
     },
     {
-      router: '/study',
+      path: '/study',
       title: '学习'
     },
     {
-      router: '/daily',
+      path: '/daily',
       title: '日常'
     },
     {
-      router: '/contact',
+      path: '/contact',
       title: '留言板'
     },
     {
-      router: '/about',
+      path: '/about',
       title: '关于'
     }
   ]);
+
+  // 点击跳转路由
+  const handleNavigation = (path) => {
+    router.push(path);
+  };
+
+
 
   // 判断导航栏是否处于顶部,发生滚动则跟随
   const isSticky = ref(false);
@@ -102,12 +114,6 @@
     isDrop.value = !isDrop.value;
   };
 
-  // 读取当前路由
-  const router = useRouter();
-  const currentRoute = ( path : string ) => {
-    // 判断为true就展示当前路由样式
-    return router.currentRoute.value.path === path
-  }
 
   // 挂载函数
   onMounted (() => {
@@ -120,7 +126,6 @@
 </script>
 
 <style module lang="scss">
-@import '../assets/scss/theme/default-theme';
-@import '../assets/scss/theme/dark-theme';
-@import '@/assets/scss/Navigation.module.scss';
+@import '@/assets/styles/theme/default-theme.scss';
+@import '~components/Navigation.module.scss';
 </style>

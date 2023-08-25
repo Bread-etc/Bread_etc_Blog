@@ -55,8 +55,7 @@ const items = ref([
 </script>
 
 <style module lang="scss">
-@import '../assets/scss/theme/default-theme';
-@import '../assets/scss/theme/dark-theme';
-@import '@/assets/scss/HomeCards.module.scss';
+@import '@/assets/styles/theme/default-theme.scss';
+@import '~components/HomeCards.module.scss';
 
 </style>

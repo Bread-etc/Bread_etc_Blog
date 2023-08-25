@@ -19,15 +19,10 @@
 </template>
 
 <script lang="ts" setup>
-import { useThemeStore } from '../stores/modules/theme';
-
-const themeStore = useThemeStore();
-const currentTheme = themeStore.currentTheme;
 
 </script>
 
 <style lang="scss" module>
-@import '@/assets/scss/theme/default-theme';
-@import '@/assets/scss/theme/dark-theme';
-@import '@/assets/scss/Footer.module.scss';
+@import '@/assets/styles/theme/default-theme.scss';
+@import '~components/Footer.module.scss';
 </style>

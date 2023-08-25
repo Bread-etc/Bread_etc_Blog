@@ -1,33 +1,46 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-// 引入其他路由 (使用懒加载引入路由)
-
 // 定义并配置路由
 const routes = [
     {
         path: '/',
         name: 'home',
-        component: () => import('@/router/home.vue')
+        meta: {
+            title: '首页'
+        },
+        component: () => import('@/views/home.vue')
     },
     {
         path: '/study',
         name: 'study',
-        component: () => import('@/router/study.vue')
+        meta: {
+            title: '学习'
+        },
+        component: () => import('@/views/study.vue')
     },
     {
         path: '/daily',
         name: 'daily',
-        component: () => import('@/router/daily.vue')
+        meta: {
+            title: '日常'
+        },
+        component: () => import('@/views/daily.vue')
     },
     {
         path: '/contact',
         name: 'contact',
-        component: () => import('@/router/contact.vue')
+        meta: {
+            title: '留言板'
+        },
+        component: () => import('@/views/contact.vue')
     },
     {
         path: '/about',
         name: 'about',
-        component: () => import('@/router/about.vue')
+        meta: {
+            title: '关于'
+        },
+        component: () => import('@/views/about.vue')
     },
 ]
 

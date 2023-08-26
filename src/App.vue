@@ -32,6 +32,7 @@ import Footer from "./components/Footer.vue";
 
 <style lang="scss">
 .App {
+
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -39,6 +40,10 @@ import Footer from "./components/Footer.vue";
   .header {
     margin: 0;
     padding: 0;
+    top: 0;
+    left: 0;
+    position: sticky;
+    width: 100%;
   }
 }
 

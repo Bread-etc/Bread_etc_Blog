@@ -26,7 +26,7 @@ $font-color-homePage: #3c3c43;      // 主页滚动字体颜色
 
 // 大小
 $font-size-default: 14px;               // 默认
-$font-size-nav: 14px;                   // 导航栏
+$font-size-nav: 16px;                   // 导航栏
 $font-size-homePage: 1.1rem;            // 首页滚动字体
 $font-size-homeHeadline: 2.5rem;        // 首页标题字体
 $font-size-buttons: 14px;               // 按钮字体
@@ -66,6 +66,7 @@ $border-card: 12px;                     // 卡片组件圆角
 */
 $height-default: 40px;                  // 默认的
 $height-nav: 60px;                      // 导航栏默认高度
+$height-navItem: 40px;                  // 导航栏内容高度
 $height-buttons: 2rem;                
 $height-headPicture: 100px;             // 头像高度
 

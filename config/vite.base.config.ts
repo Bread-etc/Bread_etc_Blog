@@ -68,7 +68,8 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         // variables.scss 用于在全局中使用预定义变量
-        additionalData: '@import "@/assets/styles/variables.scss";'
+        additionalData: '@import "@/assets/styles/variables.scss";@import "@/assets/styles/mixin.scss";'
+        
       }
     }
   },

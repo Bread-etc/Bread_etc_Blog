@@ -1,1 +1,34 @@
 // 全局mixin
+
+// 居中flex-end
+@mixin flexEndCenter {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  align-content: flex-start;
+}
+
+// 普通居中
+@mixin normalCenter() {
+  display: flex;
+  align-content: center;
+  margin: 0 auto;
+}
+
+// 全居中
+@mixin allCenter() {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+  justify-items: center;
+  align-items: center;
+}
+
+// 列表基础样式
+@mixin list {
+  // ul - li样式
+  text-decoration: none;
+  list-style: none;
+}

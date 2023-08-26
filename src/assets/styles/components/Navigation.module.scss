@@ -1,222 +1,223 @@
-.wrapper {
-    // 导航栏背景布局
-    background-color: rgb(73, 167, 198);
-    height: $height-nav;// 60px
-    margin: 0 auto;
-    padding: $space-navBox;// 10px
+.navbar {
+  display: block;
+  position: relative;
+  background-color: $bg-color;
+  color: $text-color;
+  height: 100%; // 60px
+
+  .headerContent {
+    height: $height-navItem; // 40px
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-
-    // ul - li样式
-    text-decoration: none;
-    list-style: none;
-
-    // font
-    font-size: $font-size-nav;// 14px
-    font-weight: $font-weight-nav;// 500
-    
+    margin: 0 auto;
+    padding: $space-navBox; // 10px
 
     .logo {
-        // logo + bread
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        height: $height-nav;//60px
-        align-items: center;
-        align-content: flex-start;
+      // logo + bread
+      @include flexEndCenter;
 
-        .bread {
-            padding: 0 8px;
-        }
+      .bread {
+        padding: 0 8px;
+      }
 
-        .author {
-            font-family: 'DejaVu Sans Mono';
-        }
+      .author {
+        font-family: "DejaVu Sans Mono";
+      }
     }
-    // 用于分隔logo和nav-router
-    .flex {
-        flex-grow: 1;
-    }
-    // 导航栏文字
+
     .navList {
+      @include list;
+      // font
+      font-size: $font-size-nav; // 16px
+      font-weight: $font-weight-nav; // 500
+      color: $font-color-nav;
+
+      display: flex;
+      flex-grow: 1;
+      justify-content: flex-end;
+      align-items: center;
+      flex-direction: row;
+      flex-wrap: nowrap;
+
+      .navItem {
+        padding: 0 0.5rem;
+
+        .navTitle {
+          padding: 4px 0;
+          position: relative;
+          // hover特效
+          &:hover {
+            color: $underline-color;
+          }
+
+          &::before,
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: $underline-color;
+            transition: width 0.7s ease-in-out;
+          }
+
+          &:hover::before {
+            width: 100%;
+          }
+        }
+      }
+
+      .button {
         display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        padding: 0 $space-navBox;// 10px
+        justify-content: center;
+        align-items: center;
+
+        .moblieButton {
+          border: none;
+          outline: none;
+          padding: 0 0.5rem;
+          height: $height-navItem; // 40px
+          background-color: $bg-componment;
+          cursor: pointer;
+
+          .buttonContainer {
+            width: 16px;
+            height: 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+
+            .buttonTop,
+            .buttonBottom,
+            .buttonTopActive,
+            .buttonBottomActive {
+              // 设置双线下拉菜单展开栏
+              width: 16px;
+              height: 2px;
+              border-radius: 50px;
+              background-color: $gray;
+              transition: 0.5s;
+            }
+
+            // 分别设置双线动画
+            .buttonTop {
+              position: relative;
+              top: -3px;
+            }
+            .buttonBottom {
+              position: relative;
+              top: 3px;
+            }
+            .buttonTopActive {
+              position: relative;
+              top: 1px;
+              transform: rotate(45deg);
+            }
+            .buttonBottomActive {
+              position: relative;
+              top: -1px;
+              transform: rotate(-45deg);
+            }
+          }
+        }
+      }
     }
 
-    //             .modeChange {
-    //                 display: flex;
-    //                 flex-direction: row;
-    //                 flex-wrap: nowrap;
-    //                 justify-content: center;
-    //                 align-content: center;
-    //                 margin: 0 -10px;
+    .dropdownMenu {
+      @include list;
+      position: absolute;
+      background-color: $bg-color;
+      border-top: 1px solid $dropdownMenu-border-color;
+      width: 100%;
+      left: 0;
+      right: 0;
+      top: $height-nav; // 60px
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: all 1s;
 
-    //                 &::before {
-    //                     margin-right: 8px;
-    //                     margin-left: 8px;
-    //                     width: 1px;
-    //                     height: 24px;
-    //                     background-color: $space-color-nav;
-    //                     content: "";
-    //                 }
-    //             }
+      ul {
+        width: 50%;
+        margin: 0;
+        padding: 0;
 
-    //             .navTitle {
-    //                 // 字体设置
-    //                 font-size: $font-size-nav;
-    //                 font-weight: $font-weight-nav;
-    //                 color: $font-color-nav;
-    //                 text-decoration: none;
-        
-    //                 // 布局设置
-    //                 display: inline-block;
-    //                 position: relative;
-    //                 white-space: nowrap;
-    //                 padding-left: $space-default;
-    //                 padding-right: $space-default;
-    //                 padding-bottom: 0;
+        li {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          justify-content: flex-start;
+          align-items: center;
+          padding: 12px 0;
+          width: 100%;
+          border-bottom: 1px solid $dropdownMenu-border-color;
 
-    //                 // hover特效
-    //                 &:hover {
-    //                     color: #c33e31;
-    //                 }
+          // 设置文本样式
+          color: $dropdownMenu-text-color;
+          font-size: $font-size-default; // 14px
 
-    //                 &::before,
-    //                 &::after {
-    //                     content: "";
-    //                     position: absolute;
-    //                     bottom: 0;
-    //                     left: 0;
-    //                     width: 0;
-    //                     height: 2px;
-    //                     background-color: $underline-color;
-    //                     transition: width 0.7s ease-in-out;
-    //                 }
-
-    //                 &:hover::before {
-    //                     width: 100%;
-    //                 }
-    //             }
-    //         }
-    
-
-    //     .button {
-
-    //         display: flex;
-    //         justify-content: center;
-    //         align-items: center;
-    //         margin-left: auto;
-    //         padding: 0;
-    //         color: $bg-componment;
-
-    //         .moblieButton {
-    //             border: none;
-    //             outline: none;
-    //             padding: 0 0.5rem;
-    //             height: $height-nav;
-    //             background-color: $bg-componment;
-    //             cursor: pointer;
-            
-    //             .buttonContainer {
-
-    //                 width: 16px;
-    //                 height: 14px;
-    //                 display: flex;
-    //                 flex-direction: column;
-    //                 justify-content: center;
-    //                 align-content: center;
-    //                 align-items: center;
-
-    //                 .buttonTop,
-    //                 .buttonBottom,
-    //                 .buttonTopActive,
-    //                 .buttonBottomActive {
-    //                     // 设置双线下拉菜单展开栏
-    //                     width: 16px;
-    //                     height: 2px;
-    //                     border-radius: 50px;
-    //                     background-color: $gray;
-    //                     transition: .5s;
-    //                 }
-
-    //                 // 分别设置双线动画
-    //                 .buttonTop {
-    //                     position: relative;
-    //                     top: -3px;
-    //                 }
-    //                 .buttonBottom {
-    //                     position: relative;
-    //                     top: 3px;
-    //                 }
-    //                 .buttonTopActive {
-    //                     position: relative;
-    //                     top: 1px;
-    //                     transform: rotate(45deg);
-    //                 }
-    //                 .buttonBottomActive {
-    //                     position: relative;
-    //                     top: -1px;
-    //                     transform: rotate(-45deg);
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
-
-    // .dropdownMenu {
-
-    //     background-color: $bg-componment;
-    //     border-top: 1px solid $dropdownMenu-border-color;
-    //     width: 100%;
-    //     display: flex;
-    //     flex-direction: column;
-    //     align-items: center;
-    //     overflow: hidden;
-
-    //     ul {
-
-    //         width: 70%;
-    //         margin: 0;
-    //         padding: 0;
-
-    //         li {
-    //             list-style: none;
-    //             display: flex;
-    //             flex-direction: row;
-    //             flex-wrap: nowrap;
-    //             justify-content: flex-start;
-    //             align-items: center;
-    //             padding: 12px 0;
-    //             width: 100%;
-    //             border-bottom: 1px solid $dropdownMenu-border-color;
-                
-    //             .moblieRouter {
-    //                 // 设置文本样式
-    //                 color: $dropdownMenu-text-color;
-    //                 line-height: 24px;
-    //                 font-size: $font-size-default;
-    //                 text-decoration: none;
-
-    //                 // hover特效
-    //                 &:hover {
-    //                     color: $underline-color;
-    //                 }
-    //             }
-
-    //             .currentMoblieRoute {
-    //                 color: $underline-color;
-    //             }
-    //         }
-    //     }
-    // }
+          // hover特效
+          &:hover {
+            color: $underline-color;
+          }
+        }
+      }
+    }
+  }
 }
+//             .modeChange {
+//                 display: flex;
+//                 flex-direction: row;
+//                 flex-wrap: nowrap;
+//                 justify-content: center;
+//                 align-content: center;
+//                 margin: 0 -10px;
+
+//                 &::before {
+//                     margin-right: 8px;
+//                     margin-left: 8px;
+//                     width: 1px;
+//                     height: 24px;
+//                     background-color: $space-color-nav;
+//                     content: "";
+//                 }
+//             }
+
 
 // .showSticky {
 //     background-color: $bg-color;
 //     box-shadow: rgba(0, 0, 0, 0.7) 0px 0px 2px 0px;
 //     transition: .7s ease-in-out;
 // }
+
+
+
+// 媒体查询(适用于网页放大和缩小)
+@media screen and (min-width: 1440px) {
+  .headerContent {
+    max-width: 1362px;
+  }
+}
+
+@media screen and (min-width: 1680px) {
+  .headerContent {
+    max-width: 1482px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .button,
+  .moblieButton {
+    // 在大于等于 768px 的屏幕上隐藏元素
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .navItem {
+    // 在小于 768px 的屏幕上隐藏元素
+    display: none;
+  }
+}

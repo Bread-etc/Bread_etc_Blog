@@ -99,3 +99,6 @@
 
 ### 2023/08/26 更新
 - 进行大面积重构`vite.base.config.ts/package.json/App.vue`
+
+### 2023/08/27 更新
+- 重构`Navigation.vue`组件

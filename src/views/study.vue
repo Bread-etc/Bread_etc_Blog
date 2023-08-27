@@ -44,6 +44,5 @@
 </script>
 
 <style module lang="scss">
-@import '@/assets/styles/theme/default-theme.scss';
 @import '~router/Study.module.scss';
 </style>

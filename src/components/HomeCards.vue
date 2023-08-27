@@ -55,7 +55,6 @@ const items = ref([
 </script>
 
 <style module lang="scss">
-@import '@/assets/styles/theme/default-theme.scss';
 @import '~components/HomeCards.module.scss';
 
 </style>

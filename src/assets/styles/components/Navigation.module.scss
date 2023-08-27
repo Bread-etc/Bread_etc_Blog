@@ -44,6 +44,7 @@
         .navTitle {
           padding: 4px 0;
           position: relative;
+          cursor: pointer;
           // hover特效
           &:hover {
             color: $underline-color;
@@ -128,7 +129,8 @@
     .dropdownMenu {
       @include list;
       position: absolute;
-      background-color: $bg-color;
+      overflow: hidden; // 防止突然出现
+      background-color: $bg-color-content;
       border-top: 1px solid $dropdownMenu-border-color;
       width: 100%;
       left: 0;
@@ -137,14 +139,14 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      transition: all 1s;
 
       ul {
         width: 50%;
         margin: 0;
-        padding: 0;
+        padding: 24px 0 96px;
 
         li {
+          cursor: pointer;
           display: flex;
           flex-direction: row;
           flex-wrap: nowrap;
@@ -167,24 +169,6 @@
     }
   }
 }
-//             .modeChange {
-//                 display: flex;
-//                 flex-direction: row;
-//                 flex-wrap: nowrap;
-//                 justify-content: center;
-//                 align-content: center;
-//                 margin: 0 -10px;
-
-//                 &::before {
-//                     margin-right: 8px;
-//                     margin-left: 8px;
-//                     width: 1px;
-//                     height: 24px;
-//                     background-color: $space-color-nav;
-//                     content: "";
-//                 }
-//             }
-
 
 // .showSticky {
 //     background-color: $bg-color;
@@ -216,7 +200,8 @@
 }
 
 @media screen and (max-width: 767px) {
-  .navItem {
+  .navItem,
+  .switch {
     // 在小于 768px 的屏幕上隐藏元素
     display: none;
   }

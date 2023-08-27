@@ -1,19 +1,18 @@
 // 全局动画效果
 
-// 导航栏下拉菜单动画效果
+/* 动画效果样式 */
 .fade-slide-enter-from,
 .fade-slide-leave-to {
-    will-change: max-height border-top-color;
+    will-change: max-height, border-top-color;
     border-top-color: transparent;
-    max-height: 0;
-    overflow: hidden; /* 避免抖动 */
+    max-height: 0px; /* 保持一致，确保动画效果 */
 }
 
 .fade-slide-enter-to,
 .fade-slide-leave-from {
-    will-change: max-height border-top-color;
+    will-change: max-height, border-top-color;
     border-top-color: transparent;
-    max-height: 300px;
+    max-height: 450px; /* 保持一致，确保动画效果 */
 }
 
 .fade-slide-enter-active,

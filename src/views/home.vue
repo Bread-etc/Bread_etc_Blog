@@ -49,6 +49,5 @@
 </script>
 
 <style module lang="scss">
-@import '@/assets/styles/theme/default-theme.scss';
 @import '~router/Home.module.scss';
 </style>

@@ -25,7 +25,7 @@
             {{ route.meta.title }}
           </div>
         </div>
-        <!-- <ThemeSwitcher /> -->
+        <ThemeSwitcher :class="$style.switch"/>
         <div :class="$style.button">
           <button type="button" :class="$style.moblieButton" @click="dropdown">
             <span :class="$style.buttonContainer">
@@ -53,6 +53,9 @@
             >
               {{ route.meta.title }}
             </li>
+            <li>
+              <ThemeSwitcher />
+            </li>
           </ul>
         </div>
       </transition>
@@ -61,6 +64,7 @@
 </template>
 
 <script lang="ts" setup>
+import ThemeSwitcher from './ThemeSwitcher.vue';
 import { useRoute, useRouter } from "vue-router";
 import { ref, onMounted, onUnmounted } from "vue";
 
@@ -137,6 +141,5 @@ onUnmounted(() => {
 </script>
 
 <style module lang="scss">
-@import "@/assets/styles/theme/dark-theme.scss";
 @import "~components/Navigation.module.scss";
 </style>

@@ -1,5 +1,13 @@
 // 全局mixin
 
+// 普通流式内容居中(important)\
+@mixin contentCenter {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin: 0 auto;
+}
+
 // 居中flex-end
 @mixin flexEndCenter {
   display: flex;

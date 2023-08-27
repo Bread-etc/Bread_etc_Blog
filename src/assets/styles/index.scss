@@ -1,7 +1,58 @@
 // 组织统一导出
 
-@import './variables.scss';
-@import './mixin.scss';
-@import './common.scss';
-@import './tranisiton.scss';
+@import 'variables';
+@import 'mixin';
+@import 'common';
+@import 'tranisiton';
 
+:root {
+    --bg-color: #ffffff;
+    --bg-color-content: #f6f6f7;
+    --text-color: #000000;
+
+    // navbar
+    --space-color-nav: #e5e7e6;
+    --font-color-nav: #3c3c43;
+    --underline-color: #c33e31;
+    --dropdownMenu-border-color: #e7e7e8;
+    --dropdownMenu-text-color: #47474e;
+
+    // home
+    --homecard-color: #f6f6f7;
+    --homecard-minibox-color: #e3e3e5;
+    --homePage-text-color: #3c3c43;
+    
+    // study
+    --card-color: #ffffff;
+    --card-text-color: #4c4948;
+
+    // footer
+    --font-color-footer: #3c3c43;
+
+}
+
+// 深色主题
+html.dark {
+    --bg-color: #1e2227;
+    --bg-color-content: #23272e;
+    --text-color: #e8e8e8;
+
+    // navbar
+    --space-color-nav: #272c39;
+    --font-color-nav: #f8f8ef;  
+    --underline-color: #fad646;
+    --dropdownMenu-border-color: #262a37;
+    --dropdownMenu-text-color: #d9e6eb;
+
+    // home
+    --homecard-color: #252529;
+    --homecard-minibox-color: #1e1e20;
+    --homePage-text-color: rgba(223, 223, 215, .7);
+
+    // study
+    --card-color: #121212;
+    --card-text-color: #b8b8b8;
+
+    // footer
+    --font-color-footer: #e8e8e8;
+}

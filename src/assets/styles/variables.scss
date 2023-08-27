@@ -1,6 +1,5 @@
+
 // 通用主题变量
-$bg-color: #ffffff;
-$text-color: #000000;
 $bg-componment: rgba(255, 255, 255, 0);
 $bg-homePage-card: #f6f6f7;
 
@@ -44,7 +43,7 @@ $font-weight-buttons: 600;              // 按钮字体
 * 全局 padding / margin -空间尺寸变量定义
 */
 $space-default: 5px;                    // 默认间距
-$space-container: 20px;                 // 容器间距 
+$space-container: 10px;                 // 容器间距 
 $space-navBox: 10px;                    // 导航盒间距
 $space-button: 5px;                     // 按钮间距
 $space-card: 12px;                      // 卡片间距
@@ -75,56 +74,32 @@ $width-default: 120px;                  // 默认的
 $width-nav: 30px;                       // 导航栏默认宽度
 $width-headPicture: 100px;              // 头像宽度
 
+
+/**
+    浅色 | 深色 变量定义
+*/
+
 // 默认模式(浅色模式)
-$bg-color: #ffffff;
-$bg-color-content: #e7e7e8; // 暂时
-$text-color: #000000;
+$bg-color: var(--bg-color);
+$bg-color-content: var(--bg-color-content);
+$text-color: var(--text-color);
 
 // 导航栏
-$space-color-nav: #e5e7e6;
-$font-color-nav: #3c3c43;
-$underline-color: #c33e31;
-$dropdownMenu-border-color: #e7e7e8;
-$dropdownMenu-text-color: #47474e;
+$space-color-nav: var(--space-color-nav);
+$font-color-nav: var(--font-color-nav);
+$underline-color: var(--underline-color);
+$dropdownMenu-border-color: var(--dropdownMenu-border-color);
+$dropdownMenu-text-color: var(--dropdownMenu-text-color);
 
 // 主页
-$homecard-color: #f6f6f7;
-$homecard-minibox-color: #e3e3e5;
-$homePage-text-color: #3c3c43;
+$homecard-color: var(--homecard-color);
+$homecard-minibox-color: var(--homecard-minibox-color);
+$homePage-text-color: var(--homePage-text-color);
 
 // 学习
-$card-color: #ffffff;
-$card-text-color: #4c4948;
+$card-color: var(--card-color);
+$card-text-color: var(--card-text-color) ;
 
 
 // 底部栏
-$font-color-footer: #3c3c43;
-
-
-// 深色主题
-html .dark {
-    $bg-color: #1e2227;
-    $bg-color-content: #23272e;
-    $text-color: #e8e8e8;
-
-    // 导航栏
-    $space-color-nav: #272c39;
-    $font-color-nav: #f8f8ef;  
-    $underline-color: #fad646;
-    $dropdownMenu-border-color: #262a37;
-    $dropdownMenu-text-color: #d9e6eb;
-
-
-    // 主页
-    $homecard-color: #252529;
-    $homecard-minibox-color: #1e1e20;
-    $homePage-text-color: rgba(223, 223, 215, .7);
-
-
-    // 学习
-    $card-color: #121212;
-    $card-text-color: #b8b8b8;
-
-    // 底部栏
-    $font-color-footer: #e8e8e8;
-}
+$font-color-footer: var(--font-color-footer);

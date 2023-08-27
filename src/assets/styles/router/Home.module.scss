@@ -1,161 +1,173 @@
+.container {
 
-.content {
-
-    // 设置布局
     display: block;
-    overflow: hidden;
-
-    // 设置背景
     background-color: $bg-componment;
 
-    .contentRow {
-        
-        // 设置布局
-        display: flex;
-        flex-direction: row;
-        
-        .homeWord {
+    .content {
+        @include contentCenter;
+        padding: $space-container; // 10px
 
-            // 设置布局
+        .welcome {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 1rem;
+            flex-direction: row;
 
-            .h1Active {
-
+            .homeWord {
                 display: flex;
-                width: auto;
-                font-size: $font-size-homeHeadline;
-
-                div {
-                    width: auto;
-                    font-size: $font-size-homeHeadline;
-                    font-weight: $font-weight-hoemHeadline;
-                    
-                    // 设置渐变字体
-                    background: rgb(233,160,154);
-                    background: linear-gradient(101deg, rgba(233,160,154,1) 27%, rgba(231,206,105,1) 50%, rgba(195,62,49,1) 83%);
-                    -webkit-background-clip: text;
-                    background-clip: text;
-                    color: transparent;                  
-                }  
-            }
-
-            h2 {
-                // 字体大小
-                width: auto;
-                font-size: 3rem;
-                font-weight: $font-weight-hoemHeadline;
-                // 设置渐变字体
-                background: rgb(234,48,32);
-                background: linear-gradient(101deg, rgba(234,48,32,1) 15%, rgba(231,206,105,1) 39%, rgba(234,124,113,1) 87%);
-                -webkit-background-clip: text;
-                background-clip: text;
-                color: transparent;   
-            }
-
-            .buttons {
-                display: flex;
-                flex-direction: row;
-                justify-content: flex-start;
-                align-items: center;
-                padding-top: 2rem;
-
-                .buttonActive {
-
-                    // 设置布局
-                    display: flex;
-                    flex-wrap: nowrap;
-                    flex-shrink: 0;
-                    justify-content: center;
-                    align-items: center;
-                    padding: 0 $space-button;
-                    line-height: $height-buttons;
-                    
-                    button {
-
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        height: 100%;
-                        border: none;
-                        outline: none;
-                        box-shadow: none;
-                        border-radius: $border-button-radius-useful;
-                        padding: 0 1.5rem;
-                        
-                        // 设置字体
-                        font-size: $font-size-buttons;
-                        font-weight: $font-weight-buttons;
-                        text-align: center;
-
-                    }
-
-                    .buttonStudy {
-                        border-color: $yellow;
-                        background-color: $yellow;
-                        color: #ffffff;
-                        transition-duration: 0.25s;
-
-                        &:hover {
-                            background-color: $yellow-hover;
-                        }
-                    }
-
-                    .buttonContact {
-                        
-                        background-color: $white;
-                        border-color: $white;
-                        transition-duration: 0.25s;
-
-                        & {
-                            border: 1px solid #c0c0c2;
-                        }
-
-                        &:hover {
-                            background-color: $white-hover;
-                        }
-                    }
-                }
+                flex-direction: column;
+                justify-content: center;
+                padding: 1rem;
             }
         }
+    }
 
-        .homeImg {
+}
+    //         .h1Active {
+
+    //             display: flex;
+    //             width: auto;
+    //             font-size: $font-size-homeHeadline;
+
+    //             div {
+    //                 width: auto;
+    //                 font-size: $font-size-homeHeadline;
+    //                 font-weight: $font-weight-hoemHeadline;
+                    
+    //                 // 设置渐变字体
+    //                 background: rgb(233,160,154);
+    //                 background: linear-gradient(101deg, rgba(233,160,154,1) 27%, rgba(231,206,105,1) 50%, rgba(195,62,49,1) 83%);
+    //                 -webkit-background-clip: text;
+    //                 background-clip: text;
+    //                 color: transparent;                  
+    //             }  
+    //         }
+
+    //         h2 {
+    //             // 字体大小
+    //             width: auto;
+    //             font-size: 3rem;
+    //             font-weight: $font-weight-hoemHeadline;
+    //             // 设置渐变字体
+    //             background: rgb(234,48,32);
+    //             background: linear-gradient(101deg, rgba(234,48,32,1) 15%, rgba(231,206,105,1) 39%, rgba(234,124,113,1) 87%);
+    //             -webkit-background-clip: text;
+    //             background-clip: text;
+    //             color: transparent;   
+    //         }
+
+    //         .buttons {
+    //             display: flex;
+    //             flex-direction: row;
+    //             justify-content: flex-start;
+    //             align-items: center;
+    //             padding-top: 2rem;
+
+    //             .buttonActive {
+
+    //                 // 设置布局
+    //                 display: flex;
+    //                 flex-wrap: nowrap;
+    //                 flex-shrink: 0;
+    //                 justify-content: center;
+    //                 align-items: center;
+    //                 padding: 0 $space-button;
+    //                 line-height: $height-buttons;
+                    
+    //                 button {
+
+    //                     display: flex;
+    //                     justify-content: center;
+    //                     align-items: center;
+    //                     height: 100%;
+    //                     border: none;
+    //                     outline: none;
+    //                     box-shadow: none;
+    //                     border-radius: $border-button-radius-useful;
+    //                     padding: 0 1.5rem;
+                        
+    //                     // 设置字体
+    //                     font-size: $font-size-buttons;
+    //                     font-weight: $font-weight-buttons;
+    //                     text-align: center;
+
+    //                 }
+
+    //                 .buttonStudy {
+    //                     border-color: $yellow;
+    //                     background-color: $yellow;
+    //                     color: #ffffff;
+    //                     transition-duration: 0.25s;
+
+    //                     &:hover {
+    //                         background-color: $yellow-hover;
+    //                     }
+    //                 }
+
+    //                 .buttonContact {
+                        
+    //                     background-color: $white;
+    //                     border-color: $white;
+    //                     transition-duration: 0.25s;
+
+    //                     & {
+    //                         border: 1px solid #c0c0c2;
+    //                     }
+
+    //                     &:hover {
+    //                         background-color: $white-hover;
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+
+    //     .homeImg {
             
-            // 设置布局
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 1rem;
+    //         // 设置布局
+    //         display: flex;
+    //         justify-content: center;
+    //         align-items: center;
+    //         padding: 1rem;
 
-            .imgBg {
-                display: flex;
-                position: relative;
-                align-items: center;
-                // 改变ggbond的大小
-                width: 80%;
+    //         .imgBg {
+    //             display: flex;
+    //             position: relative;
+    //             align-items: center;
+    //             // 改变ggbond的大小
+    //             width: 80%;
                 
-                &::before {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    // 设置图片蒙版背景
-                    border-radius: 50%;
-                    background-image: url(../images/imgBg.png);
-                    background-position: center;
-                    background-size: cover;
-                    filter: blur(60px);
-                    z-index: 1;
-                }
+    //             &::before {
+    //                 content: '';
+    //                 position: absolute;
+    //                 top: 0;
+    //                 left: 0;
+    //                 width: 100%;
+    //                 height: 100%;
+    //                 // 设置图片蒙版背景
+    //                 border-radius: 50%;
+    //                 background-image: url(../images/imgBg.png);
+    //                 background-position: center;
+    //                 background-size: cover;
+    //                 filter: blur(60px);
+    //                 z-index: 1;
+    //             }
 
-                img {
-                    z-index: 2;
-                }
-            }
-        }
+    //             img {
+    //                 z-index: 2;
+    //             }
+    //         }
+    //     }
+    // }
+
+
+// 媒体查询(适用于网页放大和缩小)
+@media screen and (min-width: 1440px) {
+    .content {
+      max-width: 1362px;
+    }
+}
+  
+  @media screen and (min-width: 1680px) {
+    .content {
+      max-width: 1482px;
     }
 }

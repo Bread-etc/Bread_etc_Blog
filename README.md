@@ -103,3 +103,6 @@
 ### 2023/08/27 更新
 - 重构`Navigation.vue`组件
 - 更新`ThemeSwitcher`组件并连接`pinia`
+
+### 2023/08/28 更新
+- **顶级更新:**加入`深色模式darkMode`

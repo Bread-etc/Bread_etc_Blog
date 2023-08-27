@@ -19,11 +19,11 @@ import Footer from "./components/Footer.vue";
         <el-header class="header">
           <Navigation />
         </el-header>
-        <el-main>
-          <!-- <router-view></router-view> -->
+        <el-main class="main">
+          <router-view></router-view>
         </el-main>
         <el-footer>
-          <!-- <Footer /> -->
+          <Footer />
         </el-footer>
       </el-container>
     </div>
@@ -45,6 +45,12 @@ import Footer from "./components/Footer.vue";
     position: sticky;
     width: 100%;
   }
+
+  .main {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
 }
 
 body {
@@ -64,4 +70,6 @@ body {
   background-color: $bg-color;
   color: $text-color;
 }
+
+
 </style>

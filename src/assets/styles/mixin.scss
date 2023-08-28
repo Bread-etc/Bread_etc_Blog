@@ -1,6 +1,6 @@
 // 全局mixin
 
-// 普通流式内容居中(important)\
+// 普通流式内容居中(important)
 @mixin contentCenter {
   display: flex;
   flex-direction: column;
@@ -39,4 +39,24 @@
   // ul - li样式
   text-decoration: none;
   list-style: none;
+}
+
+// 按钮基础样式
+@mixin button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  border-radius: $border-button-radius-useful; // 20px
+  padding: .4rem 1.5rem;
+  transition-duration: 0.25s;
+  cursor: pointer;
+  
+  // 设置字体
+  font-size: $font-size-buttons; // 14px
+  font-weight: $font-weight-buttons; // 600
+  text-align: center;
 }

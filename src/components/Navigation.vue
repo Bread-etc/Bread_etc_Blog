@@ -1,6 +1,6 @@
 <!-- Navigation.vue for top -->
 <template>
-  <div :class="$style.navbar">
+  <div :class="[$style.navbar, isSticky ? $style.showSticky : '']">
     <div :class="$style.headerContent">
       <div :class="$style.logo">
         <a href="#" :class="$style.bread">

@@ -44,6 +44,7 @@ import Footer from "./components/Footer.vue";
     left: 0;
     position: sticky;
     width: 100%;
+    z-index: 100;
   }
 
   .main {

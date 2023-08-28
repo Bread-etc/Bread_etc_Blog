@@ -3,15 +3,14 @@
   <div :class="$style.container">
     <div :class="$style.content">
       <div :class="$style.welcome">
-        <div :class="$style.homeWord">
-          <div :class="$style.h1Active">
-            🍞
-            <div>eTc</div>
+        <div :class="$style.homeFunction">
+          <div :class="$style.headTitle">
+            🍞<div>eTc</div>
           </div>
           <h2>为生活找些乐子🎁</h2>
-          <!-- <Typing /> -->
-          <div :class="$style.buttons" style="padding-left: 0">
-            <div :class="$style.buttonActive" style="padding-left: 0">
+          <Typing />
+          <div :class="$style.buttonGroup">
+            <div :class="$style.buttonActive">
               <button :class="$style.buttonStudy" @click="navigateToStudy">
                 进入博客
               </button>
@@ -28,18 +27,16 @@
             <img
               src="@/assets/images/ggbond.png"
               alt="image/bigLogo"
-              class="img-fluid"
             />
           </div>
         </div>
       </div>
     </div>
-    <!-- <HomeCards /> -->
+    <HomeCards />
   </div>
 </template>
 
 <script setup lang="ts">
-// 导入打字机效果组件
 import Typing from "../components/Typing.vue";
 import HomeCards from "../components/HomeCards.vue";
 import { useRouter } from "vue-router";

@@ -26,12 +26,12 @@
 
                 display: flex;
                 width: auto;
-                font-size: $font-size-homeHeadline;
+                font-size: $font-size-homeTitle;
 
                 div {
                     width: auto;
-                    font-size: $font-size-homeHeadline;
-                    font-weight: $font-weight-hoemHeadline;
+                    font-size: $font-size-homeTitle;
+                    font-weight: $font-weight-homeTitle;
 
                     // 设置渐变字体
                     background: rgb(183,15,0);

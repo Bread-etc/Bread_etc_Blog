@@ -1,6 +1,6 @@
 
 // 通用主题变量
-$bg-componment: rgba(255, 255, 255, 0);
+$bg-componment: transparent;
 $bg-homePage-card: #f6f6f7;
 
 // 全局颜色定义
@@ -26,8 +26,8 @@ $font-color-homePage: #3c3c43;      // 主页滚动字体颜色
 // 大小
 $font-size-default: 14px;               // 默认
 $font-size-nav: 16px;                   // 导航栏
-$font-size-homePage: 1.1rem;            // 首页滚动字体
-$font-size-homeHeadline: 2.5rem;        // 首页标题字体
+$font-size-rolling: 1.1rem;             // 首页滚动字体
+$font-size-homeTitle: 2.5rem;           // 首页标题字体
 $font-size-buttons: 14px;               // 按钮字体
 
 
@@ -35,8 +35,8 @@ $font-size-footer: 14px;                // 底部字体
 
 // 粗细
 $font-weight-nav: 500;                  // 导航栏字体
-$font-weight-homePage: 550;             // 首页滚动字体
-$font-weight-hoemHeadline: 1000;        // 首页标题字体
+$font-weight-rolling: 600;              // 首页滚动字体
+$font-weight-homeTitle: 1000;           // 首页标题字体
 $font-weight-buttons: 600;              // 按钮字体
 
 /**
@@ -45,7 +45,7 @@ $font-weight-buttons: 600;              // 按钮字体
 $space-default: 5px;                    // 默认间距
 $space-container: 10px;                 // 容器间距 
 $space-navBox: 10px;                    // 导航盒间距
-$space-button: 5px;                     // 按钮间距
+$space-button: 10px;                     // 按钮间距
 $space-card: 12px;                      // 卡片间距
 $space-card-component: 5px;             // 卡片内部组件间距
 

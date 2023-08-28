@@ -3,19 +3,19 @@
 /* 动画效果样式 */
 .fade-slide-enter-from,
 .fade-slide-leave-to {
-    will-change: max-height, border-top-color;
+    will-change: height, border-top-color;
     border-top-color: transparent;
-    max-height: 0px; /* 保持一致，确保动画效果 */
+    height: 0px; /* 保持一致，确保动画效果 */
 }
 
 .fade-slide-enter-to,
 .fade-slide-leave-from {
-    will-change: max-height, border-top-color;
+    will-change: height, border-top-color;
     border-top-color: transparent;
-    max-height: 450px; /* 保持一致，确保动画效果 */
+    height: calc(100vh - 60px); /* 保持一致，确保动画效果 */
 }
 
 .fade-slide-enter-active,
 .fade-slide-leave-active {
-    transition: max-height 1s ease-in-out;
+    transition: height 1s ease-in-out;
 }

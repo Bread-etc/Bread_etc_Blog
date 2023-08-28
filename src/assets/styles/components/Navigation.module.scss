@@ -1,7 +1,7 @@
 .navbar {
   display: block;
   position: relative;
-  background-color: $bg-color;
+  background-color: $bg-color-content;
   color: $text-color;
   height: 100%; // 60px
 
@@ -133,6 +133,7 @@
       background-color: $bg-color-content;
       border-top: 1px solid $dropdownMenu-border-color;
       width: 100%;
+      max-height: calc(100vh - 60px);
       left: 0;
       right: 0;
       top: $height-nav; // 60px
@@ -143,7 +144,7 @@
       ul {
         width: 50%;
         margin: 0;
-        padding: 24px 0 96px;
+        padding: 24px 0 calc(100vh - 60px - 24px);
 
         li {
           cursor: pointer;
@@ -170,11 +171,12 @@
   }
 }
 
-// .showSticky {
-//     background-color: $bg-color;
-//     box-shadow: rgba(0, 0, 0, 0.7) 0px 0px 2px 0px;
-//     transition: .7s ease-in-out;
-// }
+// sticky background
+.showSticky {
+    background-color: $bg-color;
+    box-shadow: rgba(0, 0, 0, 0.7) 0px 0px 2px 0px;
+    transition: .7s ease-in-out;
+}
 
 
 

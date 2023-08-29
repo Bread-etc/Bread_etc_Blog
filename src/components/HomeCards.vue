@@ -63,36 +63,35 @@ const items = ref([
   .gridContainer {
     @include contentCenter;
     padding: $space-container; // 10px
+    padding-left: 5%;
+    padding-right: 5%;
 
     .grid {
 
       display: flex;
-      margin: 0 auto;
-      grid-template-columns: repeat(
-        auto-fill,
-        minmax(calc(33.33% - 20px), 1fr)
-      ); /* 设置每个网格的宽度，考虑间距 */
-      grid-auto-columns: auto;
-      grid-auto-rows: auto; /* 高度自适应 */
+      flex-wrap: wrap;
+      justify-content: center; // 每行均匀分布盒子
       gap: 20px;
-      align-items: center;
-      justify-items: center;
-      align-content: center;
-      justify-content: center;
 
       .items {
-        padding: 0;
-        width: 100%;
-        height: 100%;
+
+        background-color: $homecard-color;
+        color: $homePage-text-color;
+        padding: 1rem;
+        border-radius: $border-card; // 12px
+        width: calc(33.33% - #{$space-card * 2}); // 初始显示三行盒子
+
+        @media screen and (max-width: 767px) {
+          width: calc(50% - #{$space-card * 2});
+        }
+
+        @media screen and (max-width: 479px) {
+          width: calc(100% - #{$space-card * 2});
+        }
 
         .item {
-          width: 100%;
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-          padding: 1rem;
-          background-color: $homecard-color;
-          border-radius: $space-card; // 12px
+
+          
 
           .icon {
             display: flex;
@@ -129,16 +128,4 @@ const items = ref([
   }
 }
 
-/* 根据屏幕大小调整网格布局 */
-@media (max-width: 992px) {
-  .grid {
-    grid-template-columns: repeat(auto-fill, minmax(calc(50% - 10px), 1fr));
-  }
-}
-
-@media (max-width: 576px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-}
 </style>

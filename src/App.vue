@@ -22,7 +22,7 @@ import Footer from "./components/Footer.vue";
         <el-main class="main">
           <router-view></router-view>
         </el-main>
-        <el-footer>
+        <el-footer class="footer">
           <Footer />
         </el-footer>
       </el-container>
@@ -51,6 +51,12 @@ import Footer from "./components/Footer.vue";
     margin: 0;
     padding: 0;
     width: 100%;
+  }
+
+  .footer {
+    margin: 0;
+    padding: 0;
+    width: 100%
   }
 }
 

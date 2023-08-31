@@ -38,9 +38,9 @@ const items = ref([
     detail: "支持游客留言。",
   },
   {
-    icon: "🅱",
+    icon: "🎨",
     title: "样式框架",
-    detail: "使用基于Sass的 Bootstrap v5 框架。",
+    detail: "使用基于Sass的 Element+ 样式框架。",
   },
   {
     icon: "💾",
@@ -67,11 +67,12 @@ const items = ref([
     padding-right: 5%;
 
     .grid {
-
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center; // 每行均匀分布盒子
-      gap: 20px;
+      display: grid;
+      // 拉伸占据容器
+      justify-content: center;
+      justify-items: stretch;
+      align-items: stretch;
+      gap: $space-card; // 20px
 
       .items {
 
@@ -79,22 +80,16 @@ const items = ref([
         color: $homePage-text-color;
         padding: 1rem;
         border-radius: $border-card; // 12px
-        width: calc(33.33% - #{$space-card * 2}); // 初始显示三行盒子
-
-        @media screen and (max-width: 767px) {
-          width: calc(50% - #{$space-card * 2});
-        }
-
-        @media screen and (max-width: 479px) {
-          width: calc(100% - #{$space-card * 2});
-        }
 
         .item {
-
-          
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
 
           .icon {
             display: flex;
+            align-self: flex-start;
             justify-content: center;
             align-items: center;
             margin-bottom: 20px;
@@ -107,6 +102,7 @@ const items = ref([
           }
 
           .subtitle {
+            align-self: flex-start;
             line-height: 24px;
             font-size: 16px;
             font-weight: 600;
@@ -114,6 +110,7 @@ const items = ref([
           }
 
           .detail {
+            align-self: flex-start;
             flex-grow: 1;
             padding-top: 8px;
             line-height: 24px;
@@ -124,8 +121,19 @@ const items = ref([
           }
         }
       }
+
+      @media screen and (min-width: 768px) {
+        grid-template-columns: repeat(auto-fill, 30%);
+      }
+
+      @media screen and (min-width: 480px) and (max-width: 767px) {
+        grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+      }
+
+      @media screen and (max-width: 479px) {
+        grid-template-columns: repeat(auto-fill, minmax(90%, 1fr));
+      }
     }
   }
 }
-
 </style>

@@ -7,7 +7,7 @@
 
 :root {
     --bg-color: #ffffff;
-    --bg-color-content: #ffffff;
+    --bg-color-content: #fcfcfc;
     --text-color: #000000;
 
     // navbar
@@ -24,7 +24,8 @@
     
     // study
     --card-color: #ffffff;
-    --card-text-color: #4c4948;
+    --card-text-color: #3c3c43;
+    --cardHeader-color: #ff577f;
 
     // footer
     --font-color-footer: #3c3c43;
@@ -50,8 +51,9 @@ html.dark {
     --homePage-text-color: rgba(223, 223, 215, .7);
 
     // study
-    --card-color: #121212;
-    --card-text-color: #b8b8b8;
+    --card-color: #1e2227;
+    --card-text-color: #e8e8e8;
+    --cardHeader-color: #fef000;
 
     // footer
     --font-color-footer: #e8e8e8;

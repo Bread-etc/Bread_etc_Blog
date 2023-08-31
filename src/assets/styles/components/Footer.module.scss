@@ -1,13 +1,12 @@
 
 .footer {
 
-    display: flex;
-    align-content: center;
-    justify-content: center;
+    @include allCenter;
     background-color: $bg-componment;
-    box-shadow: rgba(0, 0, 0, 0.7) 0px -1px 0px 0px;
-    font-size: $font-size-footer;
-    padding: 0.5rem 1rem;
+    border-top: 1px solid $dropdownMenu-border-color;
+    font-size: $font-size-footer; // 14px
+    padding: 5%;
+    padding-top: 2%;
     padding-bottom: 0;
 
     .footerContent {
@@ -25,7 +24,29 @@
                 justify-content: center;
                 align-items: center;
                 color: $font-color-footer;
+                padding: 2px 0;
+
+                a {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    text-decoration: none;
+                    color: $font-color-footer;
+                }
             }
         }
+    }
+}
+
+// 媒体查询(适用于网页放大和缩小)
+@media screen and (min-width: 1440px) {
+    .footerContent {
+      max-width: 1362px;
+    }
+}
+  
+  @media screen and (min-width: 1680px) {
+    .footerContent {
+      max-width: 1482px;
     }
 }

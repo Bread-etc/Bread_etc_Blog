@@ -24,13 +24,12 @@
                     display: flex;
                     width: auto;
                     font-size: $font-size-homeTitle; // 2.5rem
-                    font-family: 'Comic Sans MS';
 
                     div {
                         width: auto;
                         font-size: $font-size-homeTitle; // 2.5rem
                         font-weight: $font-weight-homeTitle; // 1000
-                        font-family: 'Microsoft JhengHei';
+                        font-family: 'Comic Sans MS';
                         
                         // 设置渐变字体
                         background: rgb(233,160,154);

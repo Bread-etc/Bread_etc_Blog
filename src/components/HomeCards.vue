@@ -62,9 +62,7 @@ const items = ref([
 
   .gridContainer {
     @include contentCenter;
-    padding: $space-container; // 10px
-    padding-left: 5%;
-    padding-right: 5%;
+    padding: 5%;
 
     .grid {
       display: grid;
@@ -135,5 +133,18 @@ const items = ref([
       }
     }
   }
+}
+
+// 媒体查询(适用于网页放大和缩小)
+@media screen and (min-width: 1440px) {
+    .gridContainer {
+      max-width: 1362px;
+    }
+}
+  
+  @media screen and (min-width: 1680px) {
+    .gridContainer {
+      max-width: 1482px;
+    }
 }
 </style>

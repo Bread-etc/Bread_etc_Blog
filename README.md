@@ -115,3 +115,7 @@
 
 ### 2023/08/31 更新
 - 完成`homeCard`组件修改
+
+### 2023/09/01 更新
+- 完成`MasterCard`组件
+- 加入link: github | gmail

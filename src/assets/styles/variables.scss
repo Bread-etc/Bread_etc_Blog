@@ -67,12 +67,10 @@ $height-default: 40px;                  // 默认的
 $height-nav: 60px;                      // 导航栏默认高度
 $height-navItem: 40px;                  // 导航栏内容高度
 $height-buttons: 2rem;                
-$height-headPicture: 100px;             // 头像高度
 
 
 $width-default: 120px;                  // 默认的
 $width-nav: 30px;                       // 导航栏默认宽度
-$width-headPicture: 100px;              // 头像宽度
 
 
 /**
@@ -98,7 +96,8 @@ $homePage-text-color: var(--homePage-text-color);
 
 // 学习
 $card-color: var(--card-color);
-$card-text-color: var(--card-text-color) ;
+$card-text-color: var(--card-text-color);
+$cardHeader-color: var(--cardHeader-color);
 
 
 // 底部栏

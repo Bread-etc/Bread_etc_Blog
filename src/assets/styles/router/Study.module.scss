@@ -1,210 +1,150 @@
+.container {
 
-.content {
-
-    // 设置布局
     display: block;
-    overflow: hidden;
+    background-color: $bg-color-content;
 
-    // 设置背景
-    background-color: $bg-componment;    
+    .content {
+        @include contentCenter;
+        padding: $space-container; // 10px
 
-    .studyRow {
-
-        // 设置布局
-        display: flex;
-        flex-direction: row;
-
-        .studyWord {
-
-            // 设置布局
+        .study {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 1rem;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
 
-            .h1Active {
-
+            .studyFunction {
                 display: flex;
-                width: auto;
-                font-size: $font-size-homeTitle;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1rem;
 
-                div {
+                .headTitle {
+                    display: flex;
                     width: auto;
-                    font-size: $font-size-homeTitle;
-                    font-weight: $font-weight-homeTitle;
+                    font-size: $font-size-homeTitle; // 2.5rem
 
-                    // 设置渐变字体
-                    background: rgb(183,15,0);
-                    background: linear-gradient(101deg, rgba(183,15,0,1) 9%, rgba(220,38,22,1) 33%, rgba(234,104,91,1) 64%, rgba(251,167,158,1) 87%);
-                    -webkit-background-clip: text;
-                    background-clip: text;
-                    color: transparent;
+                    div {
+                        width: auto;
+                        font-size: $font-size-homeTitle; // 2.5rem
+                        font-weight: $font-weight-homeTitle; // 1000
+                        font-family: 'Comic Sans MS';
 
+                        // 设置渐变字体
+                        background: rgb(183,15,0);
+                        background: linear-gradient(101deg, rgba(183,15,0,1) 9%, rgba(220,38,22,1) 33%, rgba(234,104,91,1) 64%, rgba(251,167,158,1) 87%);
+                        -webkit-background-clip: text;
+                        background-clip: text;
+                        color: transparent;  
+                    }
+                }
+
+                .buttonGroup {
+                    padding-left: 0;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    padding-top: 2rem;
+
+                    .buttonActive {
+                        // 设置布局
+                        display: flex;
+                        flex-wrap: nowrap;
+                        flex-shrink: 0;
+                        justify-content: center;
+                        align-items: center;
+                        padding-right: $space-button; // 10px
+    
+                        .postBlog {
+                            @include button;
+                            border-color: $yellow;
+                            background-color: $yellow;
+                            color: #ffffff;
+
+                            &:hover {
+                                background-color: $yellow-hover;
+                            }
+                        }
+                    }
                 }
             }
 
-            .buttons {
-                display: flex;
-                flex-direction: row;
-                justify-content: flex-start;
-                align-items: center;
-                padding-top: 2rem;
+            .studyImg {
+                @include allCenter;
+                flex-direction: column;
+                padding: 1rem;
+                width: auto;
+                // 自动撑满剩余空间
+                flex-grow: 1;
 
-                .buttonActive {
-
-                    // 设置布局
+                .imgBg {
                     display: flex;
-                    flex-wrap: nowrap;
-                    flex-shrink: 0;
-                    justify-content: center;
+                    position: relative;
                     align-items: center;
-                    padding: 0 $space-button;
-                    line-height: $height-buttons;
+                    justify-content: center;
 
-                    .postBlog {
-                        // 设置布局
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
+                    // ggbond size
+                    width: 50%;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
                         height: 100%;
-
-                        border: none;
-                        outline: none;
-                        box-shadow: none;
-                        border-radius: $border-button-radius-useful;
-                        padding: 0 1.5rem;
-                        background-color: $yellow;
-
-                        // 设置字体
-                        font-size: $font-size-buttons;
-                        font-weight: $font-weight-buttons;
-                        text-align: center;
-                        color: white;
-
-                        &:hover {
-                            background-color: $yellow-study;
-                        }
-
+                        // 设置图片蒙版背景
+                        border-radius: 50%;
+                        background-image: url(../../images/imgBg.png);
+                        background-position: center;
+                        background-size: contain;
+                        filter: blur(80px);
+                        z-index: 1;
+                    }
+    
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                        z-index: 2;
+                        transform: rotateY(180deg);
                     }
                 }
             }
         }
 
-        .studyImg {
+        .blog {
 
-            // 设置布局
             display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 1rem;
+            flex-direction: row;
+            background-color: $bg-componment;
 
-            .imgBg {
-
-                // 设置布局
+            .catalog {
                 display: flex;
-                position: relative;
-                align-items: center;
+                flex-direction: column;
+                justify-content: flex-start;
+                padding: 1rem;
+            }
 
-                // 改变ggbond大小
-                width: 70%;
-
-                &::before {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    // 设置图片蒙版背景
-                    border-radius: 50%;
-                    background-image: url(../images/imgBg.png);
-                    background-position: center;
-                    background-size: cover;
-                    filter: blur(60px);
-                    z-index: 1;
-                }
-
-                img {
-                    z-index: 2;
-                    // 水平镜像图片
-                    transform: rotateY(180deg);
-                }
+            .mainText {
+                display: flex;
+                justify-content: flex-start;
+                padding: 1rem;
             }
         }
-
-        // .arrowhead {
-        //     // 设置箭头布局
-        //     display: flex;
-        //     justify-content: center;
-        //     align-items: center;
-        //     width: 100%;
-        //     background-color: $bg-componment;
-
-        //     // 设置箭头大小
-        //     font-size: 30px;
-        //     text-align: center;
-
-        //     .arrow {
-        //         width: 30px;
-        //         height: 30px;
-        //         position: relative;
-        //         animation: bounce 1s infinite;
-
-        //         &::before,
-        //         &::after {
-        //             content: '';
-        //             position: absolute;
-        //             bottom: 0;
-        //             width: 0;
-        //             height: 0;
-        //             border: solid transparent;
-        //         }
-
-        //         &::before {
-        //             left: 50%;
-        //             transform: translateX(-50%);
-        //             border-width: 0 10px 15px 10px;
-        //             border-bottom-color: $red;
-        //         }
-
-        //         &::after {
-        //             left: 50%;
-        //             transform: translateX(-50%);
-        //             border-width: 0 10px 15px 10px;
-        //             border-bottom-color: rgba(0, 0, 0, 0.1);
-        //             animation-delay: 0.3s;
-        //         }
-
-        //         @keyframes bounce {
-        //             0%, 100% {
-        //                 transform: translateY(0);
-        //             }
-        //             50% {
-        //                 transform: translateY(10px);
-        //             }
-        //         }
-        //     }
-        // }
     }
+}
 
-    .contentRow {
 
-        // 设置布局
-        display: flex;
-        flex-direction: row;
-        background-color: $bg-componment;
-
-        .catalog {
-            display: flex;
-            justify-content: flex-start;
-            padding: 1rem;
-        }
-
-        .mainText {
-            display: flex;
-            justify-content: flex-start;
-            padding: 1rem;
-
-        }
+// 媒体查询(适用于网页放大和缩小)
+@media screen and (min-width: 1440px) {
+    .content {
+      max-width: 1362px;
+    }
+}
+  
+  @media screen and (min-width: 1680px) {
+    .content {
+      max-width: 1482px;
     }
 }

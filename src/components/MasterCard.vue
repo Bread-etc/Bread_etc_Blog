@@ -63,10 +63,11 @@ const email: string = 'mianbao.etc@gmail.com';
       border-radius: 50%;
       width: 50%;
       z-index: 1;
+      transition: all .7s;
 
       &:hover {
-        transform:scale(1.3);
-	      transition: all 1s ease-out;
+        transform:scale(1.2);
+	      transition: all .7s;
       }
     }
   }
@@ -108,6 +109,7 @@ const email: string = 'mianbao.etc@gmail.com';
         width: 24px;
         height: 24px;
         color: $text-color;
+        transition: all .5s ease-out;
 
         &:hover {
           transform:scale(1.2);

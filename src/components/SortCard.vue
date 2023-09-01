@@ -3,48 +3,120 @@
   <div :class="$style.card">
     <div :class="$style.cardHeader">
       <svg
+        viewBox="0 0 1024 1024"
         xmlns="http://www.w3.org/2000/svg"
-        width="32"
-        height="32"
-        viewBox="0 0 32 32"
+        data-v-ea893728=""
       >
         <path
           fill="currentColor"
-          d="M26 28H6a2.002 2.002 0 0 1-2-2V11a2.002 2.002 0 0 1 2-2h5.667a2.012 2.012 0 0 1 1.2.4l3.466 2.6H26a2.002 2.002 0 0 1 2 2v12a2.002 2.002 0 0 1-2 2zM11.666 11H5.998L6 26h20V14H15.666zM28 9H17.666l-4-3H6V4h7.667a2.012 2.012 0 0 1 1.2.4L18.333 7H28z"
-        /></svg
-      >
-      <span>
-        分类
-      </span>
+          d="M878.08 448H241.92l-96 384h636.16l96-384zM832 384v-64H485.76L357.504 192H128v448l57.92-231.744A32 32 0 0 1 216.96 384H832zm-24.96 512H96a32 32 0 0 1-32-32V160a32 32 0 0 1 32-32h287.872l128.384 128H864a32 32 0 0 1 32 32v96h23.04a32 32 0 0 1 31.04 39.744l-112 448A32 32 0 0 1 807.04 896z"
+        ></path>
+      </svg>
+      <span>分类</span>
     </div>
-    <div :class="$style.categoryItem"></div>
+    <div :class="$style.category">
+      <el-collapse v-model="activeName" accordion :class="$style.elCategory">
+        <el-collapse-item
+          v-for="item in categoryItems"
+          :key="item.meta.key"
+          :title="item.className"
+          :class="$style.categoryItem"
+        >
+          <div :class="$style.itemContent">
+            {{ item.content }}
+          </div>
+        </el-collapse-item>
+      </el-collapse>
+    </div>
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { ElCollapseItem, ElCollapse } from "element-plus";
+import { ref } from "vue";
+
+// 后续通过axios发送请求请求分类列表(category-list)
+const categoryItems = ref([
+  {
+    className: "学习",
+    meta: {
+      key: 1,
+      path: "/study",
+    },
+    content: "html/css/js",
+  },
+  {
+    className: "日常休闲",
+    meta: {
+      key: 2,
+      path: "/daily",
+    },
+    content: "daily",
+  },
+  {
+    className: "想法",
+    meta: {
+      key: 3,
+      path: "/idea",
+    },
+    content: "idea",
+  },
+]);
+
+const activeName = ref("1");
+</script>
 
 <style lang="scss" module>
 .card {
   @include card;
   margin-top: 1rem;
   padding: 20px;
-
   .cardHeader {
     display: flex;
+    width: 100%;
     flex-direction: row;
-    justify-content: flex-start; 
-    justify-items: flex-start;
-    align-content: center;
     align-items: center;
-    
+    padding: $space-card-component; // 5px
+
     span {
-      font-size: 20px;
-      margin-left: 5px;
+      font-size: 18px;
+      font-weight: 600;
+      margin-left: 10px;
     }
 
     svg {
       width: 24px;
       height: 24px;
+      font-weight: 700;
+    }
+  }
+  .category {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    padding: $space-card-component; // 5px
+    cursor: pointer;
+
+    .elCategory {
+      width: 100%;
+      height: 100%;
+      border: none;
+
+      .categoryItem {
+        
+        div {
+          background-color: $bg-componment;
+          color: $card-text-color;
+          font-size: $font-size-default; // 14px
+          padding-bottom: 0;
+          border: none;
+
+          div {
+            margin-left: 0.5rem;
+          }
+        }
+      }
     }
   }
 }

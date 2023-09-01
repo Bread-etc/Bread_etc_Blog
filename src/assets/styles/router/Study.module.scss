@@ -130,6 +130,13 @@
                 display: flex;
                 justify-content: flex-start;
                 padding: 1rem;
+
+                .mainCard {
+                    @include card;
+                    padding: 20px;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                }
             }
         }
     }

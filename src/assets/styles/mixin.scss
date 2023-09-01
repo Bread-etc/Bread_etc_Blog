@@ -68,7 +68,7 @@
   flex-direction: column;
   border-radius: $border-card; // 12px
   background-color: $card-color;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 19px 38px, rgba(0, 0, 0, 0.1) 0px 15px 12px;
   // 内容居中
   justify-content: center;
   align-content: center;
@@ -78,4 +78,10 @@
   // 设置字体
   font-size: $font-size-default; // 14px
   color: $card-text-color;
+  transition: all .5s ease;
+
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    transition: all .5s ease;
+  }
 }

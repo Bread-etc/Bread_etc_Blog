@@ -119,3 +119,7 @@
 ### 2023/09/01 更新
 - 完成`MasterCard`组件
 - 加入link: github | gmail
+
+## 2023/09/02 更新
+- 完成`SortCard`和`WebInfo`组件,等待后端请求
+- 加入`MockJS`模拟数据

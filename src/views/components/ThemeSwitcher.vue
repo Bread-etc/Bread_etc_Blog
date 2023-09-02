@@ -19,20 +19,29 @@
 <script lang="ts" setup>
 import { ElSwitch } from "element-plus";
 import { Moon, Sunny } from "@element-plus/icons-vue";
-import { useDarkModeStore } from "@/stores/modules/theme";
-import { ref } from "vue";
-
-const darkMode = useDarkModeStore();
+import { useDarkModeStore } from "../../stores/modules/theme";
+import { onMounted, ref } from "vue";
 
 // 深色模式切换
-const isDark = ref(darkMode.isDarkValue);
+const darkMode = useDarkModeStore();
+const isDark = ref(false);
 
-const toggleDark = (v: boolean) => {
+
+const toggleDark = (value: boolean) => {
   document.documentElement.classList.toggle("dark");
-  isDark.value = v;
+  isDark.value = value;
   darkMode.isDarkValue = isDark.value;
-  console.log("darkMode:", darkMode.isDarkValue);
+  // 存储isDarkMode值到localStorage
+  localStorage.setItem('isDarkMode', JSON.stringify({ isDarkMode: isDark.value }));
+  // console.log("darkMode:", darkMode.isDarkValue);
 };
+
+// 在组件加载的时候初始化深色模式状态
+onMounted(() => {
+  darkMode.initDarkMode();
+  isDark.value = darkMode.isDarkValue;
+  console.log("darkMode:", darkMode.isDarkValue);
+})
 </script>
 
 <style lang="scss" module>

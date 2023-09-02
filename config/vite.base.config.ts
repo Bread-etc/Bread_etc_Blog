@@ -6,7 +6,6 @@ import IconsResolver from 'unplugin-icons/resolver'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-import { viteMockServe } from 'vite-plugin-mock'
 
 const pathSrc = path.resolve(__dirname, '../src')
 
@@ -45,11 +44,6 @@ export default defineConfig({
       autoInstall: true,
       compiler: 'vue3'
     }),
-    viteMockServe({
-      mockPath:  '../mock', // 设置mock文件存储目录
-      watchFiles: true, // 设置是否监视mockPath对应的文件夹内文件中的更改
-      logger: true, // 是否在控制台显示请求日志
-    })
   ],
   // 预构建vueuse的包
   optimizeDeps: {

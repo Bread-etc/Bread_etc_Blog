@@ -1,5 +1,5 @@
 import axios, { AxiosInstance, AxiosError, AxiosRequestConfig, AxiosResponse, Axios } from "axios";
-import { ElMessage, ElLoading, ElMessageBox } from "element-plus";
+import { ElMessage } from "element-plus";
 
 // response interface { code, msg, success }
 // 不含data

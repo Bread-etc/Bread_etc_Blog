@@ -19,7 +19,7 @@
 <script lang="ts" setup>
 import { ElSwitch } from "element-plus";
 import { Moon, Sunny } from "@element-plus/icons-vue";
-import { useDarkModeStore } from "../stores/modules/theme";
+import { useDarkModeStore } from "@/stores/modules/theme";
 import { ref } from "vue";
 
 const darkMode = useDarkModeStore();

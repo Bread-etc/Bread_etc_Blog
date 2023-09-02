@@ -82,6 +82,7 @@ const items = ref([
   .webInfo {
     display: flex;
     flex-direction: column;
+    width: 100%;
     padding: $space-card-component; // 5px
     cursor: default;
 

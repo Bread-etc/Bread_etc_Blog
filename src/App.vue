@@ -8,8 +8,8 @@ import {
   ElMain,
   ElFooter,
 } from "element-plus";
-import Navigation from "./components/Navigation.vue";
-import Footer from "./components/Footer.vue";
+import Navigation from "./views/components/Navigation.vue";
+import Footer from "./views/components/Footer.vue";
 </script>
 
 <template>

@@ -40,10 +40,11 @@
 
 <script lang="ts" setup>
 import { ElCol } from "element-plus";
-import MasterCard from "../components/MasterCard.vue";
-import SortCard from "../components/SortCard.vue";
-import WebInfo from "../components/WebInfo.vue";
-import MainText from "../components/MainText.vue";
+import MasterCard from "./components/MasterCard.vue";
+import SortCard from "./components/SortCard.vue";
+import WebInfo from "./components/WebInfo.vue";
+import MainText from "./components/MainText.vue";
+
 </script>
 
 <style module lang="scss">

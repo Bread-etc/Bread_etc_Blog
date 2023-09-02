@@ -37,8 +37,8 @@
 </template>
 
 <script setup lang="ts">
-import Typing from "../components/Typing.vue";
-import HomeCards from "../components/HomeCards.vue";
+import Typing from "./components/Typing.vue";
+import HomeCards from "./components/HomeCards.vue";
 import { useRouter } from "vue-router";
 // 使用路由跳转
 const router = useRouter();

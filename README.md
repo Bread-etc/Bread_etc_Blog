@@ -122,4 +122,5 @@
 
 ## 2023/09/02 更新
 - 完成`SortCard`和`WebInfo`组件,等待后端请求
-- 加入`MockJS`模拟数据
+- 加入`FastMock`模拟数据
+- 使用`pinia-plugin-persist`来持久化存储pinia数据

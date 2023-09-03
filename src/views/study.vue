@@ -44,6 +44,12 @@ import MasterCard from "./components/MasterCard.vue";
 import SortCard from "./components/SortCard.vue";
 import WebInfo from "./components/WebInfo.vue";
 import MainText from "./components/MainText.vue";
+import axios from "axios";
+
+// axios.get(
+//   url: 'https://www.fastmock.site/mock/09d46f08fcc9e3aa7d20a714cb5fe876/info/blogList',
+  
+// )
 
 </script>
 

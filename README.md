@@ -126,8 +126,11 @@
 - 使用`pinia-plugin-persist`来持久化存储pinia数据
 - 更改组件文件目录
 
-### 2023/09/03 更新 (32)
+### 2023/09/03 更新 (32-33)
 - 移除`presist`插件
 - 使用`localstorage`持久化存储
 - `ThemeSwitcher`组件修改完成
 - 改动移动端深色模式Switcher位置
+
+### 2023/09/04 更新 (34)
+- 引入`axios`.封装axios中

@@ -3,7 +3,7 @@
     <el-switch
       inline-prompt
       v-model="isDark"
-      @change="toggleDark"
+      @change="toggleTheme"
       style="
         --el-switch-on-color: $bg-color-content;
         --el-switch-off-color: $bg-color-content;
@@ -20,28 +20,28 @@
 import { ElSwitch } from "element-plus";
 import { Moon, Sunny } from "@element-plus/icons-vue";
 import { useDarkModeStore } from "../../stores/modules/theme";
-import { onMounted, ref } from "vue";
+import { onBeforeMount, ref } from "vue";
 
-// 深色模式切换
+// 深色模式切换及保存
 const darkMode = useDarkModeStore();
-const isDark = ref(false);
+const isDark = ref(JSON.parse(localStorage.getItem('theme')));
 
-
-const toggleDark = (value: boolean) => {
-  document.documentElement.classList.toggle("dark");
-  isDark.value = value;
-  darkMode.isDarkValue = isDark.value;
-  // 存储isDarkMode值到localStorage
-  localStorage.setItem('isDarkMode', JSON.stringify({ isDarkMode: isDark.value }));
-  // console.log("darkMode:", darkMode.isDarkValue);
+const toggleTheme = (value: boolean) => {
+  if(value) {
+    document.documentElement.classList.toggle("dark");
+    darkMode.toggleMode(value);
+  } else {
+    document.documentElement.classList.remove("dark");
+    darkMode.toggleMode(value);
+  }
+  console.log('darkMode:',value); 
 };
 
-// 在组件加载的时候初始化深色模式状态
-onMounted(() => {
-  darkMode.initDarkMode();
-  isDark.value = darkMode.isDarkValue;
-  console.log("darkMode:", darkMode.isDarkValue);
-})
+// 页面加载初始化深色模式状态
+onBeforeMount(() => {
+  darkMode.initMode();
+});
+
 </script>
 
 <style lang="scss" module>

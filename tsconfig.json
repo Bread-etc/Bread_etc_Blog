@@ -38,7 +38,6 @@
       "element-plus/global",
       "vite/client",
       "unplugin-icons/types/vue",
-      "pinia-plugin-persist",
     ],
 
     // 忽略所有的声明文件(*.d.ts)的类型检查

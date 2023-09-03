@@ -3,22 +3,25 @@ import { defineStore } from "pinia";
 
 export const useDarkModeStore = defineStore('darkMode', {
     state: () => ({
-        isDarkValue: false,    // 默认主题
+        isDarkValue: false,
     }),
     actions: {
-        toggleDarkMode() {
-            this.isDarkValue = !this.isDarkValue;
+        toggleMode(value: boolean) {
+            this.isDarkValue = value;
             // 存储isDarkMode的值到localstorage
-            localStorage.setItem('isDarkMode', JSON.stringify({ isDarkMode: this.isDarkValue }));
+            localStorage.setItem('theme', this.isDarkValue.toString());
         },
-        // 添加一个方法用于初始化深色模式状态
-        initDarkMode() {
-            // 从localstorage读取isDarkMode的值,如果不存在默认为false
-            const savedIsDarkMode = localStorage.getItem('isDarkMode');
+        // 初始化深色模式状态
+        initMode() {
+            // 从localstorage读取theme的值,如果不存在默认为false
+            const savedIsDarkMode = localStorage.getItem('theme');
             if (savedIsDarkMode === null) {
-                localStorage.setItem('isDarkMode', JSON.stringify({ isDarkMode: false }));
-            } else {
-                this.isDarkValue = JSON.parse(savedIsDarkMode).isDarkMode;
+                localStorage.setItem('theme', 'false');
+            } else if (savedIsDarkMode === 'false') {
+                this.isDarkValue = JSON.parse(savedIsDarkMode);
+            } else if (savedIsDarkMode === 'true') {
+                document.documentElement.classList.toggle("dark");
+                this.isDarkValue = JSON.parse(savedIsDarkMode);
             }
         }
     }

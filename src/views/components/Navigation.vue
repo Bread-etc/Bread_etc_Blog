@@ -26,6 +26,7 @@
           </div>
         </div>
         <ThemeSwitcher :class="$style.switch"/>
+        <ThemeSwitcher :class="$style.moblieSwitch"/>
         <div :class="$style.button">
           <button type="button" :class="$style.moblieButton" @click="dropdown">
             <span :class="$style.buttonContainer">
@@ -53,9 +54,6 @@
             >
               {{ route.meta.title }}
             </li>
-            <li>
-              <ThemeSwitcher />
-            </li>
           </ul>
         </div>
       </transition>
@@ -71,7 +69,7 @@ import { ref, onMounted, onUnmounted } from "vue";
 const route = useRoute();
 const router = useRouter();
 // 当前选中路由
-const activePath = ref(route.path);
+// const activePath = ref(route.path);
 
 // v-for遍历导航栏
 const routes = ref([

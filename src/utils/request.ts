@@ -1,18 +1,12 @@
 import axios from "axios";
 import type { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from 'axios';
 import { ElMessageBox as MessageBox } from "element-plus";
-import { Server } from "http";
-
-type Result<T> = {
-    code: number,
-    message: string,
-    data: T
-}
 
 // 创建axios实例
 const service: AxiosInstance = axios.create({
-    baseURL: 'https://www.fastmock.site/mock/09d46f08fcc9e3aa7d20a714cb5fe876/info',
-    timeout: 5000,
+    // baseURL: 'https://www.fastmock.site/mock/09d46f08fcc9e3aa7d20a714cb5fe876',
+    baseURL: 'http://localhost:3030',
+    timeout: 50000,
 })
 
 // 请求拦截器
@@ -93,19 +87,21 @@ service.interceptors.response.use(
 
 // 导出封装的请求方法
 export const http = {
-    get<T=any>(url: string, config: AxiosRequestConfig) : Promise<T> {
+    get<T=any>(url: string, config?: AxiosRequestConfig) : Promise<T> {
         return service.get(url, config);
     },
 
-    post<T=any>(url: string, data: object, config: AxiosRequestConfig) : Promise<T> {
+    post<T=any>(url: string, data?: object, config?: AxiosRequestConfig) : Promise<T> {
         return service.post(url, data, config);
     },
 
-    put<T=any>(url: string, data: object, config: AxiosRequestConfig) : Promise<T> {
+    put<T=any>(url: string, data?: object, config?: AxiosRequestConfig) : Promise<T> {
         return service.put(url, data, config);
     },
 
-    delete<T=any>(url: string, config: AxiosRequestConfig) : Promise<T> {
+    delete<T=any>(url: string, config?: AxiosRequestConfig) : Promise<T> {
         return service.delete(url, config)
     }
 }
+
+export default service;

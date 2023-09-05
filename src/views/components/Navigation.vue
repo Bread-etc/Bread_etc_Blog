@@ -26,7 +26,6 @@
           </div>
         </div>
         <ThemeSwitcher :class="$style.switch"/>
-        <ThemeSwitcher :class="$style.moblieSwitch"/>
         <div :class="$style.button">
           <button type="button" :class="$style.moblieButton" @click="dropdown">
             <span :class="$style.buttonContainer">

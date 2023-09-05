@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite'
+import { defineConfig, ConfigEnv, UserConfigExport } from 'vite'
 import path from 'path'
 import vue from '@vitejs/plugin-vue'
 import Icons from 'unplugin-icons/vite'
@@ -6,6 +6,7 @@ import IconsResolver from 'unplugin-icons/resolver'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import { viteMockServe } from 'vite-plugin-mock'
 
 const pathSrc = path.resolve(__dirname, '../src')
 
@@ -17,6 +18,7 @@ export default defineConfig({
         '@': pathSrc,
         '~router': path.resolve(pathSrc + '/assets/styles/router'),
         '~components': path.resolve(pathSrc + '/assets/styles/components'),
+        '~utils': path.resolve(pathSrc + '/utils'),
       }
     },
   plugins: [
@@ -44,6 +46,12 @@ export default defineConfig({
       autoInstall: true,
       compiler: 'vue3'
     }),
+    viteMockServe({
+      mockPath: "../mock", // mock文件目录
+      watchFiles: true, // 监视mockPath所指文件目录
+      enable: true, // 启用mock功能
+      logger: true, // 在控制台显示请求日志
+    })
   ],
   // 预构建vueuse的包
   optimizeDeps: {

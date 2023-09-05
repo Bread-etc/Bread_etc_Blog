@@ -29,8 +29,8 @@
           <WebInfo />
         </el-col>
         <el-col :span="18" :class="$style.mainText">
-          <div :class="$style.mainCard">
-            <MainText />
+          <div :class="$style.mainCard" v-for="blog in blogList" :key="blog.id">
+            <MainText :title="blog.title" :content="blog.content"/>
           </div>
         </el-col>
       </div>
@@ -44,12 +44,21 @@ import MasterCard from "./components/MasterCard.vue";
 import SortCard from "./components/SortCard.vue";
 import WebInfo from "./components/WebInfo.vue";
 import MainText from "./components/MainText.vue";
-import axios from "axios";
+import { getBlogList } from '../api/blogList/index';
+import { ref, onMounted } from "vue";
 
-// axios.get(
-//   url: 'https://www.fastmock.site/mock/09d46f08fcc9e3aa7d20a714cb5fe876/info/blogList',
-  
-// )
+const blogList = ref();
+
+onMounted(async () => {
+  try {
+    blogList.value = await getBlogList();
+    console.log(blogList.value);
+    console.log(blogList.value[0]);
+  } catch (error) {
+    console.error(error);
+    
+  }
+})
 
 </script>
 

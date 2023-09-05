@@ -57,12 +57,13 @@
         单元测试中需要安装 tsconfig-paths 的包
     */
     // 描述计算相对路径时的根目录
-    "baseUrl": ".",
+    "baseUrl": "./",
     // 描述路径别名
     "paths": {
       "@/*": [ "src/*" ],
       "~router/*": [ "src/assets/styles/router/*" ],
       "~components/*": [ "src/assets/styles/components/*" ],
+      "~utils/*": [ "src/utils/*"]
     },
 
     // 其他未了解的配置

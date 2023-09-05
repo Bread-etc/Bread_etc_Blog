@@ -31,8 +31,7 @@
                         font-family: 'Comic Sans MS';
 
                         // 设置渐变字体
-                        background: rgb(183,15,0);
-                        background: linear-gradient(101deg, rgba(183,15,0,1) 9%, rgba(220,38,22,1) 33%, rgba(234,104,91,1) 64%, rgba(251,167,158,1) 87%);
+                        background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
                         -webkit-background-clip: text;
                         background-clip: text;
                         color: transparent;  

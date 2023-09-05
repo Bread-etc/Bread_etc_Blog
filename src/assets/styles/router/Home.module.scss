@@ -47,8 +47,7 @@
                     font-size: 3rem;
                     font-weight: $font-weight-homeTitle; // 1000
                     // 设置渐变字体
-                    background: rgb(234,48,32);
-                    background: linear-gradient(101deg, rgba(234,48,32,1) 15%, rgba(231,206,105,1) 39%, rgba(234,124,113,1) 87%);
+                    background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
                     -webkit-background-clip: text;
                     background-clip: text;
                     color: transparent;  

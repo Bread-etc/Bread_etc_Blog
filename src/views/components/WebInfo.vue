@@ -32,23 +32,23 @@ const items = ref([
     detail: 0,
   },
   {
-    name: "已运行时间",
+    name: "运行时间",
     detail: "天",
   },
   {
-    name: "本站总字数",
+    name: "总字数",
     detail: 0,
   },
   {
-    name: "本站访客数",
+    name: "访客数",
     detail: 0,
   },
   {
-    name: "本站总访问量",
+    name: "总访问量",
     detail: 0,
   },
   {
-    name: "最后更新时间",
+    name: "最后更新",
     detail: "2023-09-16",
   },
 ]);
@@ -59,6 +59,7 @@ const items = ref([
   @include card;
   margin-top: 1rem;
   padding: 20px;
+  flex-grow: 0;
   .cardHeader {
     display: flex;
     width: 100%;

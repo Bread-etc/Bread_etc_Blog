@@ -51,6 +51,7 @@ const email: string = 'mianbao.etc@gmail.com';
 <style lang="scss" module>
 .card {
   @include card;
+  flex-grow: 0;
   padding: 20px;
   position: relative;
 
@@ -119,18 +120,18 @@ const email: string = 'mianbao.etc@gmail.com';
       }
     }
   }
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100px; // 根据需要调整高度
-    background-color: $cardHeader-color;
-    -webkit-clip-path: ellipse(64% 73% at 50% 0%);
-    clip-path: ellipse(64% 73% at 50% 0%);
-    z-index: 0; // 将伪元素放在其他内容之后
-    border-radius: 12px;
-  }
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   right: 0;
+  //   height: 100px; // 根据需要调整高度
+  //   background-color: $cardHeader-color;
+  //   -webkit-clip-path: ellipse(64% 73% at 50% 0%);
+  //   clip-path: ellipse(64% 73% at 50% 0%);
+  //   z-index: 0; // 将伪元素放在其他内容之后
+  //   border-radius: 12px;
+  // }
 }
 </style>

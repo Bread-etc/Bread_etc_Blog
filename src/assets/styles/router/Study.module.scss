@@ -1,158 +1,176 @@
 .container {
+  display: block;
+  background-color: $bg-color-content;
 
-    display: block;
-    background-color: $bg-color-content;
+  .content {
+    @include contentCenter;
+    padding: $space-container; // 10px
 
-    .content {
-        @include contentCenter;
-        padding: $space-container; // 10px
+    .study {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
 
-        .study {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            align-items: center;
+      .studyFunction {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
 
-            .studyFunction {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 1rem;
+        .headTitle {
+          display: flex;
+          width: auto;
+          font-size: $font-size-homeTitle; // 2.5rem
 
-                .headTitle {
-                    display: flex;
-                    width: auto;
-                    font-size: $font-size-homeTitle; // 2.5rem
+          div {
+            width: auto;
+            font-size: $font-size-homeTitle; // 2.5rem
+            font-weight: $font-weight-homeTitle; // 1000
+            font-family: "Comic Sans MS";
 
-                    div {
-                        width: auto;
-                        font-size: $font-size-homeTitle; // 2.5rem
-                        font-weight: $font-weight-homeTitle; // 1000
-                        font-family: 'Comic Sans MS';
-
-                        // 设置渐变字体
-                        background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
-                        -webkit-background-clip: text;
-                        background-clip: text;
-                        color: transparent;  
-                    }
-                }
-
-                .buttonGroup {
-                    padding-left: 0;
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: center;
-                    padding-top: 2rem;
-
-                    .buttonActive {
-                        // 设置布局
-                        display: flex;
-                        flex-wrap: nowrap;
-                        flex-shrink: 0;
-                        justify-content: center;
-                        align-items: center;
-                        padding-right: $space-button; // 10px
-    
-                        .postBlog {
-                            @include button;
-                            border-color: $yellow;
-                            background-color: $yellow;
-                            color: #ffffff;
-
-                            &:hover {
-                                background-color: $yellow-hover;
-                            }
-                        }
-                    }
-                }
-            }
-
-            .studyImg {
-                @include allCenter;
-                flex-direction: column;
-                padding: 1rem;
-                width: auto;
-                // 自动撑满剩余空间
-                flex-grow: 1;
-
-                .imgBg {
-                    display: flex;
-                    position: relative;
-                    align-items: center;
-                    justify-content: center;
-
-                    // ggbond size
-                    width: 40%;
-
-                    &::before {
-                        content: '';
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 100%;
-                        // 设置图片蒙版背景
-                        border-radius: 50%;
-                        background-image: url(../../images/imgBg.png);
-                        background-position: center;
-                        background-size: contain;
-                        filter: blur(80px);
-                        z-index: 1;
-                    }
-    
-                    img {
-                        width: 100%;
-                        height: 100%;
-                        object-fit: contain;
-                        z-index: 2;
-                        transform: rotateY(180deg);
-                    }
-                }
-            }
+            // 设置渐变字体
+            background-image: linear-gradient(
+              to right,
+              #f78ca0 0%,
+              #f9748f 19%,
+              #fd868c 60%,
+              #fe9a8b 100%
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+          }
         }
 
-        .blog {
+        .buttonGroup {
+          padding-left: 0;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          padding-top: 2rem;
 
+          .buttonActive {
+            // 设置布局
             display: flex;
-            flex-direction: row;
-            background-color: $bg-componment;
+            flex-wrap: nowrap;
+            flex-shrink: 0;
             justify-content: center;
+            align-items: center;
+            padding-right: $space-button; // 10px
 
-            .catalog {
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
-                padding: 1rem;
+            .postBlog {
+              @include button;
+              border-color: $yellow;
+              background-color: $yellow;
+              color: #ffffff;
+
+              &:hover {
+                background-color: $yellow-hover;
+              }
             }
-
-            .mainText {
-                @include mainText;
-
-                .mainCard {
-                    @include card;
-                    width: 80%;
-                    justify-content: flex-start;
-                    align-items: flex-start;
-                    &:hover {
-                        
-                    }
-                }
-            }
+          }
         }
-    }
-}
+      }
 
+      .studyImg {
+        @include allCenter;
+        flex-direction: column;
+        padding: 1rem;
+        width: auto;
+        // 自动撑满剩余空间
+        flex-grow: 1;
+
+        .imgBg {
+          display: flex;
+          position: relative;
+          align-items: center;
+          justify-content: center;
+
+          // ggbond size
+          width: 40%;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            // 设置图片蒙版背景
+            border-radius: 50%;
+            background-image: url(../../images/imgBg.png);
+            background-position: center;
+            background-size: contain;
+            filter: blur(80px);
+            z-index: 1;
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            z-index: 2;
+            transform: rotateY(180deg);
+          }
+        }
+      }
+    }
+
+    .blog {
+      display: flex;
+      background-color: $bg-componment;
+      justify-content: center;
+
+      .catalog {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 1rem;
+      }
+
+      .rightContent {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+
+        .mainCard {
+          @include card;
+          width: 100%;
+          height: 280px;
+          justify-content: flex-start;
+          align-items: flex-start;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+}
 
 // 媒体查询(适用于网页放大和缩小)
-@media screen and (min-width: 1440px) {
-    .content {
-      max-width: 1362px;
+@media screen and (max-width: 767px) {
+  // 小于等于767px
+  .blog {
+    display: flex;
+    flex-direction: column;
+
+    .rightContent {
+      order: 1;
     }
+    .catalog {
+      order: 2;
+    }
+  }
 }
-  
-  @media screen and (min-width: 1680px) {
-    .content {
-      max-width: 1482px;
-    }
+
+@media screen and (min-width: 1440px) {
+  .content {
+    max-width: 1362px;
+  }
+}
+
+@media screen and (min-width: 1680px) {
+  .content {
+    max-width: 1482px;
+  }
 }

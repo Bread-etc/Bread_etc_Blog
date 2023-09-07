@@ -71,6 +71,7 @@ const activeName = ref("1");
   @include card;
   margin-top: 1rem;
   padding: 20px;
+  flex-grow: 0;
   .cardHeader {
     display: flex;
     width: 100%;

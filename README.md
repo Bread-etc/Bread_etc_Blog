@@ -141,3 +141,7 @@
 ### 2023/09/06 更新 (36)
 - 添加`mockJS`代替`fastMock`以增加响应速度
 - 处理导航栏localStorage问题
+
+### 2023/09/07 更新 (37)
+- 由于配置问题去除`vite-plugin-mock`以及`mock`
+- 修改`study`页面三个card组件

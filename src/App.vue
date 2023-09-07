@@ -78,5 +78,9 @@ body {
   color: $text-color;
 }
 
+::selection {
+  background-color: #512df1; /* 设置背景颜色为紫色 */
+  color: white; /* 设置文字颜色为白色 */
+}
 
 </style>

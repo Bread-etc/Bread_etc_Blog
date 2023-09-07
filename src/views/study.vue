@@ -16,30 +16,30 @@
         </div>
         <div :class="$style.studyImg">
           <div :class="$style.imgBg">
-            <img src="@/assets/images/study.png" alt="image/studyLogo" />
+            <!-- <img src="@/assets/images/study.png" alt="image/studyLogo" /> -->
           </div>
         </div>
       </div>
     </div>
     <div :class="$style.content">
-      <div :class="$style.blog">
-        <el-col :span="6" :class="$style.catalog">
+      <div v-if="isLoading">Loading...</div>
+      <div :class="$style.blog" v-if="!isLoading">
+        <div :class="$style.catalog">
           <MasterCard />
           <SortCard />
           <WebInfo />
-        </el-col>
-        <el-col :span="18" :class="$style.mainText">
+        </div>
+        <div :class="$style.rightContent">
           <div :class="$style.mainCard" v-for="blog in blogList" :key="blog.id">
-            <MainText :title="blog.title" :content="blog.content"/>
+            <MainText :title="blog.title" :content="blog.content" :image="blog.image"/>
           </div>
-        </el-col>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ElCol } from "element-plus";
 import MasterCard from "./components/MasterCard.vue";
 import SortCard from "./components/SortCard.vue";
 import WebInfo from "./components/WebInfo.vue";
@@ -48,7 +48,7 @@ import { getBlogList } from '../api/blogList/index';
 import { ref, onMounted } from "vue";
 
 const blogList = ref();
-
+const isLoading = ref(true);
 onMounted(async () => {
   try {
     blogList.value = await getBlogList();
@@ -56,7 +56,8 @@ onMounted(async () => {
     console.log(blogList.value[0]);
   } catch (error) {
     console.error(error);
-    
+  } finally {
+    isLoading.value = false;
   }
 })
 

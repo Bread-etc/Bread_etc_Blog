@@ -31,8 +31,14 @@
         </div>
         <div :class="$style.rightContent">
           <div :class="$style.mainCard" v-for="blog in blogList" :key="blog.id">
-            <MainText :title="blog.title" :content="blog.content" :image="blog.image"/>
+            <MainText :title="blog.title" :content="blog.content" :image="blog.image" :category="blog.category"/>
           </div>
+          <el-pagination 
+            layout="prev, pager, next" 
+            :current-page="1"
+            :page-count="5"
+            :total="50">
+          </el-pagination>
         </div>
       </div>
     </div>
@@ -40,6 +46,7 @@
 </template>
 
 <script lang="ts" setup>
+import { ElPagination } from 'element-plus'
 import MasterCard from "./components/MasterCard.vue";
 import SortCard from "./components/SortCard.vue";
 import WebInfo from "./components/WebInfo.vue";

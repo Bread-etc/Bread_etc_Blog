@@ -9,17 +9,11 @@
       </h2>
       <article :class="$style.content">
         <div :class="$style.detail">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="32"
-            height="32"
-            viewBox="0 0 32 32"
-          >
-            <path
-              fill="currentColor"
-              d="M26 4h-4V2h-2v2h-8V2h-2v2H6a2.002 2.002 0 0 0-2 2v20a2.002 2.002 0 0 0 2 2h20a2.002 2.002 0 0 0 2-2V6a2.002 2.002 0 0 0-2-2ZM6 6h4v2h2V6h8v2h2V6h4v4H6Zm0 6h5v6H6Zm13 14h-6v-6h6Zm0-8h-6v-6h6Zm2 8v-6h5l.001 6Z"
-            /></svg
-          >{{ detail }}
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="currentColor" d="M26 4h-4V2h-2v2h-8V2h-2v2H6a2.002 2.002 0 0 0-2 2v20a2.002 2.002 0 0 0 2 2h20a2.002 2.002 0 0 0 2-2V6a2.002 2.002 0 0 0-2-2ZM6 6h4v2h2V6h8v2h2V6h4v4H6Zm0 6h5v6H6Zm13 14h-6v-6h6Zm0-8h-6v-6h6Zm2 8v-6h5l.001 6Z"/></svg>
+          {{ detail }}
+           | 
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="currentColor" d="m28.1 18.9l-15-15c-2.5-2.6-6.6-2.6-9.2-.1s-2.6 6.7 0 9.2l.1.1L6.8 16l1.4-1.4l-2.9-2.9c-1.7-1.7-1.7-4.6 0-6.3s4.6-1.8 6.3-.1l.1.1l14.9 14.9c1.8 1.7 1.8 4.6.1 6.3c-1.7 1.8-4.6 1.8-6.3.1l-.1-.1l-7.4-7.4c-1-1-.9-2.6 0-3.5c1-.9 2.5-.9 3.5 0l4.1 4.1l1.4-1.4l-4.2-4.2c-1.8-1.7-4.6-1.6-6.3.2c-1.6 1.7-1.6 4.4 0 6.2l7.5 7.5c2.5 2.6 6.6 2.6 9.2.1s2.6-6.7 0-9.3c0 .1 0 0 0 0z"/></svg>
+          {{ category }}
         </div>
         <div :class="$style.introduction">{{ content }}</div>
       </article>
@@ -28,8 +22,7 @@
 </template>
 
 <script lang="ts" setup>
-// 此处title和detail字数有限制
-const { title, content, image, detail } = defineProps({
+const { title, content, image, detail, category } = defineProps({
   title: {
     type: String,
     default: "文章标题",
@@ -46,6 +39,10 @@ const { title, content, image, detail } = defineProps({
     type: String,
     default: "发表于 2023-09-07",
   },
+  category: {
+    type: String,
+    default: "默认分组",
+  }
 });
 </script>
 
@@ -62,11 +59,16 @@ const { title, content, image, detail } = defineProps({
     width: 50%;
     border-radius: $border-card; // 12px
     object-fit: cover;
-    transition: all .6s;
+    overflow: hidden;
 
     img {
       width: 100%;
       height: 100%;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
     }
   }
 
@@ -100,7 +102,7 @@ const { title, content, image, detail } = defineProps({
         flex-direction: row;
         gap: 5px;
         align-items: center;
-        color: #383838;
+        color: #858585;
         font-size: 12px;
         margin-bottom: 10px;
         overflow: hidden;

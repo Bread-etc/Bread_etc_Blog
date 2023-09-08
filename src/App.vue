@@ -76,11 +76,34 @@ body {
   font-weight: 400;
   background-color: $bg-color;
   color: $text-color;
+
+  // IE浏览器滚动条样式
+  scrollbar-track-color: transparent;  
+  scrollbar-base-color: $underline-color;
+  // firebox浏览器
+  scrollbar-width: thin;
+  scrollbar-color: $underline-color transparent;
+  transition: all 1s ease;
+
 }
 
+// 选中文字样式
 ::selection {
-  background-color: #512df1; /* 设置背景颜色为紫色 */
+  background-color: #711eff; /* 设置背景颜色为紫色 */
   color: white; /* 设置文字颜色为白色 */
 }
 
+// 滚动条样式
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $underline-color;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
 </style>

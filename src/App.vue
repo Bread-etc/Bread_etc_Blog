@@ -83,8 +83,6 @@ body {
   // firebox浏览器
   scrollbar-width: thin;
   scrollbar-color: $underline-color transparent;
-  transition: all 1s ease;
-
 }
 
 // 选中文字样式

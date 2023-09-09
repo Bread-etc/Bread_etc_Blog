@@ -22,23 +22,26 @@
       </div>
     </div>
     <div :class="$style.content">
-      <div v-if="isLoading">Loading...</div>
-      <div :class="$style.blog" v-if="!isLoading">
+      <div :class="$style.blog">
         <div :class="$style.catalog">
           <MasterCard />
           <SortCard />
           <WebInfo />
         </div>
         <div :class="$style.rightContent">
-          <div :class="$style.mainCard" v-for="blog in blogList" :key="blog.id">
-            <MainText :title="blog.title" :content="blog.content" :image="blog.image" :category="blog.category"/>
+          <div :class="$style.mainCard">
+            <div v-for="blog in blogList.list" :key="blog.id" :class="$style.textContent">
+              <MainText :title="blog.title" :content="blog.content" :image="blog.image" :category="blog.category"/>
+            </div>
           </div>
-          <el-pagination 
-            layout="prev, pager, next" 
-            :current-page="1"
-            :page-count="5"
-            :total="50">
-          </el-pagination>
+          <el-pagination
+            layout="prev, pager, next"
+            :current-page="blogList.currentPage"
+            :page-size="blogList.pageSize"
+            :total="blogList.totalCount"
+            @current-change="handlePageChange"
+            :class="$style.pagination"
+          ></el-pagination>
         </div>
       </div>
     </div>
@@ -46,26 +49,48 @@
 </template>
 
 <script lang="ts" setup>
-import { ElPagination } from 'element-plus'
 import MasterCard from "./components/MasterCard.vue";
 import SortCard from "./components/SortCard.vue";
 import WebInfo from "./components/WebInfo.vue";
 import MainText from "./components/MainText.vue";
-import { getBlogList } from '../api/blogList/index';
-import { ref, onMounted } from "vue";
+import { getBlogInfo } from "../api/BlogItem/blogItem";
+import { reactive, onMounted } from "vue";
 
-const blogList = ref();
-const isLoading = ref(true);
-onMounted(async () => {
+// 初始化对象
+const blogList = reactive({
+  currentPage: 1,
+  pageSize: 6,
+  totalCount: 10,
+  list: [],
+})
+
+
+// 换页
+function handlePageChange(newPage: number) {
+  blogList.currentPage = newPage
+  fetchBlogList(newPage)
+}
+
+function setBlogList(data) {
+  blogList.currentPage = data.currentPage
+  blogList.pageSize = data.pageSize
+  blogList.totalCount = data.totalCount
+  blogList.list = data.list
+}
+
+
+// 网络请求
+async function fetchBlogList(query: number) {
   try {
-    blogList.value = await getBlogList();
-    console.log(blogList.value);
-    console.log(blogList.value[0]);
+    const response = await getBlogInfo(query);
+    setBlogList(response)
   } catch (error) {
     console.error(error);
-  } finally {
-    isLoading.value = false;
   }
+}
+
+onMounted(() => {
+  fetchBlogList(blogList.currentPage);
 })
 
 </script>

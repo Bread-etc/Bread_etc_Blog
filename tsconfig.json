@@ -80,6 +80,7 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "src/autoImport/*.d.ts",
+    "src/**/**/*.ts",
   ],
   // 指定不需要编译的文件
   "exclude": [

@@ -5,7 +5,6 @@ import { ElMessageBox as MessageBox } from "element-plus";
 // 创建axios实例
 const service: AxiosInstance = axios.create({
     baseURL: 'https://www.fastmock.site/mock/09d46f08fcc9e3aa7d20a714cb5fe876',
-    // baseURL: 'http://localhost:3030',
     timeout: 50000,
 })
 

@@ -27,3 +27,44 @@ export interface BlogListResponse {
     list: BlogItem[]
   }
 }
+
+// 网站统计信息
+export interface WebInfo {
+  code: number,
+  message: string,
+  data: {
+    文章数目: number,
+    运行时间: string,
+    总字数: string,
+    访客数: number,
+    总访问量: number,
+    最后更新: string,
+  }
+}
+
+interface SubItem {
+  name: string,
+  meta: {
+    key: number,
+    path: string,
+  }
+}
+
+interface CategoryItem {
+  name: string,
+  meta: {
+    key: number,
+    path: string,
+  },
+  content: SubItem[]
+}
+
+// 文章和分类信息
+export interface generalInfo {
+  code: number,
+  message: string,
+  data: {
+    articalNum: number,
+    category: CategoryItem[]
+  }
+}

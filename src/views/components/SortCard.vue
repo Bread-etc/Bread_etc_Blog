@@ -17,13 +17,14 @@
     <div :class="$style.category">
       <el-collapse v-model="activeName" accordion :class="$style.elCategory">
         <el-collapse-item
-          v-for="item in categoryItems"
+          v-for="item in category"
           :key="item.meta.key"
-          :title="item.className"
+          :title="item.name"
+          :path = "item.path"
           :class="$style.categoryItem"
         >
-          <div :class="$style.itemContent">
-            {{ item.content }}
+          <div :class="$style.itemContent" v-for="subItem in item.content" :key="subItem.id" :path="subItem.path">
+            {{ subItem.name }}
           </div>
         </el-collapse-item>
       </el-collapse>
@@ -35,35 +36,11 @@
 import { ElCollapseItem, ElCollapse } from "element-plus";
 import { ref } from "vue";
 
-// 后续通过axios发送请求请求分类列表(category-list)
-const categoryItems = ref([
-  {
-    className: "学习",
-    meta: {
-      key: 1,
-      path: "/study",
-    },
-    content: "html/css/js",
-  },
-  {
-    className: "日常休闲",
-    meta: {
-      key: 2,
-      path: "/daily",
-    },
-    content: "daily",
-  },
-  {
-    className: "想法",
-    meta: {
-      key: 3,
-      path: "/idea",
-    },
-    content: "idea",
-  },
-]);
+// 传入数据
+const { category } = defineProps(['category'])
 
 const activeName = ref("1");
+
 </script>
 
 <style lang="scss" module>
@@ -115,6 +92,9 @@ const activeName = ref("1");
 
           div {
             margin-left: 0.5rem;
+            &:hover {
+              color: $underline-color;
+            }
           }
         }
       }

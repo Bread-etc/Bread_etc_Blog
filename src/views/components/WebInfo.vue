@@ -24,7 +24,8 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
+import { getWebInfo } from "../../api/BlogItem/webInfo";
+import { ref, onMounted } from "vue";
 
 const items = ref([
   {
@@ -52,6 +53,37 @@ const items = ref([
     detail: "2023-09-16",
   },
 ]);
+
+// 网络请求
+async function fetchWebInfo() {
+  try {
+    const response = await getWebInfo();
+    // 将接口返回的数据更新到items中
+    items.value.forEach(item => {
+      if (item.name in response) {
+        if (item.name === "运行时间") {
+          const diff = Date.now() - new Date(response[item.name]).getTime();
+          const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          item.detail = `${days}天${hours}小时`;
+        } else if (item.name === "最后更新") {
+          item.detail = new Date(response[item.name]).toLocaleDateString();
+        } else {
+          item.detail = response[item.name]
+        }
+      }
+    });
+  } catch (error) {
+    console.error(error);
+    
+  }
+}
+
+onMounted(() => {
+  fetchWebInfo();
+})
+
+
 </script>
 
 <style lang="scss" module>

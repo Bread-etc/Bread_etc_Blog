@@ -153,3 +153,6 @@
 - 完成换页组件`el-pagination`的制作
 - 更新`fastmock`和`api`目录下`BlogItem.ts`的内容
 - 初步完成换页组件
+
+### 2023/09/10 更新 (40)
+- 完成`MasterCard`和`SortCard`组件网络请求

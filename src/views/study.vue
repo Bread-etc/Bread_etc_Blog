@@ -24,8 +24,8 @@
     <div :class="$style.content">
       <div :class="$style.blog">
         <div :class="$style.catalog">
-          <MasterCard />
-          <SortCard />
+          <MasterCard :articleNum="information.articleNum" :category="information.category.length"/>
+          <SortCard :category="information.category"/>
           <WebInfo />
         </div>
         <div :class="$style.rightContent">
@@ -54,6 +54,7 @@ import SortCard from "./components/SortCard.vue";
 import WebInfo from "./components/WebInfo.vue";
 import MainText from "./components/MainText.vue";
 import { getBlogInfo } from "../api/BlogItem/blogItem";
+import { getGeneralInfo } from "../api/BlogItem/generalInfo";
 import { reactive, onMounted } from "vue";
 
 // 初始化对象
@@ -63,6 +64,11 @@ const blogList = reactive({
   totalCount: 10,
   list: [],
 })
+const information = reactive({
+  articleNum: 1,
+  category: [],
+})
+
 
 
 // 换页
@@ -71,13 +77,18 @@ function handlePageChange(newPage: number) {
   fetchBlogList(newPage)
 }
 
+
+// 赋值
 function setBlogList(data) {
   blogList.currentPage = data.currentPage
   blogList.pageSize = data.pageSize
   blogList.totalCount = data.totalCount
   blogList.list = data.list
 }
-
+function setGeneralInfo(data) {
+  information.articleNum = data.articleNum
+  information.category = data.category
+}
 
 // 网络请求
 async function fetchBlogList(query: number) {
@@ -88,8 +99,18 @@ async function fetchBlogList(query: number) {
     console.error(error);
   }
 }
+async function fetchGeneralInfo() {
+  try {
+    const responseGeneral = await getGeneralInfo();
+    console.log(responseGeneral)
+    setGeneralInfo(responseGeneral)
+  } catch (error) {
+    console.error(error);
+  }
+}
 
 onMounted(() => {
+  fetchGeneralInfo();
   fetchBlogList(blogList.currentPage);
 })
 

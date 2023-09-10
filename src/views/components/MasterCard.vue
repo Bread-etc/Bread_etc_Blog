@@ -9,7 +9,7 @@
     </div>
     <div :class="$style.authorInfo">学生，主要学习前端开发</div>
     <div :class="$style.authorWork">
-      文章&nbsp;:&nbsp;1 | 分类&nbsp;:&nbsp;3
+      文章&nbsp;:&nbsp;{{ articleNum }} | 分类&nbsp;:&nbsp;{{ categoryLength }}
     </div>
     <div :class="$style.authorGithub">
       <a href="https://github.com/Bread-etc">
@@ -42,9 +42,18 @@
     </div>
   </div>
 </template>
-
 <script lang="ts" setup>
 const email: string = 'mianbao.etc@gmail.com';
+const { articleNum, categoryLength } = defineProps({
+  articleNum: {
+    type: Number,
+    default: 1
+  },
+  categoryLength: {
+    type: Number,
+    default: 3
+  }
+})
 
 </script>
 

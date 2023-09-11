@@ -31,7 +31,7 @@
         <div :class="$style.rightContent">
           <div :class="$style.mainCard">
             <div v-for="blog in blogList.list" :key="blog.id" :class="$style.textContent">
-              <MainText :title="blog.title" :content="blog.content" :image="blog.image" :category="blog.category"/>
+              <MainText :title="blog.title" :content="blog.content" :image="blog.image" :category="blog.category" :loading="loading"/>
             </div>
           </div>
           <el-pagination
@@ -55,7 +55,7 @@ import WebInfo from "./components/WebInfo.vue";
 import MainText from "./components/MainText.vue";
 import { getBlogInfo } from "../api/BlogItem/blogItem";
 import { getGeneralInfo } from "../api/BlogItem/generalInfo";
-import { reactive, onMounted } from "vue";
+import { ref, reactive, onMounted } from "vue";
 
 // 初始化对象
 const blogList = reactive({
@@ -68,7 +68,7 @@ const information = reactive({
   articleNum: 1,
   category: [],
 })
-
+const loading = ref(false)
 
 
 // 换页
@@ -102,10 +102,12 @@ async function fetchBlogList(query: number) {
 async function fetchGeneralInfo() {
   try {
     const responseGeneral = await getGeneralInfo();
-    console.log(responseGeneral)
     setGeneralInfo(responseGeneral)
   } catch (error) {
     console.error(error);
+  } finally {
+    // 加载状态改为true
+    loading.value = true
   }
 }
 

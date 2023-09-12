@@ -31,7 +31,7 @@
         <div :class="$style.rightContent">
           <div :class="$style.mainCard">
             <div v-for="blog in blogList.list" :key="blog.id" :class="$style.textContent">
-              <MainText :title="blog.title" :content="blog.content" :image="blog.image" :category="blog.category" :loading="loading"/>
+              <MainText :title="blog.title" :content="blog.content" :image="blog.image" :category="blog.category" :ready="ready"/>
             </div>
           </div>
           <el-pagination
@@ -68,7 +68,7 @@ const information = reactive({
   articleNum: 1,
   category: [],
 })
-const loading = ref(false)
+const ready = ref(false)
 
 
 // 换页
@@ -97,6 +97,9 @@ async function fetchBlogList(query: number) {
     setBlogList(response)
   } catch (error) {
     console.error(error);
+  } finally {
+    // 加载状态改为true
+    ready.value = true;
   }
 }
 async function fetchGeneralInfo() {
@@ -105,16 +108,15 @@ async function fetchGeneralInfo() {
     setGeneralInfo(responseGeneral)
   } catch (error) {
     console.error(error);
-  } finally {
-    // 加载状态改为true
-    loading.value = true
   }
 }
 
 onMounted(() => {
+  
   fetchGeneralInfo();
   fetchBlogList(blogList.currentPage);
 })
+
 
 </script>
 

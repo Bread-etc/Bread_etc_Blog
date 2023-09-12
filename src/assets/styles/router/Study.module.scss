@@ -134,7 +134,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        // align-items: center;
+        flex-grow: 1;
 
         .mainCard {
           display: flex;
@@ -154,6 +154,7 @@
           --el-pagination-bg-color: $bg-component;
           --el-pagination-text-color: $text-color;
           --el-pagination-button-color: $underline-color;
+          align-self: center;
 
           button {
             background-color: transparent;
@@ -171,13 +172,26 @@
   .blog {
     display: flex;
     flex-direction: column;
+    align-items: center;
 
     .rightContent {
       order: 1;
+      width: 85%;
     }
     .catalog {
       order: 2;
+      width: 85%;
     }
+  }
+}
+
+@media screen and (min-width: 767px) {
+  // 大于767px
+  .catalog {
+    width: 30%;
+  }
+  .rightContent {
+    width: 70%;
   }
 }
 

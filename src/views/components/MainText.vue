@@ -1,21 +1,25 @@
 <template>
   <div :class="$style.card">
-    <el-skeleton :class="$style.skeleton" animated :throttle="500" :loading="ready">
+    <el-skeleton :class="$style.skeleton" animated :throttle="300" :loading="ready">
       <template #default>
-        <div :class="$style.image">
-          <el-skeleton-item variant="image" :class="$style.elImg"></el-skeleton-item>
-        </div>
-        <div :class="$style.text">
-          <el-skeleton-item variant="h1" :class="$style.title"></el-skeleton-item>
-          <article :class="$style.content">
-            <div :class="$style.detail">
-              <el-skeleton-item variant="text"></el-skeleton-item>
-            </div>
-          </article>
-          <div :class="$style.introduction">
-            <el-skeleton-item variant="text"></el-skeleton-item>                    
-          </div>
-        </div>
+        <el-skeleton-item variant="image" style="width: 50%; height: 100%;" />
+        <el-skeleton
+          style="
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 1rem;
+            box-sizing: border-box;
+          "
+          
+        >
+          <el-skeleton-item variant="h1"/>
+          <el-skeleton-item variant="p" />
+          <el-skeleton-item variant="text" />
+        </el-skeleton>
       </template>
       <template #template>
         <div :class="$style.image">
@@ -106,15 +110,13 @@ const { title, content, image, detail, category, ready } = defineProps({
     height: 100%;
     width: 100%;
     
-
     .image {
       width: 50%;
       border-radius: $border-card; // 12px
       object-fit: cover;
       overflow: hidden;
 
-      img, 
-      .elImg {
+      img {
         width: 100%;
         height: 100%;
         transition: transform 0.3s ease;

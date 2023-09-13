@@ -11,20 +11,12 @@ const routes = [
         component: () => import('@/views/home.vue')
     },
     {
-        path: '/study',
-        name: 'study',
+        path: '/essay',
+        name: 'essay',
         meta: {
-            title: '学习'
+            title: '随笔'
         },
-        component: () => import('@/views/study.vue')
-    },
-    {
-        path: '/daily',
-        name: 'daily',
-        meta: {
-            title: '日常'
-        },
-        component: () => import('@/views/daily.vue')
+        component: () => import('@/views/essay.vue')
     },
     {
         path: '/contact',

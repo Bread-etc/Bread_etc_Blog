@@ -121,5 +121,5 @@ onMounted(() => {
 </script>
 
 <style module lang="scss">
-@import "~router/Study.module.scss";
+@import "~router/Essay.module.scss";
 </style>

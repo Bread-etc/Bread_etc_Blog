@@ -11,7 +11,7 @@
           <Typing />
           <div :class="$style.buttonGroup">
             <div :class="$style.buttonActive">
-              <button :class="$style.buttonStudy" @click="navigateToStudy">
+              <button :class="$style.buttonStudy" @click="navigateToEssay">
                 进入博客
               </button>
             </div>
@@ -43,8 +43,8 @@ import { useRouter } from "vue-router";
 // 使用路由跳转
 const router = useRouter();
 
-const navigateToStudy = () => {
-  router.push("/study");
+const navigateToEssay = () => {
+  router.push("/essay");
 };
 
 const navigateToContact = () => {

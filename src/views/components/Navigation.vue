@@ -79,15 +79,9 @@ const routes = ref([
     },
   },
   {
-    path: "/study",
+    path: "/essay",
     meta: {
-      title: "学习",
-    },
-  },
-  {
-    path: "/daily",
-    meta: {
-      title: "日常",
+      title: "随笔",
     },
   },
   {

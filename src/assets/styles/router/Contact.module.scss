@@ -1,0 +1,138 @@
+.container {
+    display: block;
+    background-color: $bg-color-content;
+
+    .content {
+        @include contentCenter;
+        padding: $space-container; // 10px
+        flex-direction: row;
+        padding-top: 1rem;
+        width: 80%;
+
+        .card {
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex-grow: 1;
+
+            .outline {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                .textContent {
+                    width: 100%;
+                    @include card;
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                    padding: 2rem;
+                    
+                    h1 {
+                        display: flex;
+                        align-items: center;
+                        width: 100%;
+                        font-size: 1.4rem;
+                        margin-top: 1.1rem;
+
+                    }
+
+                    h2 {
+                        display: flex;
+                        align-items: center;
+                        width: 100%;
+                    }
+
+                    span {
+                        display: flex;
+                        align-items: center;
+                        font-size: 16px;
+                        width: 100%;
+                        white-space: pre-wrap;
+                        line-height: 1.5rem;
+                        word-break: break-word;
+                        padding: 3px 2px;
+                        margin: 1px 0;
+
+                        a {
+                            font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+                            text-decoration: underline;
+                            color: $text-color;
+                        }
+                    }
+                }
+
+                .divider {
+                    margin: 1.2rem 0;
+                    width: 100%;
+                    border: 0;
+                    border-top: 2px dashed $text-color;
+                }
+
+                .messageContent {
+                    width: 100%;
+                    @include card;
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                    padding: 2rem;
+
+                    h2 {
+                        display: flex;
+                        align-items: center;
+                        width: 100%;
+
+                        svg {
+                            width: 24px;
+                            height: 24px;
+                            margin-right: .5rem;
+                        }
+                    }
+
+                    .message {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                    
+                        textarea {
+                            color: $text-color;
+                            background-color: $bg-color;
+
+                            &::-webkit-scrollbar {
+                                width: 0;
+                                height: 0;
+                            }
+                        }
+
+                        span {
+                            background-color: $bg-color;
+                        }
+
+                        .sendMessage {
+                            @include button;
+                            flex-direction: row;
+                            height: 30px;
+                            width: 100px;
+                            margin: .5rem 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// 响应式
+@media screen and (min-width: 1440px) {
+    .content {
+      max-width: 1362px;
+    }
+  }
+  
+  @media screen and (min-width: 1680px) {
+    .content {
+      max-width: 1482px;
+    }
+  }
+  

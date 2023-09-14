@@ -1,4 +1,4 @@
-<!-- study,vue -->
+<!-- study.vue -->
 <template>
   <div :class="$style.container">
     <div :class="$style.content">
@@ -8,17 +8,17 @@
             📚
             <div>博客内容</div>
           </div>
-          <div :class="$style.buttonGroup">
+          <!-- <div :class="$style.buttonGroup">
             <div :class="$style.buttonActive">
               <button :class="$style.postBlog">发布博客</button>
             </div>
-          </div>
+          </div> -->
         </div>
-        <div :class="$style.studyImg">
+        <!-- <div :class="$style.studyImg">
           <div :class="$style.imgBg">
-            <!-- <img src="@/assets/images/study.png" alt="image/studyLogo" /> -->
+             <img src="@/assets/images/study.png" alt="image/studyLogo" />
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
     <div :class="$style.content">
@@ -30,9 +30,30 @@
         </div>
         <div :class="$style.rightContent">
           <div :class="$style.mainCard">
-            <div v-for="blog in blogList.list" :key="blog.id" :class="$style.textContent">
-              <MainText :title="blog.title" :content="blog.content" :image="blog.image" :category="blog.category" :ready="ready"/>
-            </div>
+            <template v-if="blogList.list.length > 0">
+              <div v-for="blog in blogList.list" :key="blog.id" :class="$style.textContent">
+                <MainText :title="blog.title" :content="blog.content" :image="blog.image" :category="blog.category" :ready="ready"/>
+              </div>
+            </template>
+            <template v-else>
+              <div v-for="index in 5" :key="index" :class="$style.skeletonContent" style="align-items: flex-start; flex-direction: row;">
+                <el-skeleton-item variant="image" style="width: 50%; height: 100%;" animated/>
+                <div
+                  style="
+                    width: 50%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    padding: 1rem;
+                    box-sizing: border-box;
+                  "
+                >
+                  <el-skeleton variant="text" animated/>
+                </div>
+              </div>
+            </template>
           </div>
           <el-pagination
             layout="prev, pager, next"

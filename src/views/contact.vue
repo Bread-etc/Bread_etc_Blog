@@ -7,12 +7,13 @@
             <div :class="$style.textContent">
               <h1>欢迎来到我的留言板！👋</h1>
               <h2>如何留言？📝</h2>
-              <span>经👉 <a href="https://github.com/login/oauth/authorize?client_id=983b9d8960cacfb8d0bc&state=breadeTc">Github</a> 登录后,在下方的留言框中输入您的留言内容即可。</span>
+              <span>👉 <a href="https://github.com/login/oauth/authorize?client_id=983b9d8960cacfb8d0bc&state=breadeTc">Github</a> 登录后,在下方的留言框中输入您的留言内容即可。</span>
               <span>请注意，为了保持良好的阅读体验喝交流氛围，请勿发布任何不良信息和言论。</span>
               <h2>免责声明 🧷</h2>
               <span>⚠️本站内容仅代表个人观点，可以转载，但请注明出处。</span>
               <span>⚠️本网站分享内容仅供学习参考使用，请勿用于其他用途。</span>
               <h2>感谢您的支持 🙏</h2>
+              <span>非常感谢您能来到我的留言板，并留下宝贵意见，关于问题我会尽快回复。</span>
             </div>
             <div :class="$style.divider"></div>
             <div :class="$style.messageContent">
@@ -29,9 +30,16 @@
                   maxlength="150"
                   show-word-limit
                 />
-                <button :class="$style.sendMessage">
+                <button :class="$style.sendMessage" @click="sendMessage">
                   发送
                 </button>
+              </div>
+              <div :class="$style.divider"></div>
+              <div :class="$style.messageList">
+                <h2>xx条评论</h2>
+                <div :class="$style.simpleMessage">
+                  132456
+                </div>
               </div>
             </div>
           </div>
@@ -41,8 +49,20 @@
 </template>
 
 <script lang="ts" setup>
+import { ElMessage } from 'element-plus';
 import { ref } from 'vue';
 const textarea = ref('')
+
+// 方法
+const sendMessage = () => {
+  ElMessage({
+    showClose: false,
+    message: '发送评论成功！',
+    type: 'success',
+    center: true,
+
+  })
+}
 </script>
 
 <style lang="scss" module>

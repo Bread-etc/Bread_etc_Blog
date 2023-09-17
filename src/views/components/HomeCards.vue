@@ -75,7 +75,6 @@ const items = ref([
       .items {
 
         background-color: $homecard-color;
-        color: $homePage-text-color;
         padding: 1rem;
         border-radius: $border-card; // 12px
 

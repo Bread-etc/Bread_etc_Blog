@@ -54,11 +54,33 @@
             padding: 3px 2px;
             margin: 1px 0;
 
+
             a {
               font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo,
                 Consolas, Liberation Mono, monospace;
               text-decoration: underline;
               color: $text-color;
+            }
+          }
+
+          .email {
+            padding: 1rem;
+            align-self: center;
+            border: 0;
+            margin-bottom: .5rem;
+            background-color: $bg-color-content;
+
+            // 字体设计
+            font-size: 14px;
+            font-weight: bold;
+            font-family: 'Courier New', Courier, monospace;
+          }
+
+          .image {
+            
+            img {
+              max-width: 100%;
+              border-radius: $border-card; // 12px
             }
           }
         }
@@ -68,9 +90,22 @@
 }
 
 // 响应式
+@media screen and (max-width: 768px) {
+  .image {
+    width: 50% !important;
+  }
+}
+@media screen and (min-width: 768px) {
+  .image {
+    width: 30% !important;
+  }
+}
 @media screen and (min-width: 1440px) {
   .content {
     max-width: 1362px;
+  }
+  .image {
+    width: 20% !important;
   }
 }
 

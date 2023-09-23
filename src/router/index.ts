@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
+
 // 定义并配置路由
 const routes = [
     {
@@ -16,7 +17,7 @@ const routes = [
         meta: {
             title: '随笔'
         },
-        component: () => import('@/views/essay.vue')
+        component: () => import('@/views/essay.vue'),
     },
     {
         path: '/contact',
@@ -33,6 +34,16 @@ const routes = [
             title: '关于'
         },
         component: () => import('@/views/about.vue')
+    },
+    {
+        path: '/404',
+        name: '404',
+        component: () => import('@/views/notFound.vue')
+    },
+    // 捕获所有404页面
+    {
+        path: '/:pathMatch(.*)',
+        component: () => import('@/views/notFound.vue')
     },
 ]
 

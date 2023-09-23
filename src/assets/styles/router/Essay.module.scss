@@ -42,79 +42,7 @@
             color: transparent;
           }
         }
-
-        // .buttonGroup {
-        //   padding-left: 0;
-        //   display: flex;
-        //   flex-direction: row;
-        //   justify-content: center;
-        //   padding-top: 2rem;
-
-        //   .buttonActive {
-        //     // 设置布局
-        //     display: flex;
-        //     flex-wrap: nowrap;
-        //     flex-shrink: 0;
-        //     justify-content: center;
-        //     align-items: center;
-        //     padding-right: $space-button; // 10px
-
-        //     .postBlog {
-        //       @include button;
-        //       border-color: $yellow;
-        //       background-color: $yellow;
-        //       color: #ffffff;
-
-        //       &:hover {
-        //         background-color: $yellow-hover;
-        //       }
-        //     }
-        //   }
-        // }
       }
-
-      // .studyImg {
-      //   @include allCenter;
-      //   flex-direction: column;
-      //   padding: 1rem;
-      //   width: auto;
-      //   // 自动撑满剩余空间
-      //   flex-grow: 1;
-
-      //   .imgBg {
-      //     display: flex;
-      //     position: relative;
-      //     align-items: center;
-      //     justify-content: center;
-
-      //     // ggbond size
-      //     width: 40%;
-
-      //     &::before {
-      //       content: "";
-      //       position: absolute;
-      //       top: 0;
-      //       left: 0;
-      //       width: 100%;
-      //       height: 100%;
-      //       // 设置图片蒙版背景
-      //       border-radius: 50%;
-      //       background-image: url(../../images/imgBg.png);
-      //       background-position: center;
-      //       background-size: contain;
-      //       filter: blur(80px);
-      //       z-index: 1;
-      //     }
-
-      //     img {
-      //       width: 100%;
-      //       height: 100%;
-      //       object-fit: contain;
-      //       z-index: 2;
-      //       transform: rotateY(180deg);
-      //     }
-      //   }
-      // }
     }
 
     .blog {

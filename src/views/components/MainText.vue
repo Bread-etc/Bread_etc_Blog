@@ -1,5 +1,5 @@
 <template>
-  <div :class="$style.card">
+  <div :class="$style.card" @click="navigateToBlog">
     <div :class="$style.image">
       <img :src="image" alt="">
     </div>
@@ -40,10 +40,16 @@
 </template>
 
 <script lang="ts" setup>
-const { title, content, image, detail, category, ready } = defineProps({
+import { useRouter } from 'vue-router';
+
+const { title, alias, content, image, detail, category } = defineProps({
   title: {
     type: String,
     default: "文章标题",
+  },
+  alias: {
+    type: String,
+    default: "博客名称",
   },
   content: {
     type: String,
@@ -66,6 +72,24 @@ const { title, content, image, detail, category, ready } = defineProps({
     default: false,
   },
 });
+
+// 跳转路由
+const router = useRouter();
+const navigateToBlog = () => {
+  const routeName = 'essay.' + alias
+  const routePath = '/essay/' + alias
+
+  // 添加子路由
+  router.addRoute({
+    name: routeName,
+    path: routePath,
+    component: () => import('../article.vue')
+  })
+
+  // 跳转到新的子路由
+  router.push({ name: routeName })
+  console.log('路由已创建!')
+}
 </script>
 
 <style lang="scss" module>

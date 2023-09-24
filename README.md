@@ -191,3 +191,7 @@
 ### 2023/09/23 更新 (49)
 - 初步了解动态添加路由
 - 加入markdown渲染插件`mavon editor`
+
+### 2023/09/24 更新 (50)
+- 移除`mavon-editor`,加入`vue3-markdown-it`
+- 加入`getBlogInfo`接口

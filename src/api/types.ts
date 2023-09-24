@@ -68,3 +68,15 @@ export interface generalInfo {
     category: CategoryItem[]
   }
 }
+
+
+// 文章详细信息
+export interface Text {
+  code: number,
+  message: string,
+  data: {
+    id: number,
+    blogId: number,
+    text: string
+  }
+}

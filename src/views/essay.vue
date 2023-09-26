@@ -22,7 +22,7 @@
           <div :class="$style.mainCard">
             <template v-if="blogList.list.length > 0">
               <div v-for="blog in blogList.list" :key="blog.id" :class="$style.textContent">
-                <MainText :title="blog.title" :alias="blog.alias" :content="blog.content" :image="blog.image" :category="blog.category" :ready="ready"/>
+                <MainText :id="blog.id" :title="blog.title" :alias="blog.alias" :content="blog.content" :image="blog.image" :category="blog.category" :create_time="blog.create_time"/>
               </div>
             </template>
             <template v-else>
@@ -106,6 +106,7 @@ function setGeneralInfo(data) {
 async function fetchBlogList(query: number) {
   try {
     const response = await getBlogInfo(query);
+    console.log(response)
     setBlogList(response)
   } catch (error) {
     console.error(error);
@@ -122,6 +123,7 @@ async function fetchGeneralInfo() {
     console.error(error);
   }
 }
+
 
 onMounted(() => {
   

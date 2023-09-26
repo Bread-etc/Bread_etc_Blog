@@ -13,6 +13,7 @@ export interface BlogItem {
   content: string,
   image: string,
   category: string,
+  create_time: Date,
 }
 
 

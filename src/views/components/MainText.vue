@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.card" @click="navigateToBlog">
     <div :class="$style.image">
-      <img :src="image" alt="">
+      <img :src="image" alt="/image/cover">
     </div>
     <div :class="$style.text">
       <h2 :class="$style.title">{{ title }}</h2>
@@ -18,7 +18,7 @@
               d="M26 4h-4V2h-2v2h-8V2h-2v2H6a2.002 2.002 0 0 0-2 2v20a2.002 2.002 0 0 0 2 2h20a2.002 2.002 0 0 0 2-2V6a2.002 2.002 0 0 0-2-2ZM6 6h4v2h2V6h8v2h2V6h4v4H6Zm0 6h5v6H6Zm13 14h-6v-6h6Zm0-8h-6v-6h6Zm2 8v-6h5l.001 6Z"
             />
           </svg>
-          {{ detail }}
+          {{ create_time }}
           |
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +42,11 @@
 <script lang="ts" setup>
 import { useRouter } from 'vue-router';
 
-const { title, alias, content, image, detail, category } = defineProps({
+const { id, title, alias, content, image, create_time, category } = defineProps({
+  id: {
+    type: Number,
+    default: 1,
+  },
   title: {
     type: String,
     default: "文章标题",
@@ -59,9 +63,9 @@ const { title, alias, content, image, detail, category } = defineProps({
     type: String,
     default: "IMAGE",
   },
-  detail: {
+  create_time: {
     type: String,
-    default: "发表于 2023-09-07",
+    default: "2023-09-07",
   },
   category: {
     type: String,
@@ -73,11 +77,15 @@ const { title, alias, content, image, detail, category } = defineProps({
   },
 });
 
+
 // 跳转路由
 const router = useRouter();
 const navigateToBlog = () => {
   const routeName = 'essay.' + alias
   const routePath = '/essay/' + alias
+  
+  // 存储路由为article渲染
+  sessionStorage.setItem('current_blogId', id.toString())
 
   // 添加子路由
   router.addRoute({
@@ -88,7 +96,6 @@ const navigateToBlog = () => {
 
   // 跳转到新的子路由
   router.push({ name: routeName })
-  console.log('路由已创建!')
 }
 </script>
 

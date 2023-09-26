@@ -16,8 +16,25 @@
 <script lang="ts" setup>
 import Markdown from "vue3-markdown-it";
 import "highlight.js/scss/atom-one-dark.scss";
+import { getBlogText } from "../api/MainText/text";
+import { ref, onMounted } from "vue";
 
-const source = "- this is not so cool!";
+const source = ref('')
+const blogId = Number(sessionStorage.getItem('current_blogId'))
+
+// 网络请求
+async function fetchBlogText(query: number) {
+  try {
+    const response = await getBlogText(query)
+    source.value = response.data.text
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+onMounted(() => {
+  fetchBlogText(blogId)
+})
 </script>
 
 <style lang="scss" module>

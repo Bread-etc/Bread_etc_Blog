@@ -18,8 +18,8 @@
               d="M26 4h-4V2h-2v2h-8V2h-2v2H6a2.002 2.002 0 0 0-2 2v20a2.002 2.002 0 0 0 2 2h20a2.002 2.002 0 0 0 2-2V6a2.002 2.002 0 0 0-2-2ZM6 6h4v2h2V6h8v2h2V6h4v4H6Zm0 6h5v6H6Zm13 14h-6v-6h6Zm0-8h-6v-6h6Zm2 8v-6h5l.001 6Z"
             />
           </svg>
-          {{ create_time }}
-          |
+          {{ time }}
+          &nbsp;|
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="32"
@@ -42,7 +42,7 @@
 <script lang="ts" setup>
 import { useRouter } from 'vue-router';
 
-const { id, title, alias, content, image, create_time, category } = defineProps({
+const { id, title, alias, content, image, time, category } = defineProps({
   id: {
     type: Number,
     default: 1,
@@ -63,9 +63,9 @@ const { id, title, alias, content, image, create_time, category } = defineProps(
     type: String,
     default: "IMAGE",
   },
-  create_time: {
+  time: {
     type: String,
-    default: "2023-09-07",
+    default: "2023-09-10"
   },
   category: {
     type: String,
@@ -76,7 +76,6 @@ const { id, title, alias, content, image, create_time, category } = defineProps(
     default: false,
   },
 });
-
 
 // 跳转路由
 const router = useRouter();
@@ -171,10 +170,11 @@ const navigateToBlog = () => {
 
       .introduction {
         padding: 2px 0;
+        margin-top: 1rem;
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
-        -webkit-line-clamp: 3; /* 设置行数 */
+        -webkit-line-clamp: 5; /* 设置行数 */
         -webkit-box-orient: vertical;
         white-space: normal;
       }

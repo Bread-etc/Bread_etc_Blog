@@ -34,12 +34,12 @@ export interface WebInfo {
   code: number,
   message: string,
   data: {
-    文章数目: number,
-    运行时间: string,
-    总字数: string,
-    访客数: number,
-    总访问量: number,
-    最后更新: string,
+    articleNum: number,
+    uptime: string,
+    totalWords: string,
+    visitorsNum: number,
+    totalPageViews: number,
+    lastUpdate: string,
   }
 }
 
@@ -73,11 +73,6 @@ export interface generalInfo {
 
 // 文章详细信息
 export interface Text {
-  code: number,
-  message: string,
-  data: {
-    id: number,
-    blogId: number,
-    text: string
-  }
+  blogId: number,
+  text: string
 }

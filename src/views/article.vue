@@ -25,8 +25,8 @@ const blogId = Number(sessionStorage.getItem('current_blogId'))
 // 网络请求
 async function fetchBlogText(query: number) {
   try {
-    const response = await getBlogText(query)
-    source.value = response.data.text
+    const data = await getBlogText(query)
+    source.value = data.text
   } catch (error) {
     console.error(error)
   }

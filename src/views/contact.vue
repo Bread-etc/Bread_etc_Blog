@@ -30,6 +30,11 @@
                   maxlength="150"
                   show-word-limit
                 />
+                <div id="remarkbox-div">
+                  <noscript>
+                    <iframe id=remarkbox-iframe src="https://my.remarkbox.com/embed?nojs=true" style="height:600px;width:100%;border:none!important" tabindex=0></iframe>
+                  </noscript>
+                </div>
                 <button :class="$style.sendMessage" @click="sendMessage">
                   发送
                 </button>
@@ -63,6 +68,7 @@ const sendMessage = () => {
 
   })
 }
+ 
 </script>
 
 <style lang="scss" module>

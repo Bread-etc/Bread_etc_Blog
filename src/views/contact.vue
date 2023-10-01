@@ -21,6 +21,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="currentColor" d="M17.74 30L16 29l4-7h6a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h9v2H6a4 4 0 0 1-4-4V8a4 4 0 0 1 4-4h20a4 4 0 0 1 4 4v12a4 4 0 0 1-4 4h-4.84Z"/><path fill="currentColor" d="M8 10h16v2H8zm0 6h10v2H8z"/></svg>
                 评论
               </h2>
+              <div id="gitalk-container"></div>
               <div :class="$style.message">
                 <el-input
                   v-model="textarea"
@@ -30,11 +31,6 @@
                   maxlength="150"
                   show-word-limit
                 />
-                <div id="remarkbox-div">
-                  <noscript>
-                    <iframe id=remarkbox-iframe src="https://my.remarkbox.com/embed?nojs=true" style="height:600px;width:100%;border:none!important" tabindex=0></iframe>
-                  </noscript>
-                </div>
                 <button :class="$style.sendMessage" @click="sendMessage">
                   发送
                 </button>
@@ -55,8 +51,22 @@
 
 <script lang="ts" setup>
 import { ElMessage } from 'element-plus';
+import 'gitalk/dist/gitalk.css';
+import Gitalk from 'gitalk';
 import { ref } from 'vue';
+
 const textarea = ref('')
+var gitalk = new Gitalk({
+  clientID: '983b9d8960cacfb8d0bc',
+  clientSecret: 'de468bc5a19b5fcfee8bddc946c657eee0f5cc71',
+  repo: 'blog-comments',
+  owner: 'Bread-etc',
+  admin: ['Bread-etc'],
+  id: location.pathname,
+  distractionFreeMode: false
+})
+
+gitalk.render('gitalk-container')
 
 // 方法
 const sendMessage = () => {

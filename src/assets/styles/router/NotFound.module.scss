@@ -33,57 +33,23 @@
               display: flex;
               align-items: center;
               justify-content: center;
+              margin: 0.7rem;
               width: 100%;
               font-size: 1.4rem;
               margin-top: 1.1rem;
+              font-family: 'Comic Sans MS';
             }
   
             h2 {
               display: flex;
               align-items: center;
               justify-content: center;
+              margin: .7rem;
               width: 100%;
             }
-  
-            span {
-              display: flex;
-              align-items: center;
-              font-size: 16px;
-              width: 100%;
-              white-space: pre-wrap;
-              line-height: 1.5rem;
-              word-break: break-word;
-              padding: 3px 2px;
-              margin: 1px 0;
-  
-  
-              a {
-                font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo,
-                  Consolas, Liberation Mono, monospace;
-                text-decoration: underline;
-                color: $text-color;
-              }
-            }
-  
-            .email {
-              padding: 1rem;
+
+            iframe {
               align-self: center;
-              border: 0;
-              margin-bottom: .5rem;
-              background-color: $bg-color-content;
-  
-              // 字体设计
-              font-size: 14px;
-              font-weight: bold;
-              font-family: 'Courier New', Courier, monospace;
-            }
-  
-            .image {
-              
-              img {
-                max-width: 100%;
-                border-radius: $border-card; // 12px
-              }
             }
           }
         }

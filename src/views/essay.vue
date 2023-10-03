@@ -6,7 +6,7 @@
         <div :class="$style.studyFunction">
           <div :class="$style.headTitle">
             📝
-            <div>博客内容</div>
+            <div>随笔</div>
           </div>
         </div>
       </div>

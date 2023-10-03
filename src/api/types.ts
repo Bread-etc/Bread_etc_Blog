@@ -76,3 +76,8 @@ export interface Text {
   blogId: number,
   text: string
 }
+
+// 404 页面接口
+export interface NotFoundMusic {
+  musicLink: string
+}

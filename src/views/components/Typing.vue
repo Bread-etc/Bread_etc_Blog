@@ -20,7 +20,7 @@ const strings: string[] = [
   "Bread_etc's Blog",
   "欢迎来到我的博客",
   "Thanks,thanks*3,Monica~",
-  "谁能代替你地位~",
+  "Welcome to my blog",
 ];
 const loop: Boolean = true;
 const typeSpeed: number = 100;

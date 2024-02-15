@@ -62,13 +62,10 @@
 
 <script lang="ts" setup>
 import ThemeSwitcher from './ThemeSwitcher.vue';
-import { useRoute, useRouter } from "vue-router";
+import { useRouter } from "vue-router";
 import { ref, onMounted, onUnmounted } from "vue";
 
-const route = useRoute();
 const router = useRouter();
-// 当前选中路由
-// const activePath = ref(route.path);
 
 // v-for遍历导航栏
 const routes = ref([

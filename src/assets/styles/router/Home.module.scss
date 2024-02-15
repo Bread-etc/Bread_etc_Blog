@@ -72,6 +72,7 @@
     
                         .buttonStudy {
                             @include button;
+                            border-radius: 10px;
                             border-color: $yellow;
                             background-color: $yellow;
                             color: #ffffff;
@@ -83,6 +84,7 @@
     
                         .buttonContact {
                             @include button;
+                            border-radius: 10px;
                             background-color: $white;
                             border-color: $white;
     

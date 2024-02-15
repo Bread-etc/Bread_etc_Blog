@@ -1,4 +1,3 @@
-
 // 通用参数类型
 export type Result<T> = {
   code: number,
@@ -8,12 +7,24 @@ export type Result<T> = {
 
 // 单篇博客信息
 export interface BlogItem {
-  id: string,
-  title: string,
-  content: string,
-  image: string,
-  category: string,
-  time: String,
+  code: number;
+  message: string;
+  data: {
+    // No
+    id: number;
+    // 文章简介 (可有可无)
+    content?: string;
+    // tag (标签)
+    tag: string;
+    // title (标题)
+    title: string;
+    // img (封面)
+    image?: string;
+    // alias (文件名)
+    alias: string;
+    // time (发布时间)
+    time?: Date;
+  };
 }
 
 
@@ -22,9 +33,13 @@ export interface BlogListResponse {
   code: number,
   message: string,
   data: {
+    // 当前页数
     currentPage: number,
+    // 页数大小
     pageSize: number,
+    // 博客总数
     totalCount: number,
+    // 对应博客列表
     list: BlogItem[]
   }
 }
@@ -43,41 +58,20 @@ export interface WebInfo {
   }
 }
 
-interface SubItem {
-  name: string,
-  meta: {
-    key: number,
-    path: string,
-  }
-}
-
-interface CategoryItem {
-  name: string,
-  meta: {
-    key: number,
-    path: string,
-  },
-  content: SubItem[]
-}
-
 // 文章和分类信息
-export interface generalInfo {
+interface tagCount {
+  tag: string,
+  count: number
+}
+
+export interface tagInfo {
   code: number,
   message: string,
-  data: {
-    articalNum: number,
-    category: CategoryItem[]
-  }
+  data: tagCount[]
 }
-
 
 // 文章详细信息
 export interface Text {
   blogId: number,
   text: string
-}
-
-// 404 页面接口
-export interface NotFoundMusic {
-  musicLink: string
 }

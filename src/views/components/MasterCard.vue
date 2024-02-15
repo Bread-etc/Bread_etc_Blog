@@ -7,9 +7,9 @@
     <div :class="$style.authorName">
       <span>Bread_etc</span>
     </div>
-    <div :class="$style.authorInfo">学生，主要学习前端开发</div>
+    <div :class="$style.authorInfo">学生，主要学习前端</div>
     <div :class="$style.authorWork">
-      文章&nbsp;:&nbsp;{{ articleNum }} | 分类&nbsp;:&nbsp;{{ categoryLength }}
+      文章&nbsp;:&nbsp;{{ articleNum }} | 分类&nbsp;:&nbsp;{{ tagNum }}
     </div>
     <div :class="$style.authorGithub">
       <a href="https://github.com/Bread-etc">
@@ -43,18 +43,18 @@
   </div>
 </template>
 <script lang="ts" setup>
+
 const email: string = 'mianbao.etc@gmail.com';
-const { articleNum, categoryLength } = defineProps({
+const { articleNum, tagNum } = defineProps({
   articleNum: {
     type: Number,
     default: 1
   },
-  categoryLength: {
+  tagNum: {
     type: Number,
-    default: 3
+    default: 1
   }
-})
-
+});
 </script>
 
 <style lang="scss" module>
@@ -70,7 +70,7 @@ const { articleNum, categoryLength } = defineProps({
     padding: $space-card-component; // 5px
 
     img {
-      border-radius: 50%;
+      border-radius: 25%;
       width: 50%;
       z-index: 1;
       transition: all .7s;
@@ -83,7 +83,7 @@ const { articleNum, categoryLength } = defineProps({
   }
 
   .authorName {
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1rem;
     padding: $space-card-component; // 5px
     padding-top: 1rem;

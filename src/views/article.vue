@@ -41,6 +41,7 @@ onMounted(() => {
 .container {
   display: block;
   background-color: $bg-color-content;
+  font-family: 'LXGW WenKai';
 
   .content {
     @include contentCenter;

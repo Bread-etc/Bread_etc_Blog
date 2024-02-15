@@ -14,8 +14,8 @@
     <div :class="$style.content">
       <div :class="$style.blog">
         <div :class="$style.catalog">
-          <MasterCard :articleNum="information.articleNum" :category="information.category.length"/>
-          <SortCard :category="information.category"/>
+          <MasterCard :articleNum="articleNum" :tagNum="tagNum"/>
+          <SortCard />
           <WebInfo />
         </div>
         <div :class="$style.rightContent">
@@ -60,77 +60,83 @@
 </template>
 
 <script lang="ts" setup>
+// 引入组件
 import MasterCard from "./components/MasterCard.vue";
 import SortCard from "./components/SortCard.vue";
 import WebInfo from "./components/WebInfo.vue";
 import MainText from "./components/MainText.vue";
-import { getBlogInfo } from "../api/BlogItem/blogItem";
-import { getGeneralInfo } from "../api/BlogItem/generalInfo";
+
+// 引入api
+import { getBlogItems } from "../api/BlogItem/getBlogItems";
+import { getArticleNum } from "../api/BlogItem/getArticleNum";
+import { getTagInfo } from "../api/BlogItem/getTagInfo";
+
 import { ref, reactive, onMounted } from "vue";
 
 // 初始化对象
 const blogList = reactive({
+  // 当前页数
   currentPage: 1,
-  pageSize: 6,
+  // 一页内个数
+  pageSize: 5, // 6
+  // 总数
   totalCount: 10,
+  // 博客列表
   list: [],
-})
-const information = reactive({
-  articleNum: 1,
-  category: [],
-})
-const ready = ref(false)
-
-
+});
+const articleNum = ref<number>(1);
+const tagInfo = ref([]);
+const tagNum = ref<number>(1);
+const ready = ref(false);
 
 // 换页
 function handlePageChange(newPage: number) {
-  blogList.currentPage = newPage
-  fetchBlogList(newPage)
+  // reactive无需使用.value
+  blogList.currentPage = newPage;
+  fetchBlogList(newPage);
 }
 
-
-// 赋值
-function setBlogList(data) {
-  blogList.currentPage = data.currentPage
-  blogList.pageSize = data.pageSize
-  blogList.totalCount = data.totalCount
-  blogList.list = data.list
-}
-function setGeneralInfo(data) {
-  information.articleNum = data.articleNum
-  information.category = data.category
-}
-
-// 网络请求
+// 获取博客列表
 async function fetchBlogList(query: number) {
   try {
-    const response = await getBlogInfo(query);
-    setBlogList(response)
+    const response = await getBlogItems(query);
+    // 执行赋值操作
+    setBlogList(response);
   } catch (error) {
+    // 错误操作
     console.error(error);
   } finally {
     // 加载状态改为true
     ready.value = true;
   }
 }
-async function fetchGeneralInfo() {
+
+function setBlogList(newData) {
+  blogList.currentPage = newData.currentPage;
+  blogList.pageSize = newData.pageSize;
+  blogList.totalCount = newData.totalCount;
+  blogList.list = newData.list;
+}
+
+// 获取卡片信息并设置
+async function fetchCardInfo() {
   try {
-    const responseGeneral = await getGeneralInfo();
-    setGeneralInfo(responseGeneral)
+    const an = await getArticleNum();
+    const ti = await getTagInfo();
+    // 赋值
+    articleNum.value = an;
+    tagInfo.value = ti;
+    tagNum.value = ti.length;
   } catch (error) {
-    console.error(error);
+    console.error("卡片信息获取失败..", error);
   }
 }
 
 
 onMounted(() => {
-  
-  fetchGeneralInfo();
+  fetchCardInfo();
   fetchBlogList(blogList.currentPage);
-})
-
-
+});
 </script>
 
 <style module lang="scss">

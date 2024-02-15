@@ -16,17 +16,17 @@
 </template>
 
 <script lang="ts" setup>
-import { getMusic } from "../api/NotFound/notFoundMusic";
+import { getMusic } from "../api/NotFound/getMusic";
 import { ref, onMounted } from "vue";
 
 // 初始化值
-const src = ref("//music.163.com/outchain/player?type=2&id=22693580&auto=0&height=32")
+const src = ref<string>(`//music.163.com/outchain/player?type=2&id=22693580&auto=0&height=32`);
 
 // 获取歌曲
 async function fetchMusic() {
   try {
-    const response = await getMusic();
-    src.value = response.musicLink;
+    const result = await getMusic();
+    src.value = `//music.163.com/outchain/player?type=2&id=${result}&auto=0&height=32`;
   } catch (error) {
     console.error("获取歌单失败",error);
   }

@@ -18,6 +18,7 @@ export default defineConfig({
         '~router': path.resolve(pathSrc + '/assets/styles/router'),
         '~components': path.resolve(pathSrc + '/assets/styles/components'),
         '~utils': path.resolve(pathSrc + '/utils'),
+        '@fonts': path.resolve(pathSrc + '/assets/fonts'),
       }
     },
   plugins: [

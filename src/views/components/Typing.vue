@@ -19,10 +19,9 @@
 const strings: string[] = [
   "Bread_etc's Blog",
   "欢迎来到我的博客",
-  "Thanks,thanks*3,Monica~",
   "Welcome to my blog",
 ];
-const loop: Boolean = true;
+const loop: boolean = true;
 const typeSpeed: number = 100;
 const startDelay: number = 1000;
 const backSpeed: number = 70;
@@ -35,5 +34,6 @@ const backSpeed: number = 70;
   color: $homePage-text-color;
   font-size: $font-size-rolling; // 1.1rem
   font-weight: $font-weight-rolling; // 500
+  font-family: 'LXGW WenKai';
 }
 </style>

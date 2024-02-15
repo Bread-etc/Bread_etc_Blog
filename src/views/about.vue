@@ -7,7 +7,7 @@
           <div :class="$style.textContent">
             <h1>关于页面 ✅</h1>
             <h2>关于我 😃</h2>
-            <span>一名信息工程专业的大学生，主要学习前端等方向。</span>
+            <span>一名大学生，主要学习方向为前端等</span>
             <h2>联系方式 📧</h2>
             <span :class="$style.email">
               QQ Mail: 1054115624@qq.com

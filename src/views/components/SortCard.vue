@@ -5,12 +5,10 @@
       <span>📂 分类</span>
     </div>
     <div :class="$style.category">
-      <el-collapse v-model="activeName" accordion :class="$style.elCategory">
+      <el-collapse :v-model="activeName" accordion :class="$style.elCategory">
         <el-collapse-item
-          v-for="item in category"
-          :key="item.meta.key"
-          :title="item.name"
-          :path = "item.path"
+          v-for="item in tagInfo"
+          :title="item.tag"
           :class="$style.categoryItem"
         >
           <div :class="$style.itemContent" v-for="subItem in item.content" :key="subItem.id" :path="subItem.path">
@@ -26,10 +24,9 @@
 import { ElCollapseItem, ElCollapse } from "element-plus";
 import { ref } from "vue";
 
-// 传入数据
-const { category } = defineProps(['category'])
-
-const activeName = ref("1");
+const tagInfo = defineProps(['tagInfo']);
+// 激活状态 (默认激活)
+const activeName = ref<number>(1);
 
 </script>
 

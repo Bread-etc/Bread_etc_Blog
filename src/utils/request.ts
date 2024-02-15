@@ -6,7 +6,7 @@ import { ElMessageBox as MessageBox } from "element-plus";
 const service: AxiosInstance = axios.create({
     // baseURL: 'https://www.fastmock.site/mock/09d46f08fcc9e3aa7d20a714cb5fe876',
     baseURL: 'http://localhost:8080',
-    timeout: 50000,
+    timeout: 5000,
 })
 
 // 请求拦截器
@@ -73,6 +73,7 @@ service.interceptors.response.use(
                 break;
             case 504:
                 message = '网络超时(504)';
+                break;
             case 505:
                 message = 'HTTP版本不受支持(505)';
                 break;

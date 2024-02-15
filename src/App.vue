@@ -1,33 +1,24 @@
 <!-- 入口文件 -->
 <script lang="ts" setup>
-// 引入组件
-import {
-  ElConfigProvider,
-  ElContainer,
-  ElHeader,
-  ElMain,
-  ElFooter,
-} from "element-plus";
+import { NMessageProvider } from 'naive-ui';
 import Navigation from "./views/components/Navigation.vue";
 import Footer from "./views/components/Footer.vue";
 </script>
 
 <template>
-  <el-config-provider namespace="el">
+  <n-message-provider>
     <div class="App">
-      <el-container>
-        <el-header class="header">
-          <Navigation />
-        </el-header>
-        <el-main class="main">
-          <router-view></router-view>
-        </el-main>
-        <el-footer class="footer">
-          <Footer />
-        </el-footer>
-      </el-container>
+      <header class="header">
+        <Navigation />
+      </header>
+      <div classs="main">
+        <router-view></router-view>
+      </div>
+      <footer class="footer">
+        <Footer />
+      </footer>
     </div>
-  </el-config-provider>
+  </n-message-provider>
 </template>
 
 <style lang="scss">
@@ -104,4 +95,10 @@ body {
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+
+@font-face {
+  font-family: 'LXGW WenKai';
+  src: url('@fonts/LXGWWenKaiGBScreen.ttf') format('truetype');
+}
+
 </style>

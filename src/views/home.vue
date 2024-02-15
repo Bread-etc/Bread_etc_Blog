@@ -7,7 +7,7 @@
           <div :class="$style.headTitle">
             🍞<div>eTc</div>
           </div>
-          <h2>为生活找些乐子🎁</h2>
+          <h2>just for fun🎁</h2>
           <Typing />
           <div :class="$style.buttonGroup">
             <div :class="$style.buttonActive">
@@ -40,13 +40,12 @@
 import Typing from "./components/Typing.vue";
 import HomeCards from "./components/HomeCards.vue";
 import { useRouter } from "vue-router";
+
 // 使用路由跳转
 const router = useRouter();
-
 const navigateToEssay = () => {
   router.push("/essay");
 };
-
 const navigateToContact = () => {
   router.push("/contact");
 };

@@ -1,24 +1,22 @@
 <template>
   <div :class="$style.switch">
-    <el-switch
-      inline-prompt
+    <n-switch
       v-model="isDark"
-      @change="toggleTheme"
-      style="
-        --el-switch-on-color: $bg-color-content;
-        --el-switch-off-color: $bg-color-content;
-        --el-switch-border-color: #8e8e93;
-      "
-      :active-action-icon="Moon"
-      :inactive-action-icon="Sunny"
+      @update:value="toggleTheme"
     >
-    </el-switch>
+      <template #checked-icon>
+        <n-icon :component="WeatherMoon16Regular"/>
+      </template>
+      <template #unchecked-icon>
+        <n-icon :component="WeatherSunny16Regular"/>
+      </template>
+    </n-switch>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ElSwitch } from "element-plus";
-import { Moon, Sunny } from "@element-plus/icons-vue";
+import { NSwitch, NIcon } from "naive-ui";
+import { WeatherMoon16Regular, WeatherSunny16Regular } from "@vicons/fluent";
 import { useDarkModeStore } from "../../stores/modules/theme";
 import { onBeforeMount, ref } from "vue";
 

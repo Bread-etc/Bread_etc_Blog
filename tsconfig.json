@@ -34,10 +34,7 @@
 
     // 指定包含类型声明文件名列表
     "types": [
-      "node",
-      "element-plus/global",
-      "vite/client",
-      "unplugin-icons/types/vue",
+      "node"
     ],
 
     // 忽略所有的声明文件(*.d.ts)的类型检查
@@ -63,7 +60,7 @@
       "@/*": [ "src/*" ],
       "~router/*": [ "src/assets/styles/router/*" ],
       "~components/*": [ "src/assets/styles/components/*" ],
-      "~utils/*": [ "src/utils/*"]
+      "~utils/*": [ "src/utils/*"],
     },
 
     // 其他未了解的配置

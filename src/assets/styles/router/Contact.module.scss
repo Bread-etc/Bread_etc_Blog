@@ -77,64 +77,12 @@
                     justify-content: flex-start;
                     padding: 2rem;
 
-                    h2 {
-                        display: flex;
-                        align-items: center;
-                        width: 100%;
-
-                        svg {
-                            width: 24px;
-                            height: 24px;
-                            margin-right: .5rem;
-                        }
-                    }
 
                     .message {
                         width: 100%;
                         align-self: center;
                         display: flex;
                         flex-direction: column;
-                    
-                        textarea {
-                            color: $text-color;
-                            background-color: $bg-color;
-
-                            &::-webkit-scrollbar {
-                                width: 0;
-                                height: 0;
-                            }
-                        }
-
-                        span {
-                            background-color: $bg-color;
-                        }
-
-                        .sendMessage {
-                            @include button;
-                            flex-direction: row;
-                            align-self: flex-end;
-                            height: 1.5rem;
-                            width: 4.5rem;
-                            margin: .5rem 0;
-                            border-radius: 5px;
-                            transition: background .5s ease;
-
-                            &:hover {
-                                background: $underline-color;
-                            }
-                        }
-                    }
-
-                    .messageList {
-                        width: 100%;
-                        display: flex;
-                        flex-direction: column;
-
-                        .simpleMessage {
-                            display: flex;
-                            flex-direction: row;
-                            width: 100%;
-                        }
                     }
                 }
             }
@@ -154,5 +102,4 @@
     .content {
       max-width: 1482px;
     }
-  }
-  
+  }  

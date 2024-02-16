@@ -29,7 +29,7 @@
                   reactionsEnabled="1"
                   emitMetadata="0"
                   inputPosition="top"
-                  :theme="mode"
+                  :theme=mode
                   lang="zh-CN"
                   loading="lazy"
                 />
@@ -43,13 +43,20 @@
 
 <script lang="ts" setup>
 import Giscus from '@giscus/vue'
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 
-const theme = ref(JSON.parse(localStorage.getItem('theme')))
-const mode = ref(theme.value ? 'dark' : 'light')
+const theme = ref<boolean>(JSON.parse(localStorage.getItem('theme')));
+const mode = ref<string>('');
 
+onMounted(() => {
+  mode.value = theme.value ? 'noborder_dark' : 'noborder_light';
+})
 </script>
 
 <style lang="scss" module>
-@import "~router/Contact.module.scss"
+@import "~router/Contact.module.scss";
+
+giscus-widget::part(iframe) {
+  color-scheme: none;
+}
 </style>

@@ -1,8 +1,10 @@
 <template>
   <div :class="$style.switch">
     <n-switch
-      v-model="isDark"
       @update:value="toggleTheme"
+      :checked-value="true"
+      :unchecked-value="false"
+      :default-value="isDark"
     >
       <template #checked-icon>
         <n-icon :component="WeatherMoon16Regular"/>
@@ -18,7 +20,7 @@
 import { NSwitch, NIcon } from "naive-ui";
 import { WeatherMoon16Regular, WeatherSunny16Regular } from "@vicons/fluent";
 import { useDarkModeStore } from "../../stores/modules/theme";
-import { onBeforeMount, ref } from "vue";
+import { onMounted, ref } from "vue";
 
 // 深色模式切换及保存
 const darkMode = useDarkModeStore();
@@ -36,7 +38,7 @@ const toggleTheme = (value: boolean) => {
 };
 
 // 页面加载初始化深色模式状态
-onBeforeMount(() => {
+onMounted(() => {
   darkMode.initMode();
 });
 

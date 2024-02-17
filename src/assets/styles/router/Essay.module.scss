@@ -82,21 +82,8 @@
             margin-bottom: 1rem;
             height: 280px;
             @include card;
-
           }
         }
-
-        .pagination {
-          --el-pagination-bg-color: $bg-component;
-          --el-pagination-text-color: $text-color;
-          --el-pagination-button-color: $underline-color;
-          align-self: center;
-
-          button {
-            background-color: transparent;
-          }
-        }
-
       }
     }
   }

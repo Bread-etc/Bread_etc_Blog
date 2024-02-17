@@ -14,20 +14,37 @@
     <div :class="$style.content">
       <div :class="$style.blog">
         <div :class="$style.catalog">
-          <MasterCard :articleNum="articleNum" :tagNum="tagNum"/>
-          <SortCard />
+          <MasterCard :articleNum="articleNum" :tagNum="tagNum" />
+          <!-- <SortCard /> -->
           <WebInfo />
         </div>
         <div :class="$style.rightContent">
           <div :class="$style.mainCard">
             <template v-if="blogList.list.length > 0">
-              <div v-for="blog in blogList.list" :key="blog.id" :class="$style.textContent">
-                <MainText :id="blog.id" :title="blog.title" :alias="blog.alias" :content="blog.content" :image="blog.image" :category="blog.category" :time="blog.time"/>
+              <div
+                v-for="blog in blogList.list"
+                :key="blog.id"
+                :class="$style.textContent"
+              >
+                <MainText
+                  :id="blog.id"
+                  :title="blog.title"
+                  :alias="blog.alias"
+                  :content="blog.content"
+                  :image="blog.image"
+                  :category="blog.category"
+                  :time="blog.time"
+                />
               </div>
             </template>
             <template v-else>
-              <div v-for="index in 5" :key="index" :class="$style.skeletonContent" style="align-items: flex-start; flex-direction: row;">
-                <el-skeleton-item variant="image" style="width: 50%; height: 100%;" animated/>
+              <div
+                v-for="index in 5"
+                :key="index"
+                :class="$style.skeletonContent"
+                style="align-items: flex-start; flex-direction: row"
+              >
+                <image style="width: 50%; height: 80%" />
                 <div
                   style="
                     width: 50%;
@@ -38,21 +55,38 @@
                     align-items: flex-start;
                     padding: 1rem;
                     box-sizing: border-box;
+                    padding-top: 2rem;
                   "
                 >
-                  <el-skeleton variant="text" animated/>
+                  <n-skeleton
+                    text
+                    :repeat="1"
+                    style="margin-bottom: 1rem; width: 50%; --n-color-end: #737373;"
+                  />
+                  <n-skeleton text :repeat="3" style="margin-bottom: 1rem; --n-color-end: #737373;" />
                 </div>
               </div>
             </template>
           </div>
-          <el-pagination
-            layout="prev, pager, next"
-            :current-page="blogList.currentPage"
-            :page-size="blogList.pageSize"
-            :total="blogList.totalCount"
-            @current-change="handlePageChange"
-            :class="$style.pagination"
-          ></el-pagination>
+          <n-config-provider style="align-self: center">
+            <n-pagination
+              size="small"
+              v-model:page="blogList.currentPage"
+              :default-page-size="5"
+              :page-size="blogList.pageSize"
+              :item-count="blogList.totalCount"
+              @change="handlePageChange"
+              style="
+                --n-item-text-color: $text-color;
+                --n-item-color-disabled: $bg-color;
+                --n-button-icon-color: $text-color;
+                --n-button-border: 1px solid $bg-color;
+                --n-button-border-hover: none;
+                --n-button-icon-color-hover: $bg-color-content;
+                --n-item-border-disabled: 1px solid $bg-color;
+              "
+            />
+          </n-config-provider>
         </div>
       </div>
     </div>
@@ -65,6 +99,7 @@ import MasterCard from "./components/MasterCard.vue";
 import SortCard from "./components/SortCard.vue";
 import WebInfo from "./components/WebInfo.vue";
 import MainText from "./components/MainText.vue";
+import { NSkeleton, NPagination, NConfigProvider } from "naive-ui";
 
 // 引入api
 import { getBlogItems } from "../api/BlogItem/getBlogItems";
@@ -112,9 +147,13 @@ async function fetchBlogList(query: number) {
 }
 
 function setBlogList(newData) {
+  // currentPage 当前页数
   blogList.currentPage = newData.currentPage;
+  // pageSize 一页内返回最大数量
   blogList.pageSize = newData.pageSize;
+  // totalCount 博客总数
   blogList.totalCount = newData.totalCount;
+  // list 博客列表
   blogList.list = newData.list;
 }
 
@@ -131,7 +170,6 @@ async function fetchCardInfo() {
     console.error("卡片信息获取失败..", error);
   }
 }
-
 
 onMounted(() => {
   fetchCardInfo();

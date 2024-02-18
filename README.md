@@ -232,3 +232,7 @@
 ### 2024/2/18 (61)
 - 修改`n-pagination`和`n-skeleton`组件部分样式
 - 修改`request.ts`
+
+### 2024/2/19 (62)
+- 修改`SortCard`组件
+- add `getTagList.ts`

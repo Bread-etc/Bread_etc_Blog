@@ -15,7 +15,7 @@
       <div :class="$style.blog">
         <div :class="$style.catalog">
           <MasterCard :articleNum="articleNum" :tagNum="tagNum" />
-          <!-- <SortCard /> -->
+          <SortCard />
           <WebInfo />
         </div>
         <div :class="$style.rightContent">

@@ -5,29 +5,50 @@
       <span>📂 分类</span>
     </div>
     <div :class="$style.category">
-      <el-collapse :v-model="activeName" accordion :class="$style.elCategory">
-        <el-collapse-item
-          v-for="item in tagInfo"
+      <n-collapse :class="$style.NCollapse" accordion>
+        <n-collapse-item
+          v-for="item in tagAlias"
           :title="item.tag"
-          :class="$style.categoryItem"
+          :class="$style.NCollapseItem"
         >
-          <div :class="$style.itemContent" v-for="subItem in item.content" :key="subItem.id" :path="subItem.path">
-            {{ subItem.name }}
-          </div>
-        </el-collapse-item>
-      </el-collapse>
+          <span
+            v-for="alias in item.aliases"
+            :key="alias"
+            :class="$style.itemDiv"
+          >
+            {{ alias }}
+          </span>
+        </n-collapse-item>
+      </n-collapse>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ElCollapseItem, ElCollapse } from "element-plus";
-import { ref } from "vue";
+import { NCollapse, NCollapseItem } from "naive-ui";
+import { getTagAlias } from "../../api/BlogItem/getTagAlias";
+import { ref, onMounted } from "vue";
 
-const tagInfo = defineProps(['tagInfo']);
-// 激活状态 (默认激活)
-const activeName = ref<number>(1);
+type tagAndAlias = {
+  tag: string;
+  aliases: string[];
+};
 
+const tagAlias = ref<tagAndAlias[]>();
+
+function fetchTagAndAlias() {
+  getTagAlias()
+    .then((result) => {
+      tagAlias.value = result;
+    })
+    .catch((error) => {
+      console.error("获取标签分类信息失败..", error);
+    });
+}
+
+onMounted(() => {
+  fetchTagAndAlias();
+});
 </script>
 
 <style lang="scss" module>
@@ -56,23 +77,27 @@ const activeName = ref<number>(1);
     padding: $space-card-component; // 5px
     cursor: pointer;
 
-    .elCategory {
-      width: 100%;
-      height: 100%;
-      border: none;
+    .NCollapse {
+      background-color: $bg-color;
+      color: $text-color;
 
-      .categoryItem {
-        
+      .NCollapseItem {
+        color: inherit;
+
         div {
-          background-color: $bg-componment;
-          color: $card-text-color;
-          font-size: $font-size-default; // 14px
-          padding-bottom: 0;
-          border: none;
+          color: inherit;
 
-          div {
-            margin-left: 0.5rem;
-            &:hover {
+          span {
+            margin-left: 1rem;
+            display: flex;
+            flex-direction: column;
+            padding: 2px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            max-width: 120px; /* 设置最大宽度，超出部分将显示省略号 */
+
+            :hover {
               color: $underline-color;
             }
           }

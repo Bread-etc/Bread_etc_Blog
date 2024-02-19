@@ -16,7 +16,7 @@
             :key="alias"
             :class="$style.itemDiv"
           >
-            {{ alias }}
+            📍 {{ alias }}
           </span>
         </n-collapse-item>
       </n-collapse>
@@ -95,11 +95,7 @@ onMounted(() => {
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
-            max-width: 120px; /* 设置最大宽度，超出部分将显示省略号 */
-
-            :hover {
-              color: $underline-color;
-            }
+            max-width: 100px; /* 设置最大宽度，超出部分将显示省略号 */
           }
         }
       }

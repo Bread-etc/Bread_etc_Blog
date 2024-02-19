@@ -236,3 +236,6 @@
 ### 2024/2/19 (62)
 - 修改`SortCard`组件
 - add `getTagList.ts`
+- 修改`home`和`Navigation`组件,优化体验
+- 删除ggbond
+- 修改`WebInfo`组件 (剩余getVisitors api未处理)

@@ -7,7 +7,7 @@
           <div :class="$style.headTitle">
             🍞<div>eTc</div>
           </div>
-          <h2>just for fun🎁</h2>
+          <h2>Capturing Life 🎵</h2>
           <Typing />
           <div :class="$style.buttonGroup">
             <div :class="$style.buttonActive">
@@ -20,14 +20,6 @@
                 留言板
               </button>
             </div>
-          </div>
-        </div>
-        <div :class="$style.homeImg">
-          <div :class="$style.imgBg">
-            <img
-              src="@/assets/images/ggbond.png"
-              alt="image/bigLogo"
-            />
           </div>
         </div>
       </div>

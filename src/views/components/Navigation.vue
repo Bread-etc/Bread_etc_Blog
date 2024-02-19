@@ -98,6 +98,7 @@ const routes = ref([
 // 点击跳转路由
 const handleNavigation = (path: string) => {
   router.push(path);
+  isDrop.value = !isDrop.value;
 };
 
 // 判断导航栏是否处于顶部,发生滚动则跟随

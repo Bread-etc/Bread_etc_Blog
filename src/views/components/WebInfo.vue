@@ -4,75 +4,54 @@
       <span>📈 网站统计 </span>
     </div>
     <div :class="$style.webInfo">
-      <div :class="$style.info" v-for="item in items">
-        <div :class="$style.name">{{ item.name }}:</div>
-        <div :class="$style.detail">{{ item.detail }}</div>
+      <div :class="$style.info">
+        <div :class="$style.name">🖊️ 文章数目:</div>
+        <div :class="$style.detail">{{ props.articleNum }} 篇</div>
+      </div>
+      <div :class="$style.info">
+        <div :class="$style.name">⏰ 运行时间:</div>
+        <div :class="$style.detail">{{ runTime }} 天</div>
+      </div>
+      <div :class="$style.info">
+        <div :class="$style.name">🤨 访客数:</div>
+        <div :class="$style.detail">{{ visitors }} 位</div>
+      </div>
+      <div :class="$style.info">
+        <div :class="$style.name">⌚ 最后更新:</div>
+        <div :class="$style.detail">{{ lastTime }}</div>
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { getWebInfo } from "../../api/BlogItem/webInfo";
-import { ref, onMounted } from "vue";
+// 引入 api
+import { getDays } from "../../api/BlogItem/getDays";
+import { getLastTime } from "../../api/BlogItem/getLastTime";
 
-const items = ref([
-  {
-    name: "文章数目",
-    detail: 0,
-  },
-  {
-    name: "运行时间",
-    detail: "天",
-  },
-  {
-    name: "总字数",
-    detail: 0,
-  },
-  {
-    name: "访客数",
-    detail: 0,
-  },
-  {
-    name: "总访问量",
-    detail: 0,
-  },
-  {
-    name: "最后更新",
-    detail: "2023-09-16",
-  },
-]);
+import { ref, defineProps, onMounted } from "vue";
+
+// 传值
+const props = defineProps(["articleNum"]);
+const runTime = ref<number>();
+const lastTime = ref<string>();
+const visitors = ref<number>(0);
 
 // 网络请求
 async function fetchWebInfo() {
   try {
-    const response = await getWebInfo();
-    // 将接口返回的数据更新到items中
-    items.value.forEach(item => {
-      if (item.name in response) {
-        if (item.name === "运行时间") {
-          const diff = Date.now() - new Date(response[item.name]).getTime();
-          const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-          const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-          item.detail = `${days}天${hours}小时`;
-        } else if (item.name === "最后更新") {
-          item.detail = new Date(response[item.name]).toLocaleDateString();
-        } else {
-          item.detail = response[item.name]
-        }
-      }
-    });
+    runTime.value = await getDays();
+    const last = await getLastTime();
+    const date = new Date(last);
+    lastTime.value = date.toISOString().split('T')[0];
   } catch (error) {
     console.error(error);
-    
   }
 }
 
 onMounted(() => {
   fetchWebInfo();
-})
-
-
+});
 </script>
 
 <style lang="scss" module>

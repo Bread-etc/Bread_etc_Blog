@@ -7,7 +7,7 @@
     <div :class="$style.authorName">
       <span>Bread_etc</span>
     </div>
-    <div :class="$style.authorInfo">学生，主要学习前端</div>
+    <div :class="$style.authorInfo">一名学生</div>
     <div :class="$style.authorWork">
       文章&nbsp;:&nbsp;{{ articleNum }} | 分类&nbsp;:&nbsp;{{ tagNum }}
     </div>
@@ -95,7 +95,8 @@ const { articleNum, tagNum } = defineProps({
   }
 
   .authorInfo {
-    font-size: $font-size-default - 2px; // 12px
+    font-size: $font-size-default; // 14px
+    font-weight: 600;
     padding: $space-card-component; // 5px
   }
 

@@ -16,7 +16,7 @@
         <div :class="$style.catalog">
           <MasterCard :articleNum="articleNum" :tagNum="tagNum" />
           <SortCard />
-          <WebInfo />
+          <WebInfo :articleNum="articleNum" />
         </div>
         <div :class="$style.rightContent">
           <div :class="$style.mainCard">

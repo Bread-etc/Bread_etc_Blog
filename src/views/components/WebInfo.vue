@@ -5,19 +5,19 @@
     </div>
     <div :class="$style.webInfo">
       <div :class="$style.info">
-        <div :class="$style.name">🖊️ 文章数目:</div>
+        <div :class="$style.name">文章数目:</div>
         <div :class="$style.detail">{{ props.articleNum }} 篇</div>
       </div>
       <div :class="$style.info">
-        <div :class="$style.name">⏰ 运行时间:</div>
+        <div :class="$style.name">运行时间:</div>
         <div :class="$style.detail">{{ runTime }} 天</div>
       </div>
       <div :class="$style.info">
-        <div :class="$style.name">🤨 访客数:</div>
+        <div :class="$style.name">访客数:</div>
         <div :class="$style.detail">{{ visitors }} 位</div>
       </div>
       <div :class="$style.info">
-        <div :class="$style.name">⌚ 最后更新:</div>
+        <div :class="$style.name">最后更新:</div>
         <div :class="$style.detail">{{ lastTime }}</div>
       </div>
     </div>

@@ -32,7 +32,7 @@
                   :alias="blog.alias"
                   :content="blog.content"
                   :image="blog.image"
-                  :category="blog.category"
+                  :tag="blog.tag"
                   :time="blog.time"
                 />
               </div>
@@ -75,7 +75,7 @@
               :default-page-size="5"
               :page-size="blogList.pageSize"
               :item-count="blogList.totalCount"
-              @change="handlePageChange"
+              @on-update:page="handlePageChange"
               style="
                 --n-item-text-color: $text-color;
                 --n-item-color-disabled: $bg-color;

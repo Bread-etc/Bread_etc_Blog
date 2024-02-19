@@ -2,8 +2,6 @@ import axios from "axios";
 import type { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from 'axios';
 import { useMessage } from "naive-ui";
 
-const message = useMessage();
-
 // 创建axios实例
 const service: AxiosInstance = axios.create({
     baseURL: 'http://localhost:8080',
@@ -22,6 +20,7 @@ service.interceptors.request.use(
         return config;
     },
     (error: AxiosError) => {
+        const message = useMessage();
         message.error(error.message);
         return Promise.reject(error);
     }
@@ -81,7 +80,7 @@ service.interceptors.response.use(
             default:
                 result = `连接出错${status}!`;
         }
-
+        const message = useMessage();
         message.error(result);
         return Promise.reject(error);
     }

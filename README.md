@@ -239,3 +239,7 @@
 - 修改`home`和`Navigation`组件,优化体验
 - 删除ggbond
 - 修改`WebInfo`组件 (剩余getVisitors api未处理)
+
+### 2024/2/20 (63)
+- 彻底移除`element-plus`
+- 修改`MainText`组件

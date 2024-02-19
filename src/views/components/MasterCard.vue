@@ -2,7 +2,7 @@
 <template>
   <div :class="$style.card">
     <div :class="$style.authorPic">
-      <img src="@/assets/images/HeadPicture.jpg" alt="image/HeadPicture" />
+      <img src="@/assets/images/HeadPicture.webp" alt="image/HeadPicture" />
     </div>
     <div :class="$style.authorName">
       <span>Bread_etc</span>

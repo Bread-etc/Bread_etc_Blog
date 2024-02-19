@@ -5,7 +5,7 @@
       <div :class="$style.logo">
         <a href="#" :class="$style.bread">
           <img
-            src="@/assets/images/bread.png"
+            src="@/assets/images/bread.webp"
             alt="image/nav"
             width="24"
             height="24"
@@ -49,7 +49,7 @@
               v-for="route in routes"
               :key="route.path"
               :index="route.path"
-              @click="handleNavigation(route.path)"
+              @click="handleNavigationInPhone(route.path)"
             >
               {{ route.meta.title }}
             </li>
@@ -98,8 +98,12 @@ const routes = ref([
 // 点击跳转路由
 const handleNavigation = (path: string) => {
   router.push(path);
-  isDrop.value = !isDrop.value;
 };
+
+const handleNavigationInPhone = (path: string) => {
+  router.push(path);
+  isDrop.value = !isDrop.value;
+}
 
 // 判断导航栏是否处于顶部,发生滚动则跟随
 const isSticky = ref(false);

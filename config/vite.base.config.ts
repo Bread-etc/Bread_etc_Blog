@@ -1,11 +1,6 @@
 import { defineConfig } from 'vite'
 import path from 'path'
 import vue from '@vitejs/plugin-vue'
-import Icons from 'unplugin-icons/vite'
-import IconsResolver from 'unplugin-icons/resolver'
-import AutoImport from 'unplugin-auto-import/vite'
-import Components from 'unplugin-vue-components/vite'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 const pathSrc = path.resolve(__dirname, '../src')
 
@@ -23,34 +18,7 @@ export default defineConfig({
     },
   plugins: [
     vue(),
-    AutoImport({
-      imports: ['vue'],
-      resolvers: [
-        ElementPlusResolver(),
-        IconsResolver({
-          prefix: 'Icon'
-        })
-      ],
-      dts: path.resolve(pathSrc + '/autoImport', 'auto-imports.d.ts')
-    }),
-    Components({
-      resolvers: [
-        IconsResolver({
-          enabledCollections: ['ep', 'carbon', 'noto']
-        }),
-        ElementPlusResolver(),
-      ],
-      dts: path.resolve(pathSrc + '/autoImport', 'components.d.ts')
-    }),
-    Icons({
-      autoInstall: true,
-      compiler: 'vue3'
-    }),
   ],
-  // 预构建vueuse的包
-  optimizeDeps: {
-    include: ['@vueuse/core']
-  },
   css: {
     // 是否开启devSourcemap
     devSourcemap: true,
@@ -70,7 +38,7 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         // variables.scss 用于在全局中使用预定义变量
-        additionalData: '@import "@/assets/styles/variables.scss";@import "@/assets/styles/mixin.scss";@import "@/assets/styles/common.scss";@import "@/assets/styles/tranisiton.scss";'
+        additionalData: '@import "@/assets/styles/variables.scss";@import "@/assets/styles/mixin.scss";@import "@/assets/styles/tranisiton.scss";'
         
       }
     }

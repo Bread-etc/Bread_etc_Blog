@@ -18,7 +18,7 @@
             <h2>支持一下 🍦</h2>
             <span>如果您觉得我的内容对您有所帮助，欢迎赞助我，以支持我继续创作更好的内容！🤗</span>
             <span :class="$style.image">
-              <img src="@/assets/images/wechatPay.jpg" alt="image/wechat">
+              <img src="@/assets/images/wechatPay.webp" alt="image/wechat">
             </span>
             <h2>友情链接 🔗</h2>
             <span></span>

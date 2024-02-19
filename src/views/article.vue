@@ -16,32 +16,36 @@
 <script lang="ts" setup>
 import Markdown from "vue3-markdown-it";
 import "highlight.js/scss/atom-one-dark.scss";
-import { getBlogText } from "../api/MainText/text";
 import { ref, onMounted } from "vue";
+import { useMessage } from "naive-ui";
 
-const source = ref('')
-const blogId = Number(sessionStorage.getItem('current_blogId'))
+// 引入api
+
+const source = ref("");
+const alias: string = sessionStorage.getItem("current_alias");
+const message = useMessage();
 
 // 网络请求
-async function fetchBlogText(query: number) {
+async function fetchBlogText(query: string) {
   try {
-    const data = await getBlogText(query)
-    source.value = data.text
+    // const data = await getBlogText(query);
+    // source.value = data.text;
   } catch (error) {
-    console.error(error)
+    message.error("获取失败..");
+    console.error("获取具体文章信息失败..", error);
   }
 }
 
 onMounted(() => {
-  fetchBlogText(blogId)
-})
+  fetchBlogText(alias);
+});
 </script>
 
 <style lang="scss" module>
 .container {
   display: block;
   background-color: $bg-color-content;
-  font-family: 'LXGW WenKai';
+  font-family: "LXGW WenKai";
 
   .content {
     @include contentCenter;

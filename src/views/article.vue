@@ -15,11 +15,13 @@
 
 <script lang="ts" setup>
 import Markdown from "vue3-markdown-it";
-import "highlight.js/scss/atom-one-dark.scss";
+import "highlight.js/lib/common";
+import "highlight.js/styles/atom-one-dark-reasonable.css";
 import { ref, onMounted } from "vue";
 import { useMessage } from "naive-ui";
 
 // 引入api
+import { getMarkdown } from "../api/MainText/getMarkdown";
 
 const source = ref("");
 const alias: string = sessionStorage.getItem("current_alias");
@@ -28,10 +30,10 @@ const message = useMessage();
 // 网络请求
 async function fetchBlogText(query: string) {
   try {
-    // const data = await getBlogText(query);
-    // source.value = data.text;
+    const data = await getMarkdown(query);
+    source.value = data;
   } catch (error) {
-    message.error("获取失败..");
+    message.error("获取文章失败..");
     console.error("获取具体文章信息失败..", error);
   }
 }
@@ -46,6 +48,7 @@ onMounted(() => {
   display: block;
   background-color: $bg-color-content;
   font-family: "LXGW WenKai";
+  overflow: hidden;
 
   .content {
     @include contentCenter;
@@ -60,6 +63,7 @@ onMounted(() => {
       flex-direction: column;
       justify-content: center;
       flex-grow: 1;
+      width: 80%;
 
       .mdContent {
         display: flex;
@@ -73,6 +77,15 @@ onMounted(() => {
           align-items: flex-start;
           justify-content: flex-start;
           padding: 2rem;
+
+          div {
+            width: inherit;
+          }
+
+          div > pre > code {
+            font-family: "DejaVu Sans Mono";
+            border-radius: 10px;
+          }
         }
       }
     }

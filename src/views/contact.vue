@@ -7,8 +7,8 @@
             <div :class="$style.textContent">
               <h1>欢迎来到我的留言板！👋</h1>
               <h2>如何留言？📝</h2>
-              <span>经👉 <div>Github</div> 登录后,在下方的留言框中输入您的留言内容即可。</span>
-              <span>评论区支持 <div>markdown</div> 格式和 <div>emoji😘</div></span>
+              <span>经👉 Github 登录后,在下方的留言框中输入您的留言内容即可。</span>
+              <span>评论区支持 markdown 和 emoji😘 </span>
               <span>请注意，为了保持良好的阅读体验和交流氛围，请勿发布任何不良信息和言论。</span>
               <h2>免责声明 🧷</h2>
               <span>⚠️本站内容仅代表个人观点。</span>

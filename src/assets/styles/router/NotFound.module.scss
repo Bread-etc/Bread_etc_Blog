@@ -15,6 +15,7 @@
         flex-direction: column;
         justify-content: center;
         flex-grow: 1;
+        width: 80%;
   
         .notFound {
           display: flex;
@@ -23,7 +24,7 @@
           align-items: center;
   
           .textContent {
-            width: 100%;
+            width: 80%;
             @include card;
             align-items: flex-start;
             justify-content: flex-start;
@@ -50,6 +51,7 @@
 
             iframe {
               align-self: center;
+              width: 80%;
             }
           }
         }

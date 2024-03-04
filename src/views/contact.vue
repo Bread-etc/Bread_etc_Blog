@@ -45,7 +45,7 @@
 import Giscus from '@giscus/vue'
 import { ref, onMounted } from 'vue'
 
-const theme = ref<boolean>(JSON.parse(localStorage.getItem('theme')));
+const theme = ref<boolean>(JSON.parse(localStorage.getItem('theme') as string));
 const mode = ref<string>('');
 
 onMounted(() => {

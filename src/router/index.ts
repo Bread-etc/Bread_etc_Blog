@@ -49,8 +49,7 @@ const routes = [
 // 定义路由器
 const router = createRouter({
   // 使用HTML5，需要在服务器下使用
-  history: createWebHistory(),
+  history: createWebHistory('/'),
   routes,
 });
-
 export default router;

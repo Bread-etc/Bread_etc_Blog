@@ -98,7 +98,7 @@ body {
 
 @font-face {
   font-family: 'LXGW WenKai';
-  src: url('@fonts/LXGWWenKaiGBScreen.ttf') format('truetype');
+  src: url('./assets/fonts/LXGWWenKaiGBScreen.ttf') format('truetype');
 }
 
 </style>

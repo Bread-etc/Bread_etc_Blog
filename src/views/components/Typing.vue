@@ -1,39 +1,42 @@
+<script setup>
+import { reactive, onMounted  } from 'vue'
+// 引入
+import EasyTyper from 'easy-typer-js'
+
+// 计算属性
+const obj = reactive({
+  output: '',
+  isEnd: false,
+  speed: 200,
+  singleBack: true,
+  sleep: 50,
+  type: 'rollback',
+  backSpeed: 100,
+  sentencePause: true
+})
+
+// 实例化
+onMounted(() => {
+  // @ts-ignore
+  const typed = new EasyTyper(obj, [`Bread_etc's Blog`, `Welcome to my blog!`])
+})
+
+</script>
+
 <template>
-  <div>
-    <vuetyped
-      :strings="strings"
-      :loop="loop"
-      :smart-backspace="true"
-      :typeSpeed="typeSpeed"
-      :startDelay="startDelay"
-      :backSpeed="backSpeed"
-      :class="$style.type"
-      :autoInsertCss="true"
-    >
-      <div class="typing" />
-    </vuetyped>
+  <div :class="$style.type">
+      <div>{{ obj.output }}</div>
   </div>
 </template>
-
-<script lang="ts" setup>
-const strings: string[] = [
-  "Bread_etc's Blog",
-  "欢迎来到我的博客",
-  "Welcome to my blog",
-];
-const loop: boolean = true;
-const typeSpeed: number = 100;
-const startDelay: number = 1000;
-const backSpeed: number = 70;
-</script>
 
 <style module lang="scss">
 .type {
   align-items: center;
   line-height: 20px;
   color: $homePage-text-color;
-  font-size: $font-size-rolling; // 1.1rem
-  font-weight: $font-weight-rolling; // 500
+  font-size: 1.1rem;
+  height: 1.1rem;
+  font-weight: 600;
   font-family: 'LXGW WenKai';
 }
 </style>

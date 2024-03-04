@@ -29,7 +29,7 @@
 import { getDays } from "../../api/BlogItem/getDays";
 import { getLastTime } from "../../api/BlogItem/getLastTime";
 
-import { ref, defineProps, onMounted } from "vue";
+import { ref, onMounted } from "vue";
 
 // 传值
 const props = defineProps(["articleNum"]);

@@ -24,7 +24,7 @@ import { onMounted, ref } from "vue";
 
 // 深色模式切换及保存
 const darkMode = useDarkModeStore();
-const isDark = ref(JSON.parse(localStorage.getItem('theme')));
+const isDark = ref(JSON.parse(localStorage.getItem('theme') as string));
 
 const toggleTheme = (value: boolean) => {
   if(value) {

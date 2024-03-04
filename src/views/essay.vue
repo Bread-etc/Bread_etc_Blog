@@ -117,10 +117,10 @@ const blogList = reactive({
   // 总数
   totalCount: 10,
   // 博客列表
-  list: [],
+  list: [] as any[],
 });
 const articleNum = ref<number>(1);
-const tagInfo = ref([]);
+const tagInfo = ref<any>([]);
 const tagNum = ref<number>(1);
 const ready = ref(false);
 
@@ -146,7 +146,7 @@ async function fetchBlogList(query: number) {
   }
 }
 
-function setBlogList(newData) {
+function setBlogList(newData: any) {
   // currentPage 当前页数
   blogList.currentPage = newData.currentPage;
   // pageSize 一页内返回最大数量

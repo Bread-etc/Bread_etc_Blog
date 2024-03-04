@@ -24,7 +24,7 @@ import { useMessage } from "naive-ui";
 import { getMarkdown } from "../api/MainText/getMarkdown";
 
 const source = ref("");
-const alias: string = sessionStorage.getItem("current_alias");
+const alias: string = sessionStorage.getItem("current_alias") as string;
 const message = useMessage();
 
 // 网络请求

@@ -4,7 +4,7 @@ import { useMessage } from "naive-ui";
 
 // 创建axios实例
 const service: AxiosInstance = axios.create({
-    baseURL: 'http://localhost:8080',
+    baseURL: 'https://admin.hastur23.top/api',
     timeout: 5000,
 })
 
@@ -44,7 +44,7 @@ service.interceptors.response.use(
         // 处理HTTP网络错误
         let result = '';
         // HTTP 状态码
-        const status = error.response.status;
+        const status = error.status;
         switch(status) {
             case 400:
                 result = "请求错误(400)";

@@ -24,7 +24,6 @@
 </template>
 
 <script lang="ts" setup>
-import { defineProps } from "vue";
 import { useRouter } from "vue-router";
 import { NTag, NIcon } from "naive-ui";
 import { Pin12Filled, Calendar3Day16Filled } from "@vicons/fluent";
@@ -45,7 +44,7 @@ const navigateToBlog = () => {
   const routeName = "essay." + props.alias;
   const routePath = "/essay/" + props.alias;
 
-  // 存储路由为article渲染
+  // 存储路由
   sessionStorage.setItem("current_alias", props.alias);
 
   // 添加子路由

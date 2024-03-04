@@ -7,6 +7,6 @@ declare module "*.vue" {
   export default component;
 }
 
-// 用于兼容typedJs
-declare module "vue3typed";
+// 兼容 vue-markdown-it
+declare module "vue3-markdown-it";
 

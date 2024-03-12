@@ -37,6 +37,6 @@ onMounted(() => {
   font-size: 1.1rem;
   height: 1.1rem;
   font-weight: 600;
-  font-family: 'LXGW WenKai';
+  font-family: 'LXGW WenKai', Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
 }
 </style>

@@ -73,6 +73,7 @@ onMounted(() => {
 
         .text {
           width: 100%;
+          font-size: 1rem !important;
           @include card;
           align-items: flex-start;
           justify-content: flex-start;
@@ -82,9 +83,32 @@ onMounted(() => {
             width: inherit;
           }
 
+          div > p > a > img {
+            max-width: 100%;
+            padding: 0 1rem;
+            max-height: 40vh;
+            display: block;
+            margin: 0 auto;
+          }
+
+          div > p > code {
+            font-family: Consolas, "Microsoft YaHei", monospace;
+            font-size: inherit;
+            font-weight: bold;
+            margin: 0 .2rem;
+            border-radius: 20px;
+          }
+
           div > pre > code {
-            font-family: "DejaVu Sans Mono";
-            border-radius: 10px;
+            font-family: Consolas, monospace;
+            border-radius: 5px;
+            font-style: normal;
+          }
+
+          div > blockquote {
+            background-color: $font-color-code;
+            margin: 1rem 0;
+            padding: 0 0.2rem;
           }
         }
       }

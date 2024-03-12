@@ -67,6 +67,8 @@ body {
   font-weight: 400;
   background-color: $bg-color;
   color: $text-color;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
 
   // IE浏览器滚动条样式
   scrollbar-track-color: transparent;  

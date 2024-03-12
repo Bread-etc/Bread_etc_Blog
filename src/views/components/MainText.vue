@@ -72,13 +72,16 @@ const navigateToBlog = () => {
   .image {
     width: 50%;
     border-radius: $border-card; // 12px
-    object-fit: cover;
     overflow: hidden;
 
     img {
       width: 100%;
       height: 100%;
+      object-fit: cover;
+      object-position: center;
+      background-color: $card-color;
       transition: transform 0.3s ease;
+      border-radius: $border-card; // 12px
 
       &:hover {
         transform: scale(1.1);
